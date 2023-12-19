@@ -27,7 +27,7 @@ const NavBar = () => {
       <div className="container-xl p-1">
         <style>
           {`
-            input[type="text"] {
+            input[type="text"].navbaronly {
               width: 350px;
               box-sizing: border-box;
               border-radius: 4px;
@@ -43,7 +43,7 @@ const NavBar = () => {
             //   border: 1px solid lightgrey; /* Default border color */
             }
 
-            input[type="text"]:focus {
+            input[type="text"].navbaronly:focus {
                 width: 550px; /* Change width when focused */
               border: 3px solid black; /* Change border color when focused */
             
@@ -54,7 +54,7 @@ const NavBar = () => {
         <nav className="d-flex justify-content-between align-items-center" style={{fontSize:"12px", }}>
           <div className="navbar-brand d-flex">
             <img style={{ width: '50px' }} className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png" alt="" />
-            <input type="text" name="search" className='fs-5 rounded-3 navbarinput navinput' placeholder="search" />
+            <input type="text" name="search" className='fs-5 rounded-3 navbarinput navinput navbaronly' placeholder="search" />
           </div>
           <div className="navbar-links icons d-flex justify-content-around ">
               <div className="mx-3 text-center ">
