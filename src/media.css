@@ -1,0 +1,59 @@
+/* Default styles for all screen sizes */
+
+/* Small screens (phones, 600px and below) */
+@media only screen and (max-width: 600px) {
+    /* Styles for small screens */
+    .navinput {
+        width: 20px !important;
+        display: none;
+    }
+  
+    nav p {
+        display: none;
+    }
+    .navbar-brand img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .icons img {
+         width: 28px !important;
+    }
+    .lastIcons {
+        display: none;
+    }
+  }
+  
+  /* Medium screens (tablets, 601px to 900px) */
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    /* Styles for medium screens */
+    .navinput {
+        width: 400px !important;
+    }
+    .icons img {
+        width: 40px !important;
+   }
+   .lastIcons {
+    display: none;
+    }
+    nav p {
+        display: none;
+    }
+  }
+  
+  /* Large screens (desktops, 901px and above) */
+  @media only screen and (min-width: 901px) {
+    /* Styles for large screens */
+    /* .lastIcons {
+        display: none;
+        }
+        .navinput {
+            width: 300px !important;
+        }
+        .icons img {
+            width: 40px !important;
+       }
+       nav p {
+        display: none;
+    } */
+  }
+  
