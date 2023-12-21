@@ -6,6 +6,8 @@ function MainProfile() {
     const [layer, setLayer] = useState(false)
     const [usercard, setusercard] = useState(false)
     const [JobPreference, setJobPreference] = useState(false)
+    const [userProfile, setUserProfile] = useState(false)
+
     const handleuserCard = () => {setusercard(!usercard)}
     const handleCard =() => {
       setLayer(!layer)
@@ -23,15 +25,27 @@ function MainProfile() {
 
       const [inputValue, setInputValue] = useState('');
       const [names, setNames] = useState([]);
-    
+
+      const [inputLocation, setinputLocation] = useState('');
+      const [Location, setLocation] = useState([]);
+      
       const handleChange = (event) => {
         setInputValue(event.target.value);
+      };
+      const handleChangeLocation = (event) => {
+        setinputLocation(event.target.value);
       };
     
       const handleAddName = () => {
         if (inputValue.trim() !== '') {
           setNames([...names, inputValue]);
           setInputValue('');
+        }
+      };
+      const handleAddLocation = () => {
+        if (inputLocation.trim() !== '') {
+          setLocation([...Location, inputLocation]);
+          setinputLocation('');
         }
       };
     
@@ -74,10 +88,10 @@ function MainProfile() {
                             <div className='border mt-4 fw- p-3 w-50 bg-secondary rounded-5 fs-5'>
                             <div className='d-flex  justify-content-between'>
                                 <div className='fw-bold'>open to work</div>
-                                <img src={pen} onClick={() => setJobPreference(!JobPreference)} alt="" />
+                                <img src={pen} onClick={() => setJobPreference(!JobPreference)} style={{cursor:"pointer"}} alt="" />
                                 </div>     
                                 <><Link>
-                                <h6 className='fw-bold'>
+                                <h6 className='fw-bold' onClick={() => setUserProfile(!userProfile)}>
                                 Show Details
                                 </h6>
                                 </Link></>
@@ -154,7 +168,16 @@ function MainProfile() {
     {
         layer ? (
             <>
-             <div class="card text-center  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
+                 {/* <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65"
+            }}></div> */}
+        
+                 <div class="card text-center  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
                 <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
 
@@ -189,6 +212,14 @@ function MainProfile() {
       usercard ?
        <>
          <div>
+         <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65"
+            }}></div>
          <div class="card  shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"900px", left:"30%", height:"740px"}}>
          <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
@@ -253,6 +284,14 @@ function MainProfile() {
     }
     {JobPreference ? <>
       <div>
+      <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65"
+            }}></div>
       <div class="card  shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"500px", left:"35%", height:"740px"}}>
       <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
@@ -261,10 +300,20 @@ function MainProfile() {
                     </div>
 
                 </div>
-            <div class="card-body">
+            <div class="card-body" style={{overflowY:"scroll"}}>
+                
                 <p>* Indicates required</p>
                 <div>
                 <label for="username" class="fs-6 mb-1 mt-3 ">job titles*</label>
+                {names.length > 0 && (
+                        <div>
+                        <div className='d-flex flex-wrap '>
+                            {names.map((name, index) => (
+                            <p className='btn btn-success rounded-pill mx-2' key={index}>{name} <span className='fw-bold mx-2'>X</span></p>
+                            ))}
+                        </div>
+                        </div>
+                    )}
                     <input
                         className='form-control my-2'
                         type="text"
@@ -272,23 +321,62 @@ function MainProfile() {
                         onChange={handleChange}
                         placeholder="Add title"
                     />
-                    <button className='btn btn-primary' onClick={handleAddName}>Add Name</button>
-
-                    {names.length > 0 && (
-                        <div>
-                        <p>Entered names:</p>
-                        <ul>
-                            {names.map((name, index) => (
-                            <li key={index}>{name}</li>
-                            ))}
-                        </ul>
+                    <button className='btn btn-primary' onClick={handleAddName}>Add Title</button>
+                    </div>
+                    <div className='mt-4'>
+                        <p>Location type*</p>
+                        <button className='btn btn-outline-primary mx-2' >on-site </button>
+                        <button className='btn btn-outline-primary mx-2' >Hybrid</button>
+                        <button className='btn btn-outline-primary mx-2' >Remote</button>
+                    </div>
+                    <div>
+                    <div>
+                        <label for="username" class="fs-6 mb-1 mt-3 ">job titles*</label>
+                        {Location.length > 0 && (
+                                <div>
+                                <div className='d-flex flex-wrap '>
+                                    {Location.map((name, index) => (
+                                    <p className='btn btn-success rounded-pill mx-2' key={index}>{name} <span className='fw-bold mx-2'>X</span></p>
+                                    ))}
+                                </div>
+                                </div>
+                            )}
+                            <input
+                                className='form-control my-2'
+                                type="text"
+                                value={inputLocation}
+                                onChange={handleChangeLocation}
+                                placeholder="Add Location"
+                            />
+                            <button className='btn btn-primary' onClick={handleAddLocation}>Add Location</button>
+                    </div>
+                    {/* immidate join or not ......... */}
+                        <div className='mt-4 p-1'>
+                            <div>Start date*</div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked/>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                Immediately, I am actively applying                                </label>
+                                </div>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  />
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                Flexible, I am casually looking                                </label>
+                                </div>
                         </div>
-                    )}
+                        {/* Employee type...... */}
+                        <div className='mt-4'>
+                        <p>Employee type*</p>
+                        <button className='btn btn-outline-primary m-2' >Full-time </button>
+                        <button className='btn btn-outline-primary m-2' >Part-time</button>
+                        <button className='btn btn-outline-primary m-2' >Contract</button>
+                        <button className='btn btn-outline-primary m-2' >InternShip</button>
+                        <button className='btn btn-outline-primary m-2' >Temporary</button>
+                    </div>
                     </div>
 
             </div><hr />
-            <button
-                        className="m-3 fs-6 shadow btn btn-primary text-center d-flex align-self-end fw-bold"
+            <button className="m-3 fs-6 shadow btn btn-primary text-center d-flex align-self-end fw-bold"
                         type='submit'
                     >
                         save
@@ -296,6 +384,37 @@ function MainProfile() {
             </div>
       </div>
     </> : <><div>{null}</div></>}
+        
+        {
+            userProfile ? <>
+            <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65"
+            }}></div>
+             <div>
+             <div class="card  shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"650px", left:"35%", height:"740px"}}>
+             <div class="card-header">
+                    <div className="d-flex justify-content-between p-2">
+                    <h3 className='fw-bold'>job preferences</h3>
+                    <button className='btn btn-primary' onClick={() => setUserProfile(!userProfile)}>Close</button>
+                    </div>
+
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        2 days ago
+                    </div>
+                    </div>
+             </div>
+            </> : <><div>{null}</div></>
+        }
+
          </>
       )
 }
