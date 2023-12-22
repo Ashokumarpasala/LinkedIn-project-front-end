@@ -92,8 +92,8 @@ function Home() {
         {/* middle card content */}
         <div class="col-6">
           {/* post card  */}
-          <div className="card shadow rounded-4 p-3">
-            <div className="d-flex align-items-center">
+          <div className="card postcard shadow rounded-4 p-3">
+            <div className="d-flex  align-items-center">
 
           <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "70px",
                    
@@ -102,7 +102,7 @@ function Home() {
               <input type="" className='form-control mx-3 rounded-5 fs-4' placeholder='' />
 
                   </div>
-                  <div className="d-flex justify-content-around  mt-4 fw-bold text-secondary " style={{cursor:"pointer"}}>
+                  <div className="d-flex centercard  justify-content-around  mt-4 fw-bold text-secondary " style={{cursor:"pointer"}}>
                    <div className="d-flex align-items-center border p-2 ">
                     <img src={imge} style={{width:"30px"}} alt="" />
                     <p className=' mx-2' style={{top:"10px", position:"relative"}}>Media</p>

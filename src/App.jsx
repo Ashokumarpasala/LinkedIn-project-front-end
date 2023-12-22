@@ -8,7 +8,8 @@ import Notifications from './components/Notifications'
 import Messages from './components/Messages'
 import MainProfile from './components/profileComponents/MainProfile';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import './components/profileComponents/profileComp.css'
+import './networkmedia.css'
 function App() {
   return (
     <div>

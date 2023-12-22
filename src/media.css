@@ -2,6 +2,9 @@
 
 /* Small screens (phones, 600px and below) */
 @media only screen and (max-width: 600px) {
+    body {
+        top: 40px !important;
+    }
     /* Styles for small screens */
     .navinput {
         width: 20px !important;
@@ -20,6 +23,17 @@
     }
     .lastIcons {
         display: none;
+    }
+    .centercard {
+        flex-direction: column;
+    }
+    .postcard {
+        width: 100% !important;
+        margin-top: 10px ;
+    }
+    .col-6 {
+        width: 100% !important;
+        
     }
   }
   

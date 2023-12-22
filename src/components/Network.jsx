@@ -70,7 +70,7 @@ function Network() {
             </div>
           </div>
           {/* users cards....... */}
-          <div className="card p-3 mt-2">
+          <div className="card followers p-3 mt-2">
             <p>People you may know based on your recent activity</p>
             <div className="d-flex flex-wrap">
               <div class="card text-center shadow m-4 w-25" >

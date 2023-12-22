@@ -51,7 +51,7 @@ function MainProfile() {
     
   return (
     <>
-      <div style={layer ? layerClass : {}} className=''>
+      <div style={layer ? layerClass : {}} className='profilecard'>
         <div className='layerClass'></div>
             <NavBar />
        
@@ -66,7 +66,7 @@ function MainProfile() {
                     </svg>
                     </div>
                   <img className='' style={{height:"200px"}} src="https://img.freepik.com/free-photo/gray-smooth-textured-paper-background_53876-101833.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1702512000&semt=ais" alt="" />
-                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "200px",
+                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle avatar" style={{width: "200px",
                     position:"absolute",
                     top:"80px",
                     right:"700px",
@@ -79,13 +79,15 @@ function MainProfile() {
                     <img className='' style={{ cursor:"pointer"}} src={pen} alt="" />
                     </div>
 
-                            <h3 className='fw-bold'>Ashok Kumar (Ashok kumar) pasala (He/Him)</h3>
+                            <h3 className='fw-bold mainName'>Ashok Kumar (Ashok kumar) pasala (He/Him)</h3>
                             <p>Worked in Think Core Technologies</p>
                             <p>Andhra Pradesh, India  <Link className='fw-bold'>Contact info</Link></p>
+                            <div className="profilebtn">
                             <div className="btn btn-primary">Open to</div>
                             <div className="btn fw-bold btn-outline-primary mx-3">Add Profile section</div>
                             <div className="btn fw-bold btn-outline-primary">More</div>
-                            <div className='border mt-4 fw- p-3 w-50 bg-secondary rounded-5 fs-5'>
+                            </div>
+                            <div className='border userCard mt-4 fw- p-3 w-50 bg-secondary rounded-5 fs-5'>
                             <div className='d-flex  justify-content-between'>
                                 <div className='fw-bold'>open to work</div>
                                 <img src={pen} onClick={() => setJobPreference(!JobPreference)} style={{cursor:"pointer"}} alt="" />
@@ -177,7 +179,7 @@ function MainProfile() {
                 opacity:"0.65"
             }}></div> */}
         
-                 <div class="card text-center  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
+                 <div class="card text showCard  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
                 <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
 
@@ -220,7 +222,7 @@ function MainProfile() {
                 left:"0",
                 opacity:"0.65"
             }}></div>
-         <div class="card  shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"900px", left:"30%", height:"740px"}}>
+         <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"900px", left:"30%", height:"740px"}}>
          <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
 
@@ -292,7 +294,7 @@ function MainProfile() {
                 left:"0",
                 opacity:"0.65"
             }}></div>
-      <div class="card  shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"500px", left:"35%", height:"740px"}}>
+      <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"500px", left:"35%", height:"740px"}}>
       <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
                     <h3 className='fw-bold'>Edit job preferences</h3>
@@ -396,7 +398,7 @@ function MainProfile() {
                 opacity:"0.65"
             }}></div>
              <div>
-             <div class="card  shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"650px", left:"35%", height:"740px"}}>
+             <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"650px", left:"35%", height:"740px"}}>
              <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
                     <h3 className='fw-bold'>job preferences</h3>
