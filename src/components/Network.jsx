@@ -71,7 +71,7 @@ function Network() {
           </div>
           {/* users cards....... */}
           <div className="card followers p-3 mt-2">
-            <p>People you may know based on your recent activity</p>
+            <p>People you may know based on your recent activities</p>
             <div className="d-flex flex-wrap">
               <div class="card text-center shadow m-4 w-25" >
                 <img src="https://t4.ftcdn.net/jpg/03/64/50/81/360_F_364508192_18qLD98JRj0bC7DZV5WH9V0QGTB7vEBm.jpg" class="card-img-top h-25" alt="..."/>
