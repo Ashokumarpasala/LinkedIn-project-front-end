@@ -19,10 +19,10 @@
 body {
   background-color: #f4f2ee;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   position: relative;
   top: 70px;
-  height: auto;
+  height: 1500px;
 }
 
 
