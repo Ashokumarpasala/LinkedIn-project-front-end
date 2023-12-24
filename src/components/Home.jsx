@@ -46,12 +46,12 @@ function Home() {
   return (
     <div>
       <NavBar />
-      <div class="row container-xl mx-auto m-3 " style={{position:"relative", zIndex:"0", top:"20px", height:"auto"}}>
+      <div class="row home container-xl mx-auto pt-4 " style={{position:"relative", zIndex:"0", top:"10px", height:"auto"}}>
         {/* left side content user details card......... */}
-        <div class="col">
+        <div class="col-3">
         <div class="card shadow ">
           <Link to='/MainProfile'>
-        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "100px",
+        <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "100px",
         position:"absolute",
         top:"30px",
         right:"100px"  

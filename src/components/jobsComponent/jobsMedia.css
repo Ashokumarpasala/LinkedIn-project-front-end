@@ -15,3 +15,15 @@
         top: -30px !important;
     }
 }
+
+@media only screen and (min-width: 764px) and (max-width: 1200px) {
+    .job .col-2,
+    .job .col-3,
+    .job .col-7 {
+        width: 100%;
+        font-size: 20px !important;
+        padding-bottom: 30px;
+        position: relative;
+        top: -30px;
+    }
+}

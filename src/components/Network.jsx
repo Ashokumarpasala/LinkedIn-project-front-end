@@ -62,9 +62,9 @@ function Network() {
             <li class="list-group-item px-3">
             <div className=" p-3 text-center my-2">
             <p>Get the latest jobs and industry news</p>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex  justify-content-center">
 
-            <img className='' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px",}} alt="Avatar" />
+            <img className='image' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px",}} alt="Avatar" />
             </div>
             <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
             <button className='btn btn-primary fw-bold'>Follow</button>

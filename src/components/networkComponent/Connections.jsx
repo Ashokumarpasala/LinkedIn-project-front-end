@@ -7,7 +7,7 @@ function Connections() {
   return (
     <div>
       <NavBar />
-      <div class="row container-xl mx-auto pt-4">
+      <div class="row connections container-xl mx-auto pt-4">
             <div class="col-9">
                 <div className="card p-3">
                     <h5>You don’t have any connections yet.</h5>

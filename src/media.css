@@ -41,8 +41,12 @@
   }
   
   /* Medium screens (tablets, 601px to 900px) */
-  @media only screen and (min-width: 601px) and (max-width: 900px) {
+  @media only screen and (min-width: 764px) and (max-width: 1200px) {
     /* Styles for medium screens */
+    body {
+        height: auto !important;
+        padding-bottom: 50px !important;
+    }
     .navinput {
         width: 400px !important;
     }
@@ -55,10 +59,24 @@
     nav p {
         display: none;
     }
+    .home .col-6 {
+        width: 100% !important;
+    }
+    .home .col-3 {
+        width: 100% !important;
+    }
+    .home .col-3 .avatar {
+        position: relative;
+        left: 150px !important;
+    }
+    .mainNavbar input {
+        width: 70% !important;
+    }
+
   }
   
   /* Large screens (desktops, 901px and above) */
-  @media only screen and (min-width: 901px) {
+  @media only screen and (min-width: 1200px) {
     /* Styles for large screens */
     /* .lastIcons {
         display: none;

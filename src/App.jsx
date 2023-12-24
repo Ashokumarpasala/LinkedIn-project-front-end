@@ -16,7 +16,7 @@ import FollowersPage from './components/networkComponent/FollowersPage';
 import GroupsPage from './components/networkComponent/GroupsPage';
 import EventsPage from './components/networkComponent/EventsPage';
 import Pages from './components/networkComponent/Pages';
-
+import './homeMedia.css'
 function App() {
   return (
     <div>

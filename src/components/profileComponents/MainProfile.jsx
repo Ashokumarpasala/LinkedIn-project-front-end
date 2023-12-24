@@ -144,7 +144,7 @@ function MainProfile() {
         <div className='layerClass'></div>
             <NavBar />
        
-        <div class="row  container-xl mx-auto" style={{position:"relative", top:"30px", zIndex:"0", overflowY:"hidden"}}>
+        <div class="row mainprofiles container-xl mx-auto" style={{position:"relative", top:"30px", zIndex:"0", overflowY:"hidden"}}>
             <div class="  col-9">
                 {/* main card.......... */}
                 <div className={`card my-2 shadow rounded-5`}>
@@ -285,7 +285,7 @@ function MainProfile() {
                 opacity:"0.65"
             }}></div> */}
         
-                 <div class="card text showCard  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
+                 <div class="card backgroundimagecard text showCard  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
                 <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
 
@@ -330,7 +330,7 @@ function MainProfile() {
                 left:"0",
                 opacity:"0.65"
             }}></div>
-         <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"900px", left:"30%", height:"740px"}}>
+         <div class="card showCard editCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"900px", left:"30%", height:"740px"}}>
          <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
 
@@ -491,7 +491,7 @@ function MainProfile() {
                 left:"0",
                 opacity:"0.65"
             }}></div>
-      <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"500px", left:"35%", height:"740px"}}>
+      <div class="card showCard editCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"500px", left:"35%", height:"740px"}}>
       <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
                     <h3 className='fw-bold'>Edit job preferences</h3>
@@ -595,7 +595,7 @@ function MainProfile() {
                 opacity:"0.65"
             }}></div>
              <div>
-             <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"650px", left:"35%", height:"740px"}}>
+             <div class="card showCard editCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"650px", left:"35%", height:"740px"}}>
              <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
                     <h3 className='fw-bold'>job preferences</h3>
@@ -625,7 +625,7 @@ function MainProfile() {
                 opacity:"0.65"
             }}></div>
              <div>
-             <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"10%",zIndex:"3",width:"850px", left:"35%", height:"auto"}}>
+             <div class="card aboutcard showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"10%",zIndex:"3",width:"850px", left:"35%", height:"auto"}}>
              <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
                     <h3 className='fw-bold'>Edit about</h3>
@@ -684,7 +684,7 @@ function MainProfile() {
                 opacity:"0.65"
             }}></div>
              <div>
-             <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"850px", left:"35%", height:"auto"}}>
+             <div class="card editCard showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"850px", left:"35%", height:"auto"}}>
              <div class="card-header">
                     <div className="d-flex justify-content-between p-2">
                     <h3 className='fw-bold'>Profile language settings</h3>
