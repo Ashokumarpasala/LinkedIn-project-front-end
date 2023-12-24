@@ -6,4 +6,38 @@
     width: 100% !important;
     left: -25px !important;
    }
+   .follow .col-3{
+      margin-top: 10px;
+   }
+   .group .col-9  .grps {
+     flex-direction: column;
+     padding-bottom: 20px;
+   }
+   .group .col-9 .d-flex p {
+      font-size: 20px;
+   }
+   .group .col-9 .grps .btn {
+      width: 100% !important;
+   }
+   .group .col-3 {
+      margin-top: 20px;
+   }
+   .event .col-9 img {
+      width: 100% !important;
+   }
+   .event .col-3 {
+      margin-top: 20px;
+   }
+   .page .col-3 {
+      margin-top: 20px;
+   }
+   .pending {
+      margin-top: 15px;
+      margin-bottom: 15px;
+   }
+   .network .col-9 .lastbtn {
+      width: auto !important;
+      font-size: 20px !important;
+   }
+
   }

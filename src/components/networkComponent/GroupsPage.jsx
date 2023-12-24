@@ -11,11 +11,11 @@ function GroupsPage() {
   return (
     <div>
       <NavBar />
-      <div class="row container-xl mx-auto pt-4">
+      <div class="row group container-xl mx-auto pt-4">
             <div class="col-9">
                 <div className="card p-3">
                     <div>
-            <div className='d-flex justify-content-between border-bottom'>
+            <div className='d-flex grps justify-content-between border-bottom'>
                 <div className='d-flex fw-bold' style={{cursor:"pointer"}}>
                 <p
                     className={`cursor-pointer ${activeTab === 'following' ? 'border-bottom text-success border-success p-2 border-3' : 'p-2'}`}
@@ -52,8 +52,8 @@ function GroupsPage() {
             )}
 
             {activeTab === 'followers' && (
-                <div>
-                                        <h1>Followers Tab</h1>
+                <div className='p-3'>
+                                        <h1>Request's Tab</h1>
                     {/* Content for Followers */}
                     {/* ... */}
                 </div>

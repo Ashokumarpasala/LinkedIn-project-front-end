@@ -1,0 +1,17 @@
+@media only screen and (max-width: 764px) {
+    .col-2  {
+        width: 100% !important;
+    }
+    .col-7 {
+        width: 100% !important;
+        margin-top: 20px;
+    }
+
+    .job .col-3 {
+        margin-top: 20px;
+    }
+    .job {
+        position: relative;
+        top: -30px !important;
+    }
+}

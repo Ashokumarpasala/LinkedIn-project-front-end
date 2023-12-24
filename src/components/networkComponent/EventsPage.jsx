@@ -6,7 +6,7 @@ function EventsPage() {
   return (
     <div className=''>
       <NavBar />
-      <div className='row container-xl mx-auto pt-5'>
+      <div className='row event container-xl mx-auto pt-5'>
        <div className="col-9">
         <div className="card p-3">
             <div className="d-flex justify-content-between border-bottom p-2">

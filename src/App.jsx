@@ -10,6 +10,7 @@ import MainProfile from './components/profileComponents/MainProfile';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './components/profileComponents/profileComp.css'
 import './networkmedia.css'
+import './components/jobsComponent/jobsMedia.css'
 import Connections from './components/networkComponent/Connections';
 import FollowersPage from './components/networkComponent/FollowersPage';
 import GroupsPage from './components/networkComponent/GroupsPage';

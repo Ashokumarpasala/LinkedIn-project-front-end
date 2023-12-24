@@ -13,7 +13,7 @@ function Jobs() {
   return (
     <div style={{backgroundColor:"#f4f2ee", position:"relative", top:"50px"}}>
       <NavBar />
-      <div class="row container-xl mx-auto">
+      <div class="row job container-xl mx-auto">
         <div class="col-2">
           <div className="card p-1 shadow  " style={{fontSize:"14px"}}>
           <div className='d-flex mt-3'>

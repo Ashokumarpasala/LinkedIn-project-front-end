@@ -14,7 +14,7 @@ function Network() {
     <div style={{backgroundColor:"#f4f2ee", position:"relative", top:"20px"}}>
     
       <NavBar />
-      <div class="row container-xl mx-auto p-3">
+      <div class="row container-xl network mx-auto p-3">
         <div class="col-3 ">
         <div class="card">
           <ul class="list-group list-group-light">
@@ -75,7 +75,7 @@ function Network() {
         </div>
         </div>
         <div class="col-9 ">
-          <div className="card">
+          <div className="card pending">
             {/* manage card......... */}
             <div className="d-flex justify-content-between mx-3 mt-3 align-items-center">
             <p>No pending invitations</p>
@@ -212,7 +212,7 @@ function Network() {
                 </div>
               </div>
             </div>
-            <button className='btn btn-outline-primary fw-bold px-3 w-25 m-4'>show more</button>
+            <button className='btn lastbtn btn-outline-primary fw-bold px-3 w-25 m-4'>show more</button>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ function FollowersPage() {
   return (
     <div>
       <NavBar />
-      <div class="row container-xl mx-auto pt-4">
+      <div class="row follow container-xl mx-auto pt-4">
             <div class="col-9">
                 <div className="card p-3">
                     <h6>Ashok Kumar's Network</h6> <hr />

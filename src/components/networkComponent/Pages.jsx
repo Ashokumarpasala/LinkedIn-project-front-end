@@ -5,7 +5,7 @@ function Pages() {
   return (
     <div className=''>
     <NavBar />
-    <div className='row container-xl mx-auto pt-5'>
+    <div className='row page container-xl mx-auto pt-5'>
      <div className="col-9">
       <div className="card p-3">
           <div className="border-bottom p-3">
