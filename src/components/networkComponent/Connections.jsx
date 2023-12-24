@@ -1,91 +1,23 @@
-import React, { useState } from 'react'
-import NavBar from './NavBar'
-import network from './navImages/teamwork.png'
-import checkperson from './networkimages/person-check.svg'
-import calender from './networkimages/calendar2-event.svg'
-import file from './networkimages/file-earmark.svg'
-import hash from './networkimages/hash.svg'
-import paper from './networkimages/newspaper.svg'
+import React from 'react'
+import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
-
-function Network() {
   
-  return (
-    <div style={{backgroundColor:"#f4f2ee", position:"relative", top:"20px"}}>
-    
-      <NavBar />
-      <div class="row container-xl mx-auto p-3">
-        <div class="col-3 ">
-        <div class="card">
-          <ul class="list-group list-group-light">
-            <li class="list-group-item px-3">
-              <p className='fw-bold'>Manage my network</p>
-              <div  >
-                <Link to='/connections/network' className='d-flex fw-bold'>
-                <img src={network} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>connections</p>
-                </Link>
-              </div>
-              <div className='d-flex'>
-                <Link to='/Followerspage/network' className='d-flex fw-bold'>
-                <img src={checkperson} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Following & followers</p>
-                </Link>
-              </div>
-              <div className='d-flex'>
-              <Link to='/groups/network' className='d-flex fw-bold'>
-                <img src={network} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Groups</p>
-              </Link>
-              </div>
-              <div className='d-flex'>
-              <Link to='/events/network' className='d-flex fw-bold'>
-               <img src={calender} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Events</p>
-              </Link>
-              </div>
-              <div className='d-flex'>
-              <Link to='/pages/network' className='d-flex fw-bold'>
-                <img src={file} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Pages</p>
-              </Link>
-              </div>
-              <div className='d-flex'>
-                <img src={paper} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Newsletter</p>
-              </div>
-              <div className='d-flex'>
-                <img src={hash} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Hashtags</p>
-              </div>
-            </li>
-            <li class="list-group-item px-3">
-            <div className=" p-3 text-center my-2">
-            <p>Get the latest jobs and industry news</p>
-            <div className="d-flex justify-content-center">
 
-            <img className='' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px",}} alt="Avatar" />
-            </div>
-            <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
-            <button className='btn btn-primary fw-bold'>Follow</button>
-          </div>
-            </li>
-            <li class="list-group-item px-3">Fotter Part</li>
-          </ul>
-        </div>
-        </div>
-        <div class="col-9 ">
-          <div className="card">
-            {/* manage card......... */}
-            <div className="d-flex justify-content-between mx-3 mt-3 align-items-center">
-            <p>No pending invitations</p>
-            <p>Manage</p>
-            </div>
-          </div>
-          {/* users cards....... */}
-          <div className="card followers p-3 mt-2">
+function Connections() {
+  return (
+    <div>
+      <NavBar />
+      <div class="row container-xl mx-auto pt-4">
+            <div class="col-9">
+                <div className="card p-3">
+                    <h5>You don’t have any connections yet.</h5>
+                    <p>Discover fresh ideas and jobs on LinkedIn through your connections and their networks. Find your first connection below.</p>
+                </div>
+                <div className="card mt-3">
+                     {/* users cards....... */}
+          <div className=" followers p-3 mt-2">
             <div className="d-flex justify-content-between">
-            <p>People in the IT Services and IT Consulting industry you may know</p>
+            <p>People may You Know </p>
             <p><Link>See All</Link></p>
 
             </div>
@@ -214,10 +146,22 @@ function Network() {
             </div>
             <button className='btn btn-outline-primary fw-bold px-3 w-25 m-4'>show more</button>
           </div>
+                </div>
+            </div>
+            <div class="col-3">
+            <div className="card p-3 text-center my-2">
+            <p>Get the latest jobs and industry news</p>
+            <div className="d-flex align-self-center">
+
+            <img className='' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px",}} alt="Avatar" />
+            </div>
+            <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
+            <button className='btn btn-primary fw-bold'>Follow</button>
+          </div>
+            </div>
         </div>
-      </div>
-      </div>
+    </div>
   )
 }
 
-export default Network
+export default Connections

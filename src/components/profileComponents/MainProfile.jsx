@@ -1,17 +1,21 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
 import pen from '../../assets/pen.svg'
+import axios from 'axios'
 function MainProfile() {
     const [layer, setLayer] = useState(false)
     const [usercard, setusercard] = useState(false)
     const [JobPreference, setJobPreference] = useState(false)
     const [userProfile, setUserProfile] = useState(false)
+    const [AboutCard, setAboutCard] = useState(false)
+    const [languagecard, setlanguagecard] = useState(false)
 
     const handleuserCard = () => {setusercard(!usercard)}
     const handleCard =() => {
       setLayer(!layer)
     }
+    
     const layerClass = {
         position: 'relative',
         zIndex: 3,
@@ -48,10 +52,95 @@ function MainProfile() {
           setinputLocation('');
         }
       };
+
+    //   handle for dara card......
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        additionalName: '',
+        pronouns: '',
+        headline: '',
+        currentPosition: '',
+        industry: '',
+        countryRegion: '',
+        city: ''
+      });
+    
+      const handleFormData = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value
+        }));
+      };
+
+      const [users, setUsers] = useState([]);
+
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get('http://localhost:8080/users');
+            setUsers(response.data);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, []); 
+
+      const handleSubmitFormData = async () => {
+        try {
+          const response = await axios.post('http://localhost:8080/user', formData);
+          console.log('Form submitted successfully:', response.data);
+        } catch (error) {
+          console.error('Error submitting form:', error);
+        }
+      };
+
+      const [skills, setSkills] = useState([]);
+  const [newSkill, setNewSkill] = useState('');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const handleAddSkill = () => {
+    if (skills.length < 5) {
+      setSkills([...skills, newSkill]);
+      setNewSkill('');
+
+      // Disable the button if the count of skills is now 5
+      if (skills.length + 1 === 5) {
+        setIsButtonDisabled(true);
+      }
+    } }
+
+    const [language, setLanguage] = useState('');
+    const [languages, setLanguages] = useState([]);
+    const maxLanguages = 3;
+
+    const handleLanguageChange = (event) => {
+        setLanguage(event.target.value);
+    };
+
+    const handleAddLanguage = () => {
+        if (languages.length < maxLanguages) {
+            // Only add language if not reached the maximum
+            setLanguages([...languages, language]);
+            setLanguage('');
+        }
+    };
     
   return (
     <>
       <div style={layer ? layerClass : {}} className='profilecard'>
+      {/* <div>
+      <h2>User List</h2>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.firstName}</li>
+        ))}
+      </ul>
+    </div> */}
+
         <div className='layerClass'></div>
             <NavBar />
        
@@ -66,14 +155,30 @@ function MainProfile() {
                     </svg>
                     </div>
                   <img className='' style={{height:"200px"}} src="https://img.freepik.com/free-photo/gray-smooth-textured-paper-background_53876-101833.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1702512000&semt=ais" alt="" />
+                 <div className='' style={{
+                    backgroundImage:"url(https://mdbcdn.b-cdn.net/img/new/avatars/2.webp)",
+                    backgroundRepeat:"no-repeat",
+                    height:"250px",
+                    width:"250px",
+                    backgroundPosition:"center",
+                    backgroundSize:"cover",
+                    objectFit:"contain",
+                    top:"-120px",
+                    left:"50px",
+                    position:"relative",
+                    border:"5px solid white",
+                    borderRadius:"50%"
+                 }}>
+{/* 
                   <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle avatar" style={{width: "200px",
-                    position:"absolute",
-                    top:"80px",
-                    right:"700px",
+                    position:"static",
+                    top:"100px",
+                    right:"600px",
                     border:"5px solid white" 
                 }}
-                alt="Avatar" />
-                <div className='p-5 my-5'>
+                alt="Avatar" /> */}
+                </div>
+                <div className='p-5' style={{position:"relative", top:"-100px"}}>
                     <div className="d-flex justify-content-end " onClick={handleuserCard}>
 
                     <img className='' style={{ cursor:"pointer"}} src={pen} alt="" />
@@ -103,9 +208,10 @@ function MainProfile() {
                 </div>
                 {/* about card........... */}
                 <div className="card p-4 my-2 shadow ">
+
                     <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>About</h5>
-                     <img src={pen} alt="" />
+                     <img src={pen} alt="" style={{cursor:"pointer"}} onClick={() => setAboutCard(!AboutCard)} />
                     </div>
                     <p>Highly skilled Front-End Developer with 3 years of experience translating design concepts into seamless and responsive web experiences. Proficient in HTML, CSS, JavaScript, and modern front-end frameworks like React js and Redux.</p>
                      <div className="border rounded-5 p-3 my-3">
@@ -141,7 +247,7 @@ function MainProfile() {
             <div className="card p-4 shadow">
                 <div className='d-flex  justify-content-between'>
                     <div className='fw-bold'>Profile language</div>
-                     <img src={pen} alt="" />
+                     <img src={pen} alt="" style={{cursor:"pointer"}} onClick={() => setlanguagecard(!languagecard)} />
                     </div>
                     <p>English</p> <hr />
                     <div className='d-flex  justify-content-between'>
@@ -210,6 +316,8 @@ function MainProfile() {
             <div>{null}</div>
         </>)
     }
+
+    {/* ......user card details form .......... */}
     {
       usercard ?
        <>
@@ -233,39 +341,127 @@ function MainProfile() {
                 </div>
                 {/* form............. */}
             <div class="card-body" style={{overflowY:"scroll"}}>
-                <p>* Indicates required</p>
-                <form action="" className=''>
-                    <label for="username" class="fs-6 mb-1 mt-3 ">First name*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <label for="username" class="fs-6 mb-1 mt-3 ">Last name*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <label for="username" class="fs-6 mb-1 mt-3 ">Additional name</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <p className='mt-4'>Name pronunciation</p>
-                    <p> <span className='badge bg-dark'>i</span> This can only be added using our mobile app</p>
-                    <label htmlFor="" class="fs-6 mb-1 mt-3 ">pronous</label>
-                    <select name="" id="" class="fs-6 mb-1 form-control  fs-5 p-2 ">
-                        <option value="">select option</option>
-                        <option value="He">He</option>
-                        <option value="She">She</option>
-                        <option value="She">They/Them</option>
-                        <option value="Others">Others</option>
-                    </select>
-                    <p>Let others know how to refer to you.</p>
-                    <label for="username" class="fs-6 mb-1 mt-3 ">Headline*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <h3 className='mt-5'>Current Position</h3>
-                    <label for="username" class="fs-6 mb-1 mt-3 ">current position*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <label for="username" class="fs-6 mb-1 mt-3 ">Industry*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <h3 className='mt-5'>Location</h3>
-                    <label for="username" class="fs-6 mb-1 mt-3 ">country/Region*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <label for="username" class="fs-6 mb-1 mt-3 ">city*</label>
-                    <input type="text" className='form-control p-1 fs-5' />
-                    <h3 className='mt-5'>Contact Info</h3>
-                    <p>Add or edit your profile URL, email, and more</p>
+            <p>* Indicates required</p>
+      <form className="">
+        <label htmlFor="firstName" className="fs-6 mb-1 mt-3">
+          First name*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleFormData}
+        />
+
+        <label htmlFor="lastName" className="fs-6 mb-1 mt-3">
+          Last name*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleFormData}
+        />
+
+        <label htmlFor="additionalName" className="fs-6 mb-1 mt-3">
+          Additional name
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="additionalName"
+          value={formData.additionalName}
+          onChange={handleFormData}
+        />
+
+        <p className="mt-4">Name pronunciation</p>
+        <p>
+          <span className="badge bg-dark">i</span> This can only be added
+          using our mobile app
+        </p>
+
+        <label htmlFor="pronouns" className="fs-6 mb-1 mt-3">
+          Pronouns
+        </label>
+        <select
+          name="pronouns"
+          id="pronouns"
+          className="fs-6 mb-1 form-control fs-5 p-2"
+          value={formData.pronouns}
+          onChange={handleFormData}
+        >
+          <option value="">Select option</option>
+          <option value="He">He</option>
+          <option value="She">She</option>
+          <option value="They/Them">They/Them</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <p>Let others know how to refer to you.</p>
+
+        <label htmlFor="headline" className="fs-6 mb-1 mt-3">
+          Headline*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="headline"
+          value={formData.headline}
+          onChange={handleFormData}
+        />
+
+        <h3 className="mt-5">Current Position</h3>
+
+        <label htmlFor="currentPosition" className="fs-6 mb-1 mt-3">
+          Current position*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="currentPosition"
+          value={formData.currentPosition}
+          onChange={handleFormData}
+        />
+
+        <label htmlFor="industry" className="fs-6 mb-1 mt-3">
+          Industry*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="industry"
+          value={formData.industry}
+          onChange={handleFormData}
+        />
+
+        <h3 className="mt-5">Location</h3>
+
+        <label htmlFor="countryRegion" className="fs-6 mb-1 mt-3">
+          Country/Region*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="countryRegion"
+          value={formData.countryRegion}
+          onChange={handleFormData}
+        />
+
+        <label htmlFor="city" className="fs-6 mb-1 mt-3">
+          City*
+        </label>
+        <input
+          type="text"
+          className="form-control p-1 fs-5"
+          name="city"
+          value={formData.city}
+          onChange={handleFormData}
+        />
+
+        <h3 className="mt-5">Contact Info</h3>
+        <p>Add or edit your profile URL, email, and more</p>
                     <Link className='mt-3 fs-6 fw-bold'>Edit contact info</Link>
 
                 </form>
@@ -274,7 +470,7 @@ function MainProfile() {
 
             <button
                         className="m-3 fs-6 shadow btn btn-primary text-center d-flex align-self-end fw-bold"
-                        onClick={openFile}
+                        onClick={handleSubmitFormData}
                         type='submit'
                     >
                         save
@@ -284,6 +480,7 @@ function MainProfile() {
        </> : <>{null}</>
 
     }
+
     {JobPreference ? <>
       <div>
       <div style={{
@@ -414,6 +611,130 @@ function MainProfile() {
                     </div>
                     </div>
              </div>
+            </> : <><div>{null}</div></>
+        }
+        {/* about card........... */}
+        {
+            AboutCard ? <>
+            <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65"
+            }}></div>
+             <div>
+             <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"10%",zIndex:"3",width:"850px", left:"35%", height:"auto"}}>
+             <div class="card-header">
+                    <div className="d-flex justify-content-between p-2">
+                    <h3 className='fw-bold'>Edit about</h3>
+                    <button className='btn btn-primary' onClick={() => setAboutCard(!AboutCard)}>Close</button>
+                    </div>
+
+                    </div>
+                    <div class="card-body">
+                        <p>You can write about your years of experience, industry, or skills. People also talk about their achievements or previous job experiences.</p>
+                        <textarea name="" id="" cols="90" rows="10"></textarea>
+                        <div>
+                            <h3>Skills</h3>
+                            <p>Show your top skills — add up to 5 skills you want to be known for. They’ll also appear in your Skills section.</p>
+                            <div className="mt-3">
+                                    <strong>Skills:</strong>
+                                    <div className='d-flex flex-wrap'>
+                                    {skills.map((skill, index) => (
+                                        <p className='btn btn-success mx-1' key={index}>{skill}</p>
+                                    ))}
+                                    </div>
+                                </div>
+                            <div className="d-flex justify-content-start">
+                            <input
+                                type="text"
+                                placeholder="Enter Skills"
+                                className="form-control"
+                                value={newSkill}
+                                onChange={(e) => setNewSkill(e.target.value)}
+                            />
+                            <button
+                                className="btn btn-primary w-25 mx-2"
+                                onClick={handleAddSkill}
+                                disabled={isButtonDisabled}
+                            >
+                                Add skill
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        2 days ago
+                    </div>
+                    </div>
+             </div>
+            </> : <><div>{null}</div></>
+        }
+        {/* language card....... */}
+        {
+            languagecard ? <>
+            <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65"
+            }}></div>
+             <div>
+             <div class="card showCard shadow-lg p-3 mb-5 rounded" style={{position:"fixed", top:"15%",zIndex:"3",width:"850px", left:"35%", height:"auto"}}>
+             <div class="card-header">
+                    <div className="d-flex justify-content-between p-2">
+                    <h3 className='fw-bold'>Profile language settings</h3>
+                    <button className='btn btn-primary' onClick={() => setlanguagecard(!languagecard)}>Close</button>
+                    </div>
+
+                    </div>
+                  <div className="card-body bg-light">
+                  <div className="d-flex justify-content-around">
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-globe mx-2" viewBox="0 0 16 16">
+  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472M3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+</svg>                  
+ <p className='w-50'>Add more than one language on your profile to make finding you easier.</p>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-sunglasses mx-2" viewBox="0 0 16 16">
+  <path d="M3 5a2 2 0 0 0-2 2v.5H.5a.5.5 0 0 0 0 1H1V9a2 2 0 0 0 2 2h1a3 3 0 0 0 3-3 1 1 0 1 1 2 0 3 3 0 0 0 3 3h1a2 2 0 0 0 2-2v-.5h.5a.5.5 0 0 0 0-1H15V7a2 2 0 0 0-2-2h-2a2 2 0 0 0-1.888 1.338A1.99 1.99 0 0 0 8 6a1.99 1.99 0 0 0-1.112.338A2 2 0 0 0 5 5zm0 1h.941c.264 0 .348.356.112.474l-.457.228a2 2 0 0 0-.894.894l-.228.457C2.356 8.289 2 8.205 2 7.94V7a1 1 0 0 1 1-1"/>
+</svg>
+                   <p className='w-50'>We will match viewers’ language to your available language profile. If there’s no match, your default profile will be shown.</p>
+                  </div>
+        </div><hr />
+            <div className="d-flex justify-content-start mt-3">
+                <input
+                    type="text"
+                    placeholder="Enter Language"
+                    className="form-control"
+                    value={language}
+                    onChange={handleLanguageChange}
+                />
+                <button
+                    className="btn btn-primary w-25 mx-2"
+                    onClick={handleAddLanguage}
+                    disabled={languages.length >= maxLanguages}
+                >
+                    Add Language
+                </button>
+            </div>
+
+            <div className="mt-3">
+                <h5>Added Languages:</h5>
+                <div>
+                    {languages.map((lang, index) => (
+                        <p className='btn btn-success mx-2' key={index}>{lang}</p>
+                    ))}
+                </div>
+                <p>You can only have 1 profile per language. When you switch your primary language profile, empty sections will be filled using your previous primary language. Learn more about creating profiles in another language.</p>
+            </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        2 days ago
+                    </div>
+                    </div>
             </> : <><div>{null}</div></>
         }
 

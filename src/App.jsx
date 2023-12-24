@@ -10,6 +10,12 @@ import MainProfile from './components/profileComponents/MainProfile';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './components/profileComponents/profileComp.css'
 import './networkmedia.css'
+import Connections from './components/networkComponent/Connections';
+import FollowersPage from './components/networkComponent/FollowersPage';
+import GroupsPage from './components/networkComponent/GroupsPage';
+import EventsPage from './components/networkComponent/EventsPage';
+import Pages from './components/networkComponent/Pages';
+
 function App() {
   return (
     <div>
@@ -21,6 +27,11 @@ function App() {
           <Route exact path='/messages' element={<Messages />} />
           <Route exact path='/notifications' element={<Notifications />} />
           <Route exact path='/MainProfile'  element={<MainProfile />} />
+          <Route exact path='/connections/network'  element={<Connections />} />
+          <Route exact path='/Followerspage/network'  element={<FollowersPage />} />
+          <Route exact path='/groups/network'  element={<GroupsPage />} />
+          <Route exact path='/events/network'  element={<EventsPage />} />
+          <Route exact path='/pages/network'  element={<Pages />} />
         </Routes>
       </Router>
     </div>
