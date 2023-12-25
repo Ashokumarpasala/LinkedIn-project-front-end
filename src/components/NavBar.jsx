@@ -15,6 +15,7 @@ const NavBar = () => {
 
     const [active, setActive] = useState(false)
     const [profileCard, setprofileCard] = useState(false)
+    const [showlayer, setShowLayer] = useState(false)
     const [businesscard, setbusinesscard] = useState(false)
     const handletoggle =() => {
         setActive(!active)
@@ -54,7 +55,7 @@ const NavBar = () => {
         <nav className="d-flex mainNavbar justify-content-between align-items-center" style={{fontSize:"12px", }}>
           <div className="navbar-brand d-flex">
             <img style={{ width: '50px' }} className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png" alt="" />
-            <input type="text" name="search" className='fs-5 rounded-3 navbarinput navinput navbaronly' placeholder="search" />
+            <input type="text" name="search" onClick={() => setShowLayer(!showlayer)} className='fs-5 rounded-3 navbarinput navinput navbaronly' placeholder="search" />
           </div>
           <div className="navbar-links icons d-flex justify-content-around ">
               <div className="mx-3 text-center ">
@@ -115,6 +116,19 @@ const NavBar = () => {
       
       
     </div>    
+    {
+      showlayer ? <><div>
+            <div style={{
+                position:"absolute",
+                width:"100%",
+                height:"100%",
+                backgroundColor:"black",top:"0",
+                left:"0",
+                opacity:"0.65",
+                zIndex:"1"
+            }} onClick={() => setShowLayer(!showlayer)}></div>
+        </div></> : <><div>{null}</div></>
+    }
 
       {
         profileCard ? 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import Jobs from './components/Jobs'
@@ -17,13 +17,30 @@ import GroupsPage from './components/networkComponent/GroupsPage';
 import EventsPage from './components/networkComponent/EventsPage';
 import Pages from './components/networkComponent/Pages';
 import './homeMedia.css'
+import axios from 'axios'
 function App() {
+  const [usersData, setUsersData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://api.github.com/users');
+        setUsersData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(usersData);
   return (
     <div>
       <Router>
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/network' element={<Network />} />
+          <Route exact path='/network' element={<Network usersData={usersData} />} />
           <Route exact path='/jobs' element={<Jobs />} />
           <Route exact path='/messages' element={<Messages />} />
           <Route exact path='/notifications' element={<Notifications />} />

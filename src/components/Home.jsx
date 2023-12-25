@@ -46,7 +46,7 @@ function Home() {
   return (
     <div>
       <NavBar />
-      <div class="row home container-xl mx-auto pt-4 " style={{position:"relative", zIndex:"0", top:"10px", height:"auto"}}>
+      <div class="row home container-xl mx-auto pt-5 " style={{position:"relative", zIndex:"0", height:"auto"}}>
         {/* left side content user details card......... */}
         <div class="col-3">
         <div class="card shadow ">
@@ -120,7 +120,7 @@ function Home() {
           </div> <hr />
         </div>
         {/* right side hoome page */}
-        <div class="col">
+        <div class="col-3">
           <div className="card p-3 shadow ">
             <div className="d-flex justify-content-between fw-bold">
               <p>LinkedIn News</p>
@@ -160,7 +160,8 @@ function Home() {
       )}
     </div>
           </div>
-          <div className="card p-3 text-center my-2">
+          {/* sticky card........... */}
+          <div className="card p-3 text-center my-2 sticky-top" >
             <p>Get the latest jobs and industry news</p>
             <div className="d-flex align-self-center">
 

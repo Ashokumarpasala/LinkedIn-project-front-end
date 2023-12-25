@@ -30,7 +30,9 @@ function Pages() {
             <h1>Footer part</h1>    
           </div>
           </div> 
-                
+          241|fmmJcce4ibRzyYqToGw9Jl2Is4UdNLkNjnsplOZo
+
+
        </div>
   </div>
   )
