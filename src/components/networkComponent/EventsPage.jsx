@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function EventsPage() {
   return (
-    <div className=''>
+    <div className='mt-5 pt-4' style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
       <div className='row event container-xl mx-auto pt-5'>
        <div className="col-9">

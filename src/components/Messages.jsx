@@ -3,9 +3,9 @@ import NavBar from './NavBar'
 
 function Messages() {
   return (
-    <div>
+    <div className='mt-5'>
       <NavBar />
-      <h1 className="text-center mt-5">Welcome to message page!</h1>
+      <h1 className="text-center">Welcome to message page!</h1>
 
     </div>
   )

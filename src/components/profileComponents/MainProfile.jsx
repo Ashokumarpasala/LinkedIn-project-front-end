@@ -131,7 +131,9 @@ function MainProfile() {
     
   return (
     <>
-      <div style={layer ? layerClass : {}} className='profilecard'>
+      <div style={layer ? layerClass : {
+        backgroundColor:"#f4f2ee"
+      }} className='profilecard '>
       {/* <div>
       <h2>User List</h2>
       <ul>
@@ -141,15 +143,15 @@ function MainProfile() {
       </ul>
     </div> */}
 
-        <div className='layerClass'></div>
+        <div className='layerClass' style={{backgroundColor:"#f4f2ee"}}></div>
             <NavBar />
        
-        <div class="row mainprofiles container-xl mx-auto" style={{position:"relative", top:"30px", zIndex:"0", overflowY:"hidden"}}>
+        <div class="row mainprofiles container-xl mx-auto mt-5 pt-3 py-5" style={{position:"relative", top:"30px", zIndex:"0", overflowY:"hidden"}}>
             <div class="  col-9">
                 {/* main card.......... */}
                 <div className={`card my-2 shadow rounded-5`}>
                     <div className=''  onClick={handleCard} style={{position:"absolute", left:"93%", top:"20px", cursor:"pointer"}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="blue"  class="bi bi-camera-fill bg-white border p-2 rounded-circle" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="blue"  class="bi bi-camera-fill  bg-white border p-2 rounded-circle" viewBox="0 0 16 16">
                     <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
                     <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
                     </svg>
@@ -180,8 +182,10 @@ function MainProfile() {
                 </div>
                 <div className='p-5' style={{position:"relative", top:"-100px"}}>
                     <div className="d-flex justify-content-end " onClick={handleuserCard}>
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
 
                     <img className='' style={{ cursor:"pointer"}} src={pen} alt="" />
+                    </div>
                     </div>
 
                             <h3 className='fw-bold mainName'>Ashok Kumar (Ashok kumar) pasala (He/Him)</h3>
@@ -195,7 +199,9 @@ function MainProfile() {
                             <div className='border userCard mt-4 fw- p-3 w-50 bg-secondary rounded-5 fs-5'>
                             <div className='d-flex  justify-content-between'>
                                 <div className='fw-bold'>open to work</div>
+                                <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
                                 <img src={pen} onClick={() => setJobPreference(!JobPreference)} style={{cursor:"pointer"}} alt="" />
+                               </div>
                                 </div>     
                                 <><Link>
                                 <h6 className='fw-bold' onClick={() => setUserProfile(!userProfile)}>
@@ -211,7 +217,10 @@ function MainProfile() {
 
                     <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>About</h5>
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
+
                      <img src={pen} alt="" style={{cursor:"pointer"}} onClick={() => setAboutCard(!AboutCard)} />
+                    </div>
                     </div>
                     <p>Highly skilled Front-End Developer with 3 years of experience translating design concepts into seamless and responsive web experiences. Proficient in HTML, CSS, JavaScript, and modern front-end frameworks like React js and Redux.</p>
                      <div className="border rounded-5 p-3 my-3">
@@ -222,7 +231,9 @@ function MainProfile() {
                 <div className="card p-4 shadow">
                 <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>Experience</h5>
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
                      <img src={pen} alt="" />
+                     </div>
                     </div>
                     <h6>Frontend Developer</h6>
                     <p>Think Core · Full-time</p>
@@ -235,7 +246,9 @@ function MainProfile() {
                 <div className="card p-4 my-2 shadow">
                 <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>Education</h5>
-                     <img src={pen} alt="" />
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>     
+                <img src={pen} alt="" />
+                </div>
                     </div>
                     <p>Btech Mechnica; enginerring</p>
                     <p>2017-2020</p>
@@ -247,20 +260,26 @@ function MainProfile() {
             <div className="card p-4 shadow">
                 <div className='d-flex  justify-content-between'>
                     <div className='fw-bold'>Profile language</div>
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
+
                      <img src={pen} alt="" style={{cursor:"pointer"}} onClick={() => setlanguagecard(!languagecard)} />
+                    </div>
                     </div>
                     <p>English</p> <hr />
                     <div className='d-flex  justify-content-between'>
                     <div className='fw-bold'>Public profile & URL</div>
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
                      <img src={pen} alt="" />
+                     </div>
                     </div>
                 </div>
                 {/* user card...... */}
                 <div className="card p-3 text-center my-2 shadow">
                     <p>Get the latest jobs and industry news</p>
                     <div className="d-flex align-self-center">
-
+                    <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
                     <img className='' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px",}} alt="Avatar" />
+                    </div>
                     </div>
                     <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
                     <button className='btn btn-primary fw-bold'>Follow</button>
@@ -276,14 +295,7 @@ function MainProfile() {
     {
         layer ? (
             <>
-                 {/* <div style={{
-                position:"absolute",
-                width:"100%",
-                height:"100%",
-                backgroundColor:"black",top:"0",
-                left:"0",
-                opacity:"0.65"
-            }}></div> */}
+                 
         
                  <div class="card backgroundimagecard text showCard  h-75 shadow" style={{position:"fixed", top:"15%",zIndex:"3", left:"30%", height:"auto", width:"750px"}}>
                 <div class="card-header">
@@ -323,7 +335,7 @@ function MainProfile() {
        <>
          <div>
          <div style={{
-                position:"absolute",
+                position:"fixed",
                 width:"100%",
                 height:"100%",
                 backgroundColor:"black",top:"0",
@@ -484,7 +496,7 @@ function MainProfile() {
     {JobPreference ? <>
       <div>
       <div style={{
-                position:"absolute",
+                position:"fixed",
                 width:"100%",
                 height:"100%",
                 backgroundColor:"black",top:"0",
@@ -587,7 +599,7 @@ function MainProfile() {
         {
             userProfile ? <>
             <div style={{
-                position:"absolute",
+                position:"fixed",
                 width:"100%",
                 height:"100%",
                 backgroundColor:"black",top:"0",
@@ -617,7 +629,7 @@ function MainProfile() {
         {
             AboutCard ? <>
             <div style={{
-                position:"absolute",
+                position:"fixed",
                 width:"100%",
                 height:"100%",
                 backgroundColor:"black",top:"0",
@@ -676,7 +688,7 @@ function MainProfile() {
         {
             languagecard ? <>
             <div style={{
-                position:"absolute",
+                position:"fixed",
                 width:"100%",
                 height:"100%",
                 backgroundColor:"black",top:"0",

@@ -3,7 +3,7 @@ import NavBar from '../NavBar'
 
 function Pages() {
   return (
-    <div className=''>
+    <div className='mt-5 pt-4' style={{backgroundColor:"#f4f2ee"}}>
     <NavBar />
     <div className='row page container-xl mx-auto pt-5'>
      <div className="col-9">

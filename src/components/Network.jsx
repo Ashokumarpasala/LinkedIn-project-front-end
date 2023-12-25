@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 function Network({usersData}) {
   
   return (
-    <div style={{backgroundColor:"#f4f2ee", position:"relative", top:"20px"}}>
+    <div style={{backgroundColor:"#f4f2ee"}} className='mt-5 pt-4'>
     
       <NavBar />
       <div class="row container-xl network mx-auto p-3">

@@ -11,9 +11,9 @@ import { Link } from 'react-router-dom'
 
 function Jobs() {
   return (
-    <div style={{backgroundColor:"#f4f2ee", position:"relative", top:"50px"}}>
+    <div style={{backgroundColor:"#f4f2ee"}} className='mt-5'>
       <NavBar />
-      <div class="row job container-xl mx-auto">
+      <div class="row job container-xl mx-auto py-5">
         <div class="col-2">
           <div className="card p-1 shadow  " style={{fontSize:"14px"}}>
           <div className='d-flex mt-3'>

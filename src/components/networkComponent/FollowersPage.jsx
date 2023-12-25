@@ -9,7 +9,7 @@ function FollowersPage() {
         setActiveTab(tab);
     };
   return (
-    <div>
+    <div className='mt-5 pt-4' style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
       <div class="row follow container-xl mx-auto pt-4">
             <div class="col-9">

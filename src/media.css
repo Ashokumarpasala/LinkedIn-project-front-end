@@ -44,6 +44,14 @@
         width: 100% !important;
         margin-top: 20px;
     }
+    .home .postedcard .card-footer .plate {
+        flex-wrap: wrap;
+        justify-content: space-between !important;
+        
+    }
+    .home .postedcard {
+        margin: 15px 0px;
+    }
     
   }
   

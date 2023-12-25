@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 
 function Connections() {
   return (
-    <div>
+    <div className='mt-5 pt-4' style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
-      <div class="row connections container-xl mx-auto pt-4">
+      <div class="row connections container-xl mx-auto pt-4 py-5">
             <div class="col-9">
                 <div className="card p-3">
                     <h5>You don’t have any connections yet.</h5>
@@ -149,7 +149,7 @@ function Connections() {
                 </div>
             </div>
             <div class="col-3">
-            <div className="card p-3 text-center my-2">
+            <div className="card p-3 text-center">
             <p>Get the latest jobs and industry news</p>
             <div className="d-flex align-self-center">
 
