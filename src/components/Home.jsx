@@ -4,9 +4,15 @@ import imge from './homeImages/image.png'
 import write from './homeImages/writting.png'
 import calender from './homeImages/calendar.png'
 import { Link } from 'react-router-dom'
+import Footer from '../Footer'
+import MediaComponent from './profileComponents/MediaComponent'
+import EventComponent from './profileComponents/EventComponent'
 function Home() {
   const [showAll, setShowAll] = useState(false);
   const [showpost, setShowpost] = useState('');
+  const [showMediaComponent, setShowMediaComponent] = useState(false)
+  const [eventComponent, seteventComponent] = useState(false)
+
   const handleReadMore = () => {
     setShowAll(!showAll);
     setShowpost('slide-bottom')
@@ -132,11 +138,11 @@ function Home() {
 
                   </div>
                   <div className="d-flex centercard  justify-content-around  mt-4 fw-bold text-secondary " style={{cursor:"pointer"}}>
-                   <div className="d-flex align-items-center rounded-4  px-4 ">
+                   <div className="d-flex align-items-center rounded-4  px-4 " onClick={() => setShowMediaComponent(!showMediaComponent)}>
                     <img src={imge} style={{width:"30px"}} alt="" />
                     <p className=' ' style={{top:"10px", position:"relative"}}>Media</p>
                    </div>
-                   <div className="d-flex align-items-center p-2 rounded-4 px-4  ">
+                   <div className="d-flex align-items-center p-2 rounded-4 px-4 " onClick={() => seteventComponent(!eventComponent)}>
                     <img src={calender} style={{width:"30px"}} alt="" />
                     <p className='mx-2' style={{top:"10px", position:"relative"}}>Event</p>
                    </div>
@@ -245,7 +251,9 @@ function Home() {
     </div>
           </div>
           {/* sticky card........... */}
-          <div ref={stickyCardRef} className={`card p-3 text-center my-2 ${isSticky ? 'sticky-top' : ''}`}>
+
+          <div ref={stickyCardRef} className={` ${isSticky ? 'sticky-top' : ''}`}>
+          <div className='card  p-4 text-center my-2'>
             <p>Get the latest jobs and industry news</p>
             <div className="d-flex align-self-center">
 
@@ -254,8 +262,47 @@ function Home() {
             <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
             <button className='btn btn-primary fw-bold'>Follow</button>
           </div>
+          {/* .......footer......... */}
+          <Footer />
+          </div>
         </div>
       </div>
+
+      {/* mediaComponenet,............. */}
+      {showMediaComponent ?
+       <>
+          <div style={{
+            position:"fixed",
+            width:"100%",
+            height:"100%",
+            backgroundColor:"black",
+            top:"0",
+            left:"0",
+            opacity:"0.65"
+          }}>
+
+            </div>
+              <MediaComponent setShowMediaComponent={setShowMediaComponent} showMediaComponent={showMediaComponent} />
+      </> : <><div>{null}</div></>}
+
+      {/* .....events componenet.................. */}
+      {eventComponent ?
+       <>
+          <div style={{
+            position:"fixed",
+            width:"100%",
+            height:"100%",
+            backgroundColor:"black",
+            top:"0",
+            left:"0",
+            opacity:"0.65"
+          }}>
+
+            </div>
+              <EventComponent seteventComponent={seteventComponent} eventComponent={eventComponent} />
+      </> : <><div>{null}</div></>}
+
+
       </div>
   )
 }

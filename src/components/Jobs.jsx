@@ -7,6 +7,7 @@ import file from './networkimages/file-earmark.svg'
 import hash from './networkimages/hash.svg'
 import paper from './networkimages/newspaper.svg'
 import { Link } from 'react-router-dom'
+import Footer from '../Footer'
 
 
 function Jobs() {
@@ -101,6 +102,10 @@ function Jobs() {
             </div>
             <p className='p-2'>Explore our curated guide of expert-led courses, such as how to improve your resume and grow your network, to help you land your next opportunity.</p>
              <Link className='fw-bold fs-5 p-3'>show more</Link>
+          </div>
+          <div className='' style={{fontSize:"12px"}}>
+
+          <Footer />
           </div>
         </div>
       </div>

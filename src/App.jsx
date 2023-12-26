@@ -24,8 +24,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/users');
-        // setUsersData(response.data);
+        const response = await axios.get('https://api.github.com/users');
+        setUsersData(response.data);
         console.log(response.data)
       } catch (error) {
         console.error('Error fetching data:', error);
