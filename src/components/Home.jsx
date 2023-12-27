@@ -102,7 +102,12 @@ function Home() {
             <p class="card-text" style={{fontSize:"14px"}}>Worked in Think Core Technologies</p>
           </div> <hr />
           <ul class="list-group homelist list-group-flush fw-bold" >
-            <h5 class="list-group-item">connections <br /><span style={{fontSize:"14px"}}>Grow our Network </span></h5>
+            <h5 class="list-group-item">
+              <Link to='/network'>
+              connections
+              </Link>
+              
+               <br /><span style={{fontSize:"14px"}}>Grow our Network </span></h5>
             <li class="list-group-item">Try For Free $/-</li>
             <li class="list-group-item">My Items</li>
           </ul>
@@ -110,9 +115,9 @@ function Home() {
 
          <div className="card shadow mt-3">
          <ul class="list-group homelist list-group-flush mt-4 fw-bold" >
-            <h5 class="list-group-item">Groups</h5>
-            <li class="list-group-item">Events</li>
-            <li class="list-group-item">Followed by</li>
+            <h5 class="list-group-item"><Link to='/groups/network'>Groups</Link></h5>
+            <li class="list-group-item"><Link to='/events/network'>Events</Link></li>
+            <li class="list-group-item"><Link to='/Followerspage/network'>Followed by</Link></li>
           </ul>
           <ul class="list-group list-group-flush fw-bold fs-6">
           <li class="list-group-item"></li>
