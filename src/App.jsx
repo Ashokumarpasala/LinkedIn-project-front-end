@@ -20,13 +20,28 @@ import './homeMedia.css'
 import axios from 'axios'
 function App() {
   const [usersData, setUsersData] = useState([]);
+  const [users, setUsers] = useState([]);
+  console.log(users)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/users');
+        setUsers(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []); 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://api.github.com/users');
         setUsersData(response.data);
-        console.log(response.data)
+        // console.log(response.data)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -35,17 +50,17 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(usersData);
+  // console.log(usersData);
   return (
     <div>
       <Router>
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={<Home users={users} />} />
           <Route exact path='/network' element={<Network usersData={usersData} />} />
           <Route exact path='/jobs' element={<Jobs />} />
           <Route exact path='/messages' element={<Messages />} />
           <Route exact path='/notifications' element={<Notifications />} />
-          <Route exact path='/MainProfile'  element={<MainProfile />} />
+          <Route exact path='/MainProfile'  element={<MainProfile users={users} />} />
           <Route exact path='/connections/network'  element={<Connections />} />
           <Route exact path='/Followerspage/network'  element={<FollowersPage />} />
           <Route exact path='/groups/network'  element={<GroupsPage />} />

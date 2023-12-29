@@ -3,7 +3,7 @@ import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
 import pen from '../../assets/pen.svg'
 import axios from 'axios'
-function MainProfile() {
+function MainProfile({users}) {
     const [layer, setLayer] = useState(false)
     const [usercard, setusercard] = useState(false)
     const [JobPreference, setJobPreference] = useState(false)
@@ -74,29 +74,27 @@ function MainProfile() {
         }));
       };
 
-      const [users, setUsers] = useState([]);
+ 
 
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await axios.get('http://localhost:8080/users');
-            setUsers(response.data);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData();
-      }, []); 
+      const [submitted, setSubmitted] = useState(false);
 
-      const handleSubmitFormData = async () => {
-        try {
-          const response = await axios.post('http://localhost:8080/user', formData);
-          console.log('Form submitted successfully:', response.data);
-        } catch (error) {
-          console.error('Error submitting form:', error);
-        }
-      };
+
+      const handleSubmitFormData = async (e) => {
+    e.preventDefault();
+
+    if (submitted) {
+      console.log('Form already submitted');
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:8080/user', formData);
+      console.log('Form submitted successfully:', response.data);
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
 
       const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState('');
@@ -187,10 +185,22 @@ function MainProfile() {
                     <img className='' style={{ cursor:"pointer"}} src={pen} alt="" />
                     </div>
                     </div>
+                    {
+                      users.slice(0, 1).map ((user) =>{
+                         return (
+                          <div key={user.id}>
+                          {/* <h3 className='fw-bold mainName'>Ashok Kumar (Ashok kumar) pasala (He/Him)</h3> */}
+                          <h3 className='fw-bold mainName'>{user.firstName} {user.lastName} ({user.firstName} {user.lastName}) {user.additionalName} </h3>
+                          {/* <p>Worked in Think Core Technologies</p> */}
+                          <p>{user.headline} {user.currentPosition}</p>
+                          {/* <p>Andhra Pradesh, India  <Link className='fw-bold'>Contact info</Link></p> */}
+                          <p>{user.countryRegion},{user.city} <Link className='fw-bold'>Contact info</Link></p>
+                          
+                          </div>
+                         )
+                      })
+                    }
 
-                            <h3 className='fw-bold mainName'>Ashok Kumar (Ashok kumar) pasala (He/Him)</h3>
-                            <p>Worked in Think Core Technologies</p>
-                            <p>Andhra Pradesh, India  <Link className='fw-bold'>Contact info</Link></p>
                             <div className="profilebtn">
                             <div className="btn btn-primary">Open to</div>
                             <div className="btn fw-bold btn-outline-primary mx-3">Add Profile section</div>
@@ -755,4 +765,4 @@ function MainProfile() {
       )
 }
 
-export default MainProfile
+export default React.memo(MainProfile);

@@ -34,6 +34,12 @@
     background-color: lightgray;
     border-radius: 50%;
 }
+.iconshover:hover {
+  background-color: lightgray;
+  color: black;
+  font-weight: bold;
+  border-radius: 7.5px;
+}
 
 .slide-in-right{animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
 .slide-out-right{animation:slide-out-right .5s cubic-bezier(.55,.085,.68,.53) both}
