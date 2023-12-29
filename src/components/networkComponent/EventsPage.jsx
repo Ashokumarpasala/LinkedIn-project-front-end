@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
+import Footer from '../../Footer'
 
 function EventsPage() {
   return (
@@ -33,8 +34,8 @@ function EventsPage() {
             <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
             <button className='btn btn-primary fw-bold'>Follow</button>
           </div>
-          <div className="card mt-3 p-3">
-              <h1>Footer part</h1>    
+          <div className=" mt-3 p-1">
+              <Footer />    
             </div>
             </div> 
                   

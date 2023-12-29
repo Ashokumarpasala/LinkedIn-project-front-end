@@ -12,6 +12,7 @@ function Home({users}) {
   const [showpost, setShowpost] = useState('');
   const [showMediaComponent, setShowMediaComponent] = useState(false)
   const [eventComponent, seteventComponent] = useState(false)
+  
 
   const handleReadMore = () => {
     setShowAll(!showAll);
@@ -76,6 +77,7 @@ function Home({users}) {
   }, []); 
 
   const cardData = Array.from({ length: 5 }, (_, index) => index); // Creates an array [0, 1, 2, 3, 4]
+  const [followclick, setfollowclick] = useState(false)
 
 
   
@@ -199,13 +201,28 @@ function Home({users}) {
                           <h6>6d. <img src="https://i.pinimg.com/564x/cc/8c/bc/cc8cbc0443d2f033fe6a457cb383601c.jpg" style={{width:"15px"}} alt="" /> </h6>
                         </div>
                         </div>
-                      <div className='text-primary  d-flex align-items-center'>
+                      {
+                        followclick ? <>
+                        
+                        <div className='text-secondary  d-flex  align-items-center followinghover px-3' onClick={() => setfollowclick(!followclick)} style={{cursor:"pointer"}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-check-lg mx-2" viewBox="0 0 16 16">
+    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022"/>
+  </svg>     
+                        <p className='fw-bold fs-5  my-2 '>Following</p>
+                        </div>
+                        </> : <>
+                      <div className='text-primary  d-flex followhover align-items-center   px-2' onClick={() => setfollowclick(!followclick)} style={{cursor:"pointer"}}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi  bi-plus-lg mx-2 " viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
                       </svg>        
-                      <p className='fw-bold fs-5  my-2'>Follow</p>
+                      <p className='fw-bold fs-5  my-2 '>Follow</p>
                       </div>
+                        
+                        </>
+                      }
                       </div>
+
+
                       {/* image */}
                       <img className='w-100 my-4' src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/frontend-web-development-with-react-js-design-template-579c0a6dabb1443eb54339c89891da9d_screen.jpg?ts=1679758911" alt="" />
                     </div>

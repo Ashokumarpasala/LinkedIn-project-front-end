@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar'
+import Footer from '../../Footer'
 
 function Pages() {
   return (
@@ -26,8 +27,8 @@ function Pages() {
           <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
           <button className='btn btn-primary fw-bold'>Follow</button>
         </div>
-        <div className="card mt-3 p-3">
-            <h1>Footer part</h1>    
+        <div className=" mt-3 p-2">
+            <Footer />   
           </div>
           </div> 
           241|fmmJcce4ibRzyYqToGw9Jl2Is4UdNLkNjnsplOZo
