@@ -625,11 +625,49 @@ function MainProfile({users}) {
                     </div>
 
                     </div>
-                    <div class="card-body">
-                        
+                    <div class="card-body" style={{overflowY:"scroll"}}>
+                        <div className="d-flex justify-content-between">
+                          <div className="d-flex align-items-center ">
+                          <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px" }} alt="Avatar" /> 
+                          <div className='mx-3'>
+                            <h5>Ashok Kumar pasala</h5>
+                            <p>Open to Work</p>
+                          </div>
+                         </div>
+                         <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
+                          <img className='' style={{ cursor:"pointer"}} src={pen} alt="" />
+                          </div>
+                        </div>
+                        <div className='p-2'>
+                          <div className='my-5'>
+                            <p className='fw-bold'>Job Title</p>
+                            <h5>Frontend Developer · Javascript Developer</h5>
+                          </div>
+                          <div className='my-5'>
+                            <p className='fw-bold'>Location types</p>
+                            <h5>On-site · Hybrid · Remote</h5>
+                          </div>
+                          <div className='my-5'>
+                            <p className='fw-bold'>Locations (on-site)</p>
+                            <h5>Andhra Pradesh, India</h5>
+                          </div>
+                          <div className='my-5'>
+                            <p className='fw-bold'>Locations (remote)</p>
+                            <h5>Andhra Pradesh, India</h5>
+                          </div>
+                          <div className='my-5'>
+                            <p className='fw-bold'>Start date</p>
+                            <h5>Immediately, I am actively applying</h5>
+                          </div>
+                          <div className='my-5'>
+                            <p className='fw-bold'>Employee Type</p>
+                            <h5>Full-time </h5>
+                          </div>
+                        </div>
                     </div>
                     <div class="card-footer text-body-secondary">
-                        2 days ago
+                    <i class="bi bi-eye-fill mx-2"></i>
+                       All LinkedIn members
                     </div>
                     </div>
              </div>
