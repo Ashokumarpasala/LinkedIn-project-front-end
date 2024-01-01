@@ -46,13 +46,58 @@
     }
     .home .postedcard .card-footer .plate {
         flex-wrap: wrap;
-        justify-content: space-between !important;
-        
+        justify-content: space-between !important;        
     }
     .home .postedcard {
         margin: 15px 0px;
     }
-    
+    .postedUser > div {
+        flex-direction: column;
+    }
+    .postedUser  .user {
+        width: 45px !important;
+        height: 45px !important;
+        margin-bottom: 10px;
+    } 
+    .postedUser h6,
+    .postedUser p {
+        font-size: 12px !important;
+    }
+    .mediacard {
+        height: 600px !important;
+        top: -30px !important;
+        right: 70px;
+        width: 60% !important;
+    }
+    .mediacard .plaincard {
+        flex-direction: column;
+    }
+    .mediacard .card-body {
+        overflow-y: scroll;
+    }
+    .mediacard .btn,
+    .eventcard .btn {
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .mediacard .selectedimage img {
+        width: 50% !important;
+        object-fit: contain;
+    }
+    .eventcard .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .eventcard {
+        width: 120% !important;
+        right: 77.5px;
+        height: 600px !important;
+        top: -40px;
+    }
+    .eventcard .card-body {
+        height: 300px !important;
+        overflow-y: scroll;
+    } 
   }
   
   /* Medium screens (tablets, 601px to 900px) */

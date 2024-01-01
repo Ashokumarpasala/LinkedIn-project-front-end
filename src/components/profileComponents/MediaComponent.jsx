@@ -1,11 +1,24 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-function MediaComponent({setShowMediaComponent, showMediaComponent, seteventComponent, eventComponent}) {
+
+function MediaComponent({setChildImages, setShowMediaComponent, showMediaComponent, seteventComponent, eventComponent, dataFromEventComp}) {
     const fileInputRef = useRef(null);
+    const [images, setImages] = useState([]);
+    const [image, setImage] = useState('');
+    const [text, setText] = useState('');
+
+    const updateParentImages = () => {
+      setChildImages(images);
+    };
+
+    console.log(dataFromEventComp)
+    
 
     const openfile = () => {
       fileInputRef.current.click();
     };
+
+
 
     const handleMediaComponent =() => {
       setShowMediaComponent(!showMediaComponent)
@@ -16,26 +29,46 @@ function MediaComponent({setShowMediaComponent, showMediaComponent, seteventComp
 
     const handleImageChange = (e) => {
       const file = e.target.files[0];
+      
   
       if (file) {
         const reader = new FileReader();
   
         reader.onloadend = () => {
           setImagePreview(reader.result);
+          setImage(reader.result);
         };
   
         reader.readAsDataURL(file);
       }
     };
-  useState
-  return (
+
+    const handleTextChange = (e) => {
+      setText(e.target.value);
+    };
+
+    const handleSave = () => {
+      const newImage = { image, text };
+      const updatedImages = [...images, newImage];
+      updateParentImages();
+      setImages(updatedImages);
+      setShowMediaComponent(!showMediaComponent)
+      
+  
+      // Reset input fields
+      setImage('');
+      setText('');
+    };
+
+    return (
     <div className='' style={{
         position:"fixed",
         top:"100px",
         left:"25%",
+        
     }}>
-      <div class="card p-3 " style={{height:"700px", width:"1000px"}}>
-        <div class="card-header d-flex justify-content-between">
+      <div class="card mediacard  p-3 " style={{height:"700px", width:"1000px"}}>
+        <div class="card-header plaincard d-flex justify-content-between">
             <div className='d-flex'>
 
 
@@ -58,14 +91,29 @@ function MediaComponent({setShowMediaComponent, showMediaComponent, seteventComp
         <div class="card-body ">
 
            
-            <input type="text" placeholder='what do you want to talk about ?' className='form-control p-3 fs-4' style={{border:"none", outlineStyle:"none"}}  />
+            <input type="text" placeholder='what do you want to talk about ?' value={text} onChange={handleTextChange} className='form-control p-3 fs-4' style={{border:"none", outlineStyle:"none"}}  />
             <div style={{width:"500px", height:"300px"}} className='my-4  rounded-4'>
                        
 
             {imagePreview && (
-        <div className='my-3'>
+        <div className='my-3 selectedimage'>
           <img src={imagePreview} alt="Profile Preview" style={{width:"500px", height:"300px", objectFit:"contain"}} />
         </div>
+      )}
+
+      {dataFromEventComp && (
+        <>
+        {dataFromEventComp.map((data) => {
+          return (
+          <div className="card h-75 p-4 fw-bold fs-5 border" style={{width:"850px"}}>
+            <p className='text-danger'>Meeting Will Be Held Between from {data.startDate} to {data.endDate}</p>
+            <p>Mentor : {data.firstName} {data.lastName}</p>
+            <p>Mode of Meeting : {data.eventType}</p>
+            <p>Meeting Aganda Description : {data.description}</p>
+          </div>
+          )
+        })}
+        </>
       )}
             </div>
           <div className=' h-auto d-flex  align-items-end'>
@@ -77,7 +125,6 @@ function MediaComponent({setShowMediaComponent, showMediaComponent, seteventComp
                         id="profileImageInput" accept="image/*" 
                         onChange={handleImageChange}
                     />
-                  {/* <input type="file" id="profileImageInput" accept="image/*" onChange={handleImageChange} /> */}
 
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" onClick={openfile}
             style={{cursor:"pointer"}} fill="currentColor"  class="bi bi-image mx-3" viewBox="0 0 16 16">
@@ -102,7 +149,7 @@ function MediaComponent({setShowMediaComponent, showMediaComponent, seteventComp
 
         </div>
         <div class="card-footer text-body-secondary d-flex justify-content-end">
-            <button className='btn btn-success px-4'>post</button>
+        <button className='btn btn-success px-4' onClick={handleSave}>post</button>
         </div>
         </div>
     </div>

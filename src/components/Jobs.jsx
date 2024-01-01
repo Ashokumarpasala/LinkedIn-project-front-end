@@ -8,6 +8,9 @@ import hash from './networkimages/hash.svg'
 import paper from './networkimages/newspaper.svg'
 import { Link } from 'react-router-dom'
 import Footer from '../Footer'
+import { Carousel } from 'react-bootstrap';
+import test from '../assets/test.png'
+
 
 
 function Jobs() {
@@ -83,6 +86,81 @@ function Jobs() {
             <h5 className='fw-bold'>Hybrid opportunities <br /></h5>
             <span>Because you expressed interest in hybrid work</span>
           </div>
+          {/* ..Explore collection of obs........ */}
+          <div className="card p-3 mt-3">
+            <h5 className='fw-bold'>Explore with job collections <br /></h5>
+            <span>Broaden your job search with curated collections</span>
+            <Carousel>
+      <Carousel.Item className=''>
+        <div className="d-flex justify-content-around h-100 my-3 text-center fw-bold ">
+        <div className="card w-50 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
+          </div>
+          <p>Bio-Technologie</p>
+        </div>
+        <div className="card w-50 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
+          </div>
+          <p>IT-Sector</p>
+        </div>
+        <div className="card w-50 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
+          </div>
+          <p>Medical-sector</p>
+        </div>
+        </div>
+     
+      </Carousel.Item>
+
+
+      <Carousel.Item>
+        <div className="d-flex justify-content-around h-100 my-3 text-center fw-bold">
+        <div className="card w-50 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
+          </div>
+          <p>Bio-Technologie</p>
+        </div>
+        <div className="card w-50 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
+          </div>
+          <p>Remote</p>
+        </div>
+        <div className="card w-50 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
+          </div>
+          <p>Governement</p>
+        </div>
+        </div>
+     
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="d-flex justify-content-start h-100 my-3 text-center fw-bold">
+        <div className="card w-25 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"60px", height:"60px", top:"10px",left:"15px", position:"relative"}} alt="" />
+          </div>
+          <p>Enginerring</p>
+        </div>
+        <div className="card w-25 mx-1 border" style={{height:"200px"}}>
+          <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
+            <img src={test} style={{width:"60px", height:"60px", top:"10px",left:"15px", position:"relative"}} alt="" />
+          </div>
+          <p>show all</p>
+        </div>
+      
+        </div>
+     
+      </Carousel.Item>
+    </Carousel>
+    </div>
+
+
             {/* remote opportunites...... */}
             <div className="card p-3 mt-3">
             <h5 className='fw-bold'>Remote opportunities <br /></h5>

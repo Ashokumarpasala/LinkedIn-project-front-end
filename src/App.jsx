@@ -21,7 +21,7 @@ import axios from 'axios'
 function App() {
   const [usersData, setUsersData] = useState([]);
   const [users, setUsers] = useState([]);
-  console.log(users)
+  // console.log(users)
 
   useEffect(() => {
     const fetchData = async () => {

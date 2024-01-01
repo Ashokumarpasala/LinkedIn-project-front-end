@@ -20,11 +20,20 @@ function MainProfile({users}) {
         position: 'relative',
         zIndex: 3,
       };
+
+      const [selectedImage, setSelectedImage] = useState(null);
+
       
       const fileInputRef = useRef(null);
+    
 
       const openFile = () => {
         fileInputRef.current.click();
+      };
+
+      const handleFileChange = (event) => {
+        const file = event.target.files[0];
+            setSelectedImage(file);
       };
 
       const [inputValue, setInputValue] = useState('');
@@ -126,6 +135,12 @@ function MainProfile({users}) {
             setLanguage('');
         }
     };
+
+    const handlecardjobprofile =  () =>{
+        setJobPreference(!JobPreference)
+        setUserProfile(!userProfile)
+      }
+     
     
   return (
     <>
@@ -154,7 +169,16 @@ function MainProfile({users}) {
                     <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
                     </svg>
                     </div>
-                  <img className='' style={{height:"200px"}} src="https://img.freepik.com/free-photo/gray-smooth-textured-paper-background_53876-101833.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1702512000&semt=ais" alt="" />
+
+                    {selectedImage ? (
+        <div>
+          <img style={{width:"100%", height:"250px", objectFit:"cover"}} src={URL.createObjectURL(selectedImage)} alt="Selected" />
+        </div>) : <>
+        
+        <img className='' style={{height:"300px", width:"100%"}} src="https://img.freepik.com/free-photo/gray-smooth-textured-paper-background_53876-101833.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1702512000&semt=ais" alt="" />
+        </>
+      }
+
                  <div className='' style={{
                     backgroundImage:"url(https://mdbcdn.b-cdn.net/img/new/avatars/2.webp)",
                     backgroundRepeat:"no-repeat",
@@ -163,7 +187,7 @@ function MainProfile({users}) {
                     backgroundPosition:"center",
                     backgroundSize:"cover",
                     objectFit:"contain",
-                    top:"-120px",
+                    top:"-150px",
                     left:"50px",
                     position:"relative",
                     border:"5px solid white",
@@ -316,7 +340,7 @@ function MainProfile({users}) {
                     </div>
 
                 </div>
-                <div class="card-body">
+                <div class="card-body" onClick={() => setLayer(!layer)}>
                      <img className='w-50' src="https://static.vecteezy.com/system/resources/previews/004/491/046/original/design-studio-concept-for-web-banner-woman-and-man-designers-team-create-website-layout-and-draw-elements-modern-person-scene-illustration-in-flat-cartoon-design-with-people-characters-vector.jpg" alt="" />
                     <h5 class="card-text">Showcase your personality, interests, team moments or notable milestones</h5>
                     <p class="">A good background photo will help you stand out.<Link>Learn more</Link> </p>
@@ -325,6 +349,7 @@ function MainProfile({users}) {
                         type="file"
                         ref={fileInputRef}
                         style={{ display: 'none' }}
+                        onChange={handleFileChange}
                     />
                     <button
                         className="m-3 fs-6 shadow btn btn-primary text-center d-flex align-self-end fw-bold"
@@ -634,7 +659,7 @@ function MainProfile({users}) {
                             <p>Open to Work</p>
                           </div>
                          </div>
-                         <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
+                         <div className='penhover  d-flex align-items-center justify-content-center ' onClick={handlecardjobprofile} style={{width:"50px", height:"50px"}}>
                           <img className='' style={{ cursor:"pointer"}} src={pen} alt="" />
                           </div>
                         </div>
