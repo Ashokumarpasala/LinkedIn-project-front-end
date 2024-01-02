@@ -95,7 +95,7 @@ function Network({usersData}) {
                 usersData.map((user) => {
                   return(
                     <div class="card text-start shadow m-4 w-25" >
-                <img src="https://t4.ftcdn.net/jpg/03/64/50/81/360_F_364508192_18qLD98JRj0bC7DZV5WH9V0QGTB7vEBm.jpg" class="card-img-top h-25" alt="..."/>
+                    <img src="https://t4.ftcdn.net/jpg/03/64/50/81/360_F_364508192_18qLD98JRj0bC7DZV5WH9V0QGTB7vEBm.jpg" class="card-img-top h-25" alt="..."/>
                       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" style={{
                         position:"relative",
                         top:"-90px",
@@ -103,9 +103,9 @@ function Network({usersData}) {
                         opacity:"0.65",
                         cursor:"pointer"
                       }} class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
-</svg>
-                 <img style={{position:"absolute", top:"50px", left:"20px", width:"80px"}} className='rounded-circle' src={user.avatar_url} alt="" />
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+                  </svg>
+                 <img style={{position:"absolute", top:"50px", left:"20px", width:"110px"}} className='rounded-circle' src={user.avatar_url} alt="" />
                 <div class="card-body mt-3">
                   <h5 class="card-title fw-bold">{user.login}</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

@@ -365,11 +365,14 @@ function Home({users}) {
                         </div>
                       </div>
                       {/* image */}
-                      <div className="card h-75 p-4 fw-bold fs-5 border w-auto m-3 text-start">
-            <p className='text-danger'>Meeting Will Be Held Between from {data.startDate} to {data.endDate}</p>
-            <p>Mentor : {data.firstName} {data.lastName}</p>
-            <p>Mode of Meeting : {data.eventType}</p>
-            <p>Meeting Aganda Description : {data.description}</p>
+                      <div className="card h-75 p-4 border w-auto m-3 text-start">
+            <p className='text-danger fw-bold'>Meeting Will Be Held Between from {data.startDate} to {data.endDate}</p>
+            <div className=''>
+
+            <div className=''>Mentor : <span className='text-bark'>{data.firstName} {data.lastName}</span> </div>
+            <div>Mode of Meeting : {data.eventType}</div>
+            <div>Meeting Aganda Description : {data.description}</div>
+            </div>
           </div>
                     </div>
                   </div>

@@ -5,7 +5,9 @@ function Notifications() {
   return (
     <div>
       <NavBar />
-      <h1 className="text-center mt-5">Welcome to notifications page page!</h1>
+      <div className=' mt-5 py-5'>
+        <h1 className="text-center">Welcome to notification page!</h1>
+      </div>
     </div>
   )
 }

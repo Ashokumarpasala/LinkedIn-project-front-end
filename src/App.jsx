@@ -18,6 +18,7 @@ import EventsPage from './components/networkComponent/EventsPage';
 import Pages from './components/networkComponent/Pages';
 import './homeMedia.css'
 import axios from 'axios'
+import DiscoverGroups from './components/networkComponent/DiscoverGroups';
 function App() {
   const [usersData, setUsersData] = useState([]);
   const [users, setUsers] = useState([]);
@@ -61,11 +62,12 @@ function App() {
           <Route exact path='/messages' element={<Messages />} />
           <Route exact path='/notifications' element={<Notifications />} />
           <Route exact path='/MainProfile'  element={<MainProfile users={users} />} />
-          <Route exact path='/connections/network'  element={<Connections />} />
-          <Route exact path='/Followerspage/network'  element={<FollowersPage />} />
+          <Route exact path='/connections/network'  element={<Connections usersData={usersData} />} />
+          <Route exact path='/Followerspage/network'  element={<FollowersPage usersData={usersData} />} />
           <Route exact path='/groups/network'  element={<GroupsPage />} />
           <Route exact path='/events/network'  element={<EventsPage />} />
           <Route exact path='/pages/network'  element={<Pages />} />
+          <Route exact path='/discoverGropus/network'  element={<DiscoverGroups />} />
         </Routes>
       </Router>
     </div>

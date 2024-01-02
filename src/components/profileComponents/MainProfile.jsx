@@ -3,6 +3,7 @@ import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
 import pen from '../../assets/pen.svg'
 import axios from 'axios'
+import Footer from '../../Footer'
 function MainProfile({users}) {
     const [layer, setLayer] = useState(false)
     const [usercard, setusercard] = useState(false)
@@ -322,6 +323,7 @@ function MainProfile({users}) {
                 <div className="card p-3 my-2">
                   <p>People Aslo Viewed</p>                    
                 </div>
+                <Footer />
             </div>
         </div>
     </div>
