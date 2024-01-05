@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../Footer'
 import { Carousel } from 'react-bootstrap';
 import test from '../assets/test.png'
-
+import compaines from './jobsComponent/RecomdedJobsData'
 
 
 function Jobs() {
@@ -80,11 +80,67 @@ function Jobs() {
           <div className="card p-3 mt-3">
             <h5 className='fw-bold'>Recent job searches <br /></h5>
             <span>Based on your profile and search history</span>
+            <div>
+              {compaines.slice(0, 3).map((data) => {
+                return(<>
+                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name}>
+                  <div className='d-flex'>
+
+                  <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183937/denside-logo-design-d-letter-logo-concept-by-abdul-gaffar-dribbble.png" alt="" />
+                  <div className='mx-3' style={{fontSize:"12px"}}>
+ 
+                  <h6 className='fw-bold'>
+                    <Link>
+                    
+                    {data.position}
+                    </Link>
+                    </h6>
+                  <div><i class="bi bi-buildings-fill mx-2"></i>{data.name}</div>
+                  <div><i class="bi bi-person-workspace mx-2"></i>{data.location}</div>
+                  </div>
+                  </div>
+                  <div>
+                  <i class="bi bi-x-lg"></i>
+                  </div>
+                </div> <hr />
+                </>)
+              })}
+              <p className='text-center'><Link> Show all <i class="bi bi-arrow-right mx-2"></i></Link></p>
+            </div>
+            
           </div>
           {/* Hybrid opportunites...... */}
           <div className="card p-3 mt-3">
             <h5 className='fw-bold'>Hybrid opportunities <br /></h5>
             <span>Because you expressed interest in hybrid work</span>
+            <div>
+              {compaines.slice(8, 11).map((data) => {
+                return(<>
+                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name}>
+                  <div className='d-flex'>
+
+                  <img style={{width:"50px", height:"50px"}} src="https://img.freepik.com/free-vector/creative-gradient-laptop-logo-template_23-2149010269.jpg?size=338&ext=jpg&ga=GA1.1.1222169770.1704326400&semt=ais" alt="" />
+                  <div className='mx-3' style={{fontSize:"12px"}}>
+ 
+                  <h6 className='fw-bold'>
+                    <Link>
+                    
+                    {data.position}
+                    </Link>
+                    </h6>
+                  <div><i class="bi bi-buildings-fill mx-2"></i>{data.name}</div>
+                  <div><i class="bi bi-geo-alt-fill mx-2"></i> {data.location}, ({data.responsibilities[0]})</div>
+                  <div><i class="bi bi-person-workspace mx-2"></i>{data.benefits[0]}</div>
+                  </div>
+                  </div>
+                  <div>
+                  <i class="bi bi-x-lg"></i>
+                  </div>
+                </div> <hr />
+                </>)
+              })}
+              <p className='text-center'><Link> Show all <i class="bi bi-arrow-right mx-2"></i></Link></p>
+            </div>
           </div>
           {/* ..Explore collection of obs........ */}
           <div className="card p-3 mt-3">
@@ -165,6 +221,33 @@ function Jobs() {
             <div className="card p-3 mt-3">
             <h5 className='fw-bold'>Remote opportunities <br /></h5>
             <span>Because you expressed interest in remote work</span>
+            <div>
+              {compaines.slice(16, 19).map((data) => {
+                return(<>
+                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name}>
+                  <div className='d-flex'>
+
+                  <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183931/comtug-logo-design-combination-mark-logo-unused-by-md-zahid-hasan-dribbble.png" alt="" />
+                  <div className='mx-3' style={{fontSize:"12px"}}>
+ 
+                  <h6 className='fw-bold'>
+                    <Link>
+                    
+                    {data.position}
+                    </Link>
+                    </h6>
+                  <div><i class="bi bi-buildings-fill mx-2"></i>{data.name}</div>
+                  <div><i class="bi bi-person-workspace mx-2"></i>{data.location}</div>
+                  </div>
+                  </div>
+                  <div>
+                  <i class="bi bi-x-lg"></i>
+                  </div>
+                </div> <hr />
+                </>)
+              })}
+              <p className='text-center'><Link> Show all <i class="bi bi-arrow-right mx-2"></i></Link></p>
+            </div>
           </div>
         </div>
         <div class="col-3">
