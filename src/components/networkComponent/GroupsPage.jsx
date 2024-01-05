@@ -11,7 +11,7 @@ function GroupsPage() {
         setActiveTab(tab);
     };
   return (
-    <div className='mt-5 pt-4 ' style={{backgroundColor:"#f4f2ee", height:"100vh"}}>
+    <div className='mt-5 pt-4 ' style={{backgroundColor:"#f4f2ee", height:"auto"}}>
       <NavBar />
       <div class="row group container-xl mx-auto pt-4 py-5">
             <div class="col-9">
@@ -41,7 +41,7 @@ function GroupsPage() {
             {/* Content based on activeTab */}
             {activeTab === 'following' && (
                 
-                <div className='d-flex justify-content-center'>
+                <div className='d-flex  justify-content-center'>
                    
                     <div className='text-center'>
 

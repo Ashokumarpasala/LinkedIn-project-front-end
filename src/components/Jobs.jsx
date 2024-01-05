@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './NavBar'
 import network from './navImages/teamwork.png'
 import checkperson from './networkimages/person-check.svg'
@@ -14,6 +14,8 @@ import compaines from './jobsComponent/RecomdedJobsData'
 
 
 function Jobs() {
+  const [showPreferenceComponent, setshowPreferenceComponent] = useState(false)
+  const [showskillsetCard, setShowSkillSetCard] = useState(false)
   return (
     <div style={{backgroundColor:"#f4f2ee"}} className='mt-5'>
       <NavBar />
@@ -22,19 +24,27 @@ function Jobs() {
           <div className="card p-1 shadow  " style={{fontSize:"14px"}}>
           <div className='d-flex mt-3'>
           <i class="bi bi-bookmark-fill mx-2"  style={{width:"20px", height:"20px"}}></i>
+          <Link to='/myjobs/jobs'>
                 <p>My jobs</p>
+          </Link>
               </div>
               <div className='d-flex'>
                 <img src={checkperson} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
+                <Link onClick={() => setshowPreferenceComponent(!showPreferenceComponent)}>
                 <p>Preference</p>
+                </Link>
               </div>
               <div className='d-flex'>
               <i class="bi bi-journal-check mx-2" style={{width:"20px", height:"20px"}}></i>
-                              <p>Skill Assessment</p>
+              <Link onClick={() => setShowSkillSetCard(!showskillsetCard)}>
+                 <p>Skill Assessment</p>
+              </Link>
               </div>
               <div className='d-flex'>
                <img src={calender} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
+               <Link to='/interview-preparation/jobs'>
                 <p>Intrerview Prep</p>
+               </Link>
               </div>
               <div className='d-flex'>
                 <img src={file} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
@@ -270,6 +280,88 @@ function Jobs() {
           </div>
         </div>
       </div>
+
+      {/* ....preferences card show............. */}
+      {showPreferenceComponent ?
+       <>
+          <div style={{
+            position:"fixed",
+            width:"100%",
+            height:"100%",
+            backgroundColor:"black",
+            top:"0",
+            left:"0",
+            opacity:"0.65"
+          }}  onClick={() => setshowPreferenceComponent(!showPreferenceComponent)}>
+
+            </div>
+            <div className="card w-25 h-auto " style={{position:"fixed", top:"120px", left:"35.5%"}}>
+              <div className="d-flex justify-content-between p-3 border-bottom px-4">
+                <h5 className='fw-bold'>preference</h5>
+                <i class="bi bi-x-lg"></i>
+              </div>
+              <div className="d-flex justify-content-between px-4 p-3 border-bottom " style={{fontSize:"12px"}}>
+                <div>
+
+                <h6 className='fw-bold'>Open to work</h6>
+                <div>Job preferences to see all the Linkedin Members</div>
+                </div>
+                <i class="bi bi-arrow-right"></i>
+                </div>
+                <div className="d-flex justify-content-between px-4 p-3 border-bottom " style={{fontSize:"12px"}}>
+                <div>
+
+                <h6 className='fw-bold'>Job alerts</h6>
+                <div>Javascript developer and other</div>
+                </div>
+                <i class="bi bi-arrow-right"></i>
+                </div>
+                <div className="d-flex justify-content-between px-4 p-3 " style={{fontSize:"12px"}}>
+                <div>
+
+                <h6 className='fw-bold'>pay</h6>
+                <div>privately indicate desired pay details</div>
+                </div>
+                <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+      </> : <><div>{null}</div></>}
+
+      {/* ....skill set card ................... */}
+      {showskillsetCard ?
+       <>
+          <div style={{
+            position:"fixed",
+            width:"100%",
+            height:"100%",
+            backgroundColor:"black",
+            top:"0",
+            left:"0",
+            opacity:"0.65"
+          }}  onClick={() => setShowSkillSetCard(!showskillsetCard)}>
+
+            </div>
+            <div className="card w-auto p-3 h-auto " style={{position:"fixed", top:"120px", left:"35.5%"}}>
+              <h5>Skill assessments </h5>
+              <div className='text-center d-flex p-5'>
+                <div className='' style={{fontSize:"12px"}}>
+
+
+                <img src="https://cdn.dribbble.com/users/2131993/screenshots/15641588/media/0ced4fa58f04d8c855c082d8c8738eb1.png?resize=400x0" alt="" />
+                <h5 className='fw-bold'>LinkedIn Skill Assessments are no longer available</h5>
+                <p className=''>Instead, showcase your skills by connecting them to jobs, projects or education directly on your Profile. <a href="https://www.linkedin.com/help/linkedin/answer/a1690529">Learn more</a></p>
+                <button className='btn btn-outline-primary rounded-pill fw-bold'>
+                  Update Profile Skills
+                </button>
+                </div>
+               </div>
+              </div>
+      </> : <><div>{null}</div></>}
+
+
+
+
+
     </div>
   )
 }

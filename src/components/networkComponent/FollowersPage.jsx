@@ -47,8 +47,8 @@ function FollowersPage({usersData}) {
                         usersData.slice(23, 30).map((user) => {
                             return (
                                 <>
-                                 <div className='d-flex justify-content-between my-4'>
-                                    <div className='d-flex'>
+                                 <div className='d-flex  justify-content-between my-4'>
+                                    <div className='d-flex followingCrad '>
 
 
                                     <img style={{width:"60px"}} className='rounded-circle mx-3' src={user.avatar_url} alt="" />
@@ -83,7 +83,7 @@ function FollowersPage({usersData}) {
                             return (
                                 <>
                                  <div className='d-flex justify-content-between my-4'>
-                                    <div className='d-flex'>
+                                    <div className='d-flex followingCrad'>
 
 
                                     <img style={{width:"60px"}} className='rounded-circle mx-3' src={user.avatar_url} alt="" />

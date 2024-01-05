@@ -97,7 +97,7 @@ function DiscoverGroups() {
   return (
     <div className=''>
         <NavBar />
-        <div className='row container-xl mx-auto p-3' style={{top:"80px", position:"relative"}}>
+        <div className='row discoverGroup container-xl mx-auto p-3' style={{top:"80px", position:"relative"}}>
             <div className='p-3'>See All Results</div>
           <div className="col-9 ">
             <div className="card border shadow p-3">
@@ -106,7 +106,7 @@ function DiscoverGroups() {
             return (
                 <>
                  <div>
-                 <div className='d-flex justify-content-between my-1'>
+                 <div className='d-flex  justify-content-between my-1'>
                                     <div className='d-flex lh-base'>
 
 

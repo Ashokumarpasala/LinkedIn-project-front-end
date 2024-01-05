@@ -19,6 +19,8 @@ import Pages from './components/networkComponent/Pages';
 import './homeMedia.css'
 import axios from 'axios'
 import DiscoverGroups from './components/networkComponent/DiscoverGroups';
+import Myjobs from './components/jobsComponent/Myjobs';
+import InterviewPrepComp from './components/jobsComponent/InterviewPrepComp';
 function App() {
   const [usersData, setUsersData] = useState([]);
   const [users, setUsers] = useState([]);
@@ -68,6 +70,8 @@ function App() {
           <Route exact path='/events/network'  element={<EventsPage />} />
           <Route exact path='/pages/network'  element={<Pages />} />
           <Route exact path='/discoverGropus/network'  element={<DiscoverGroups />} />
+          <Route exact path='/myjobs/jobs'  element={<Myjobs />} />
+          <Route exact path='/interview-preparation/jobs'  element={<InterviewPrepComp />} />
         </Routes>
       </Router>
     </div>

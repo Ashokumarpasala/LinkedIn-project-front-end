@@ -98,6 +98,41 @@
         height: 300px !important;
         overflow-y: scroll;
     } 
+    .network .userimg,
+    .connections .userimg {
+        width: 150px !important;
+        border: 4px solid black;
+        box-shadow: 0 14px 14px rgba(0, 0, 0, 0.2); /* Adjust the values based on your preference */
+    }
+    
+    .network .bi-x-circle-fill,
+    .connections .bi-x-circle-fill {
+        position: relative;
+      left:86% !important;
+      top: -140px !important;
+    }
+    .follow .followingCrad {
+        flex-direction: column;
+        padding: 10px;
+        padding-bottom: 5px;
+        width: 50% !important;
+        text-align: start;
+    }
+    .follow img {
+        width: 100px !important;
+    }
+
+    .follow {
+        position: relative;
+        top: -30px !important;
+        height: auto !important;
+    }
+    .discoverGroup .d-flex {
+        flex-direction: column;
+    }
+    .discoverGroup .col-9 {
+        margin-bottom: 10px;
+    }
   }
   
   /* Medium screens (tablets, 601px to 900px) */
