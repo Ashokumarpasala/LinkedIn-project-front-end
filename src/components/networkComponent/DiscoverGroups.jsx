@@ -107,7 +107,7 @@ function DiscoverGroups() {
                 <>
                  <div>
                  <div className='d-flex  justify-content-between my-1'>
-                                    <div className='d-flex lh-base'>
+                                    <div className='d-flex discovercard lh-base'>
 
 
                                     <img  className='mx-3' style={{width:"120px", height:"80px"}} src="https://www.closingthegap.com/wp-content/uploads/2020/05/generic-logo.png" alt="image" />

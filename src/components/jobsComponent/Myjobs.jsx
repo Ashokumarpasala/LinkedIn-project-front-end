@@ -24,8 +24,8 @@ function Myjobs() {
   return (
     <div style={{backgroundColor:"#f4f2ee"}} className='py-5'>
         <NavBar />
-        <div class="row container-xl mx-auto pt-5" >
-            <div class="col-3">
+        <div class="row myjobspage container-xl mx-auto pt-5" >
+            <div class="col-3 ">
              <div className="card border ">
                 <div className='p-3 '>
                 <i class="bi bi-bookmark-fill"></i> {' '}

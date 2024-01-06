@@ -127,12 +127,57 @@
         top: -30px !important;
         height: auto !important;
     }
-    .discoverGroup .d-flex {
+    .discoverGroup .discovercard {
         flex-direction: column;
     }
     .discoverGroup .col-9 {
         margin-bottom: 10px;
     }
+    .event, .page {
+        position: relative !important;
+        top: -50px !important;
+    }
+    .page .pageCard {
+        flex-direction: column ;
+    }
+    .network, .connections, .home, .mainprofiles {
+        position: relative !important;
+        top: -25px !important;
+    }
+     .preferenceCard, .skillassementCard {
+        width: 90% !important;
+        position: fixed !important;
+        left: 20px !important;
+        top: 50px;
+    }
+    .skillassementCard img {
+        width: 100% !important;
+    } 
+    .interviewPrep .col-4,
+    .interviewPrep .col-8 {
+        width: 100% !important;
+        position: relative;
+        top: -30px !important;
+        margin-bottom: 15px;
+    }
+    .interviewPrep .d-flex {
+        flex-direction: column;
+        text-align: start;
+    }
+    .interviewPrep .tutorimg,
+    .interviewPrep .btn {
+        width: 100% !important;
+    }
+    .job .carsouel .d-flex {
+        flex-direction: column;
+    }
+    .job .carsouel .card {
+        width: 95% !important;
+        margin: 15px;
+        height: 250px !important;
+    }
+    
+     
   }
   
   /* Medium screens (tablets, 601px to 900px) */

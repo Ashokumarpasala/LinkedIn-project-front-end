@@ -18,7 +18,7 @@ function InterviewPrepComp() {
   return (
     <div style={{ backgroundColor: "#f4f2ee" }} className='mt-5 pt-5 py-5 h-100'>
       <NavBar />
-      <div className="row container-xl mx-auto">
+      <div className="row interviewPrep container-xl mx-auto">
         <div className="col-4 ">
           <div className="border card">
             <div className='d-flex justify-content-between align-items-start p-3 border-bottom'>
@@ -69,7 +69,7 @@ function InterviewPrepComp() {
             <div className="d-flex border rounded-5 align-items-center justify-content-between">
                 <div className='d-flex'>
 
-                <img style={{width:"150px", objectFit:"cover"}} src="https://images.theconversation.com/files/66794/original/image-20141209-32156-7fef5i.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" alt="" />
+                <img className='tutorimg' style={{width:"150px", objectFit:"cover"}} src="https://images.theconversation.com/files/66794/original/image-20141209-32156-7fef5i.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" alt="" />
                 <div className='mx-3 fw-bold p-3'>
                  <div>{hrInterviewQuestions[selectedQuestionId].reference.name}</div>
                  <div>{hrInterviewQuestions[selectedQuestionId].reference.videoLink}</div>

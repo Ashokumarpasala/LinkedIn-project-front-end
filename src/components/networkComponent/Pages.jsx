@@ -146,7 +146,7 @@ function Pages() {
                   return (
 
               <div className='d-flex justify-content-between my-3 border-bottom p-2'>
-                                    <div className='d-flex lh-base'>
+                                    <div className='d-flex  pageCard lh-base'>
 
 
                                     <img  className='mx-1' style={{width:"80px", height:"50px"}} src="https://www.closingthegap.com/wp-content/uploads/2020/05/generic-logo.png" alt="image" />

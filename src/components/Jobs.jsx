@@ -157,8 +157,8 @@ function Jobs() {
             <h5 className='fw-bold'>Explore with job collections <br /></h5>
             <span>Broaden your job search with curated collections</span>
             <Carousel>
-      <Carousel.Item className=''>
-        <div className="d-flex justify-content-around h-100 my-3 text-center fw-bold ">
+      <Carousel.Item className='carsouel'>
+        <div className="d-flex  justify-content-around h-100 my-3 text-center fw-bold ">
         <div className="card w-50 mx-1 border" style={{height:"200px"}}>
           <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
             <img src={test} style={{width:"65px", height:"65px", top:"10px",left:"25px", position:"relative"}} alt="" />
@@ -182,7 +182,7 @@ function Jobs() {
       </Carousel.Item>
 
 
-      <Carousel.Item>
+      <Carousel.Item className='carsouel'>
         <div className="d-flex justify-content-around h-100 my-3 text-center fw-bold">
         <div className="card w-50 mx-1 border" style={{height:"200px"}}>
           <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
@@ -205,7 +205,7 @@ function Jobs() {
         </div>
      
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className='carsouel' >
         <div className="d-flex justify-content-start h-100 my-3 text-center fw-bold">
         <div className="card w-25 mx-1 border" style={{height:"200px"}}>
           <div className='h-50 d-flex align-self-center my-4 rounded-circle bg-primary-subtle w-50'>
@@ -295,7 +295,7 @@ function Jobs() {
           }}  onClick={() => setshowPreferenceComponent(!showPreferenceComponent)}>
 
             </div>
-            <div className="card w-25 h-auto " style={{position:"fixed", top:"120px", left:"35.5%"}}>
+            <div className="card w-25 h-auto preferenceCard" style={{position:"fixed", top:"120px", left:"35.5%"}}>
               <div className="d-flex justify-content-between p-3 border-bottom px-4">
                 <h5 className='fw-bold'>preference</h5>
                 <i class="bi bi-x-lg"></i>
@@ -341,7 +341,7 @@ function Jobs() {
           }}  onClick={() => setShowSkillSetCard(!showskillsetCard)}>
 
             </div>
-            <div className="card w-auto p-3 h-auto " style={{position:"fixed", top:"120px", left:"35.5%"}}>
+            <div className="card skillassementCard w-auto p-3 h-auto " style={{position:"fixed", top:"120px", left:"35.5%"}}>
               <h5>Skill assessments </h5>
               <div className='text-center d-flex p-5'>
                 <div className='' style={{fontSize:"12px"}}>

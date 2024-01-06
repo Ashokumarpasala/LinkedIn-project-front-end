@@ -5,7 +5,7 @@ import Footer from '../../Footer'
 
 function EventsPage() {
   return (
-    <div className='mt-5 pt-4' style={{backgroundColor:"#f4f2ee", height:"100vh"}}>
+    <div className='mt-5 pt-4' style={{backgroundColor:"#f4f2ee", height:"auto"}}>
       <NavBar />
       <div className='row event container-xl mx-auto pt-5'>
        <div className="col-9">
