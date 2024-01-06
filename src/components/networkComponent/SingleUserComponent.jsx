@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
-import pen from '.././navImages/home.png'
 import Footer from '../../Footer'
 import linkedInUsers from './LinkedInUsersData'
 
@@ -59,16 +58,16 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                 </div>
                 <div className='p-5'>
                         <h3 className='fw-bold'>{singleUser.firstName} {singleUser.lastName}</h3>
-                        <div>{singleUser.email}</div>
-                        <p>{singleUser.experiences[0].title} at {singleUser.experiences[0].company}</p>
-                        <p>{singleUser.location.city},{singleUser.location.country} <Link>Contact info</Link> </p>
-                        <p>{singleUser.connections} connections</p>
+                        <div><i class="bi bi-envelope-fill mx-2"></i>{singleUser.email}</div>
+                        <p><i class="bi bi-buildings-fill mx-2"></i>{singleUser.experiences[0].title} at {singleUser.experiences[0].company}</p>
+                        <p><i class="bi bi-geo-alt-fill mx-2"></i>{singleUser.location.city},{singleUser.location.country} <Link>Contact info</Link> </p>
+                        <p><i class="bi bi-people-fill mx-2"></i>{singleUser.connections} connections</p>
                  
 
-                            <div className="profilebtn">
-                            <div className="btn btn-primary rounded-pill">connect</div>
-                            <div className="btn fw-bold btn-outline-primary mx-3 rounded-pill">message</div>
-                            <div className="btn fw-bold btn-outline-primary rounded-pill">More</div>
+                            <div className="profilebtn ">
+                            <div className="btn btn-primary fs-6 rounded-pill"><i class="bi bi-plus-circle-fill mx-2"></i>connect</div>
+                            <div className="btn fw-bold fs-6 btn-outline-primary mx-3 rounded-pill">message</div>
+                            <div className="btn fw-bold btn-outline-primary fs-6 rounded-pill">More</div>
                             </div>
                             <div className='border userCard mt-4 fw- p-3 w-50 bg-secondary rounded-5 fs-5'>
                             <div className=''>
@@ -96,7 +95,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                     </div>
                     <p>{singleUser.about}</p>
                     <div className="border rounded-5 p-3 my-3">
-                        <p>Top skills</p>
+                        <p><i class="bi bi-gem mx-2"></i>Top skills</p>
                         <p>
                         <div className="d-flex">
                             {singleUser.skills.map((data) => <div className=''>{data }  {' , '}</div>)}
@@ -113,11 +112,11 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                         singleUser.experiences.map((data) => {
                             return (<>
                               <div className='w-100 border rounded-4 p-3 mt-2'>
-                                <h6>Job Role : {data.title}</h6>
-                                <div>Comapany : {data.company}</div>
-                                <div>since Worked From : {data.startDate} To : {data.endDate}</div>
-                                <div>Location : {data.location}</div>
-                                <div>Description : {data.description}</div>
+                                <h6><i class="bi bi-suitcase-lg-fill mx-2"></i>Job Role : {data.title}</h6>
+                                <div><i class="bi bi-buildings-fill mx-2"></i>Comapany : {data.company}</div>
+                                <div><i class="bi bi-alarm-fill mx-2"></i>since Worked From : {data.startDate} To : {data.endDate}</div>
+                                <div><i class="bi bi-geo-alt-fill mx-2"></i>Location : {data.location}</div>
+                                <div><i class="bi bi-list-check mx-2"></i>Description : {data.description}</div>
                               </div>
                             </>)
                         })
@@ -131,8 +130,8 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                 {/* <img src={pen} alt="" /> */}
                 </div>
                     </div>
-                    <p className='d-flex'> Degination : {singleUser.activities.map((data) => <><div>{data} {', '}</div></>)}</p>
-                    <p className='d-flex'>Prefered Locations to Work : {singleUser.preferredLocations.map((data) => <><div>{data} {', '}</div></>)}</p> <hr />
+                    <p className='d-flex'><i class="bi bi-sign-dead-end-fill mx-2"></i> Degination : {singleUser.activities.map((data) => <><div>{data} {', '}</div></>)}</p>
+                    <p className='d-flex'><i class="bi bi-geo-alt-fill mx-2"></i>Prefered Locations to Work : {singleUser.preferredLocations.map((data) => <><div>{data} {', '}</div></>)}</p> <hr />
                     <h4>Summary about the Member you Know something new .</h4>
                     <p>{singleUser.summary}</p>
                 </div> 
@@ -155,7 +154,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                     </div>
                     <p>English, Hindhi, Tamil & Telugu</p> <hr />
                     <div className=''>
-                    <div className='fw-bold'>Public profile & URL</div>
+                    <div className='fw-bold'><i class="bi bi-share-fill mx-2"></i>Public profile & URL</div>
                     <div>
 
                      <a href="">{singleUser.profileUrl}</a>
@@ -191,6 +190,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                         </>  )
                     })
                 }                   
+                <hr /><Link className='text-center '>Show All</Link>
                 </div>
             </div>
         </div>
