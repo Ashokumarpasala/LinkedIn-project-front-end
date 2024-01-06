@@ -28,7 +28,7 @@ function EventComponent({eventComponent, seteventComponent, setShowMediaComponen
   
     try {
       // Assuming you have a server endpoint for handling the form data
-      const response = await axios.post('http://localhost:9099/create/an/event/event', formDataevent);
+      const response = await axios.post('http://localhost:9099/create/an/event/newevent', formDataevent);
   
       // Handle success, e.g., show a success message or redirect
       setFormDataevent(response.data);

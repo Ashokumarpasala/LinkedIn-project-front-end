@@ -96,6 +96,7 @@ function Home({users}) {
   const [eventDetails, setEventDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -104,15 +105,31 @@ function Home({users}) {
       } catch (error) {
         console.error('Error fetching event details:', error);
       } finally {
-        setLoading(false);
-      }
+        const timeoutId = setTimeout(() => {
+          setLoading(false);
+        }, 5000);
+    
+        // Cleanup the timeout when the component unmounts or when loading is complete
+        return () => clearTimeout(timeoutId);      }
     };
 
     fetchData();
   }, []); // Empty dependency array means this effect will only run once after the initial render.
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <>
+    
+     <div className=' d-flex justify-content-center align-content-center w-100 h-100'>
+      <div>
+      <img style={{width:"350px"}} src="https://logos-world.net/wp-content/uploads/2020/05/Linkedin-Logo.png" alt="" /> <br />
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+     </div>
+      </div>
+    </>;
   }
  
 
@@ -312,7 +329,7 @@ function Home({users}) {
            <div>
             {eventDetails && eventDetails.map((data) => {
               return(
-                <div class="card postedcard text-center mt-2 ">
+                <div class="card postedcard text-center mt-2 " key={data.id}>
               <div class="card-header p-4">
                 <div className="d-flex justify-content-between">
                   <h6>Suggested</h6>
