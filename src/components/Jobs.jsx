@@ -11,15 +11,24 @@ import Footer from '../Footer'
 import { Carousel } from 'react-bootstrap';
 import test from '../assets/test.png'
 import compaines from './jobsComponent/RecomdedJobsData'
+import SingleJobComponent from './jobsComponent/SingleJobComponent'
 
 
 function Jobs() {
   const [showPreferenceComponent, setshowPreferenceComponent] = useState(false)
   const [showskillsetCard, setShowSkillSetCard] = useState(false)
+  const [singlejob, setsinglejob] = useState(true)
+  const [selectedId, setSelectedId]  = useState(null)
+  // console.log( `id from jobs ${selectedId}`)
+  const handleId = (id) => {
+    setSelectedId(id)
+  }
   return (
     <div style={{backgroundColor:"#f4f2ee"}} className='mt-5'>
       <NavBar />
-      <div class="row job container-xl mx-auto py-5">
+       {singlejob ? 
+
+      (<div class="row job container-xl mx-auto py-5">
         <div class="col-2">
           <div className="card p-1 shadow  " style={{fontSize:"14px"}}>
           <div className='d-flex mt-3'>
@@ -93,14 +102,14 @@ function Jobs() {
             <div>
               {compaines.slice(0, 3).map((data) => {
                 return(<>
-                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name}>
+                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)} >
                   <div className='d-flex'>
 
                   <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183937/denside-logo-design-d-letter-logo-concept-by-abdul-gaffar-dribbble.png" alt="" />
                   <div className='mx-3' style={{fontSize:"12px"}}>
  
                   <h6 className='fw-bold'>
-                    <Link>
+                    <Link onClick={() => setsinglejob(!singlejob)}>
                     
                     {data.position}
                     </Link>
@@ -126,14 +135,14 @@ function Jobs() {
             <div>
               {compaines.slice(8, 11).map((data) => {
                 return(<>
-                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name}>
+                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
                   <div className='d-flex'>
 
                   <img style={{width:"50px", height:"50px"}} src="https://img.freepik.com/free-vector/creative-gradient-laptop-logo-template_23-2149010269.jpg?size=338&ext=jpg&ga=GA1.1.1222169770.1704326400&semt=ais" alt="" />
                   <div className='mx-3' style={{fontSize:"12px"}}>
  
                   <h6 className='fw-bold'>
-                    <Link>
+                    <Link onClick={() => setsinglejob(!singlejob)}>
                     
                     {data.position}
                     </Link>
@@ -234,14 +243,14 @@ function Jobs() {
             <div>
               {compaines.slice(16, 19).map((data) => {
                 return(<>
-                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name}>
+                <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
                   <div className='d-flex'>
 
                   <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183931/comtug-logo-design-combination-mark-logo-unused-by-md-zahid-hasan-dribbble.png" alt="" />
                   <div className='mx-3' style={{fontSize:"12px"}}>
  
                   <h6 className='fw-bold'>
-                    <Link>
+                    <Link onClick={() => setsinglejob(!singlejob)}>
                     
                     {data.position}
                     </Link>
@@ -279,7 +288,9 @@ function Jobs() {
           <Footer />
           </div>
         </div>
-      </div>
+      </div>) : (<>
+       <div><SingleJobComponent setsinglejob={setsinglejob} handleId={handleId} selectedId={selectedId} singlejob={singlejob} /></div>
+      </>)}
 
       {/* ....preferences card show............. */}
       {showPreferenceComponent ?

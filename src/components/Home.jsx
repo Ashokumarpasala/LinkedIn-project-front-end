@@ -208,7 +208,11 @@ function Home({users}) {
          <div className="card shadow mt-3">
          <ul class="list-group homelist list-group-flush mt-4 fw-bold" >
             <h5 class="list-group-item"><Link to='/groups/network'>Groups</Link></h5>
-            <li class="list-group-item"><Link to='/events/network'>Events</Link></li>
+            <li class="list-group-item d-flex justify-content-between"><Link to='/events/network'>Events</Link>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+            </svg>
+            </li>
             <li class="list-group-item"><Link to='/Followerspage/network'>Followed by</Link></li>
           </ul>
           <ul class="list-group list-group-flush fw-bold fs-6">

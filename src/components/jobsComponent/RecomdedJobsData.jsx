@@ -1,6 +1,7 @@
 
 const companies = [
     {
+      id: 1,
       name: 'Wisedoc, Inc.',
       position: 'Frontend Developer',
       location: 'India (Remote)',
@@ -46,6 +47,7 @@ const companies = [
     // Add 19 more companies here...
   
     {
+      id: 2,
       name: 'TechGenius Solutions',
       position: 'Full Stack Developer',
       location: 'United States (On-site)',
@@ -124,6 +126,7 @@ const companies = [
       aboutPerks: ['Competitive salary', 'Flexible work hours', 'Health and wellness programs'],
     },
     {
+      id: 3,
       name: 'InnovateTech Labs',
       position: 'Data Scientist',
       location: 'Singapore (Remote)',
@@ -163,6 +166,7 @@ const companies = [
       aboutPerks: ['Remote work options', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      id: 4,
       name: 'CodeCrafters Ltd.',
       position: 'UX/UI Designer',
       location: 'Canada (Remote)',
@@ -207,6 +211,7 @@ const companies = [
     },
     // Add 16 more companies here...
     {
+      id: 5,
       name: 'WebMasters Co.',
       position: 'SEO Specialist',
       location: 'Australia (On-site)',
@@ -250,6 +255,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      id: 6,
       name: 'SoftInnovate Solutions',
       position: 'Software Engineer',
       location: 'Germany (Remote)',
@@ -294,6 +300,7 @@ const companies = [
     },
   
     {
+      id: 7,
       name: 'EcoTech Innovations',
       position: 'Environmental Analyst',
       location: 'Brazil (On-site)',
@@ -337,6 +344,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      id: 8,
       name: 'FinTech Solutions Ltd.',
       position: 'Financial Analyst',
       location: 'United Kingdom (Remote)',
@@ -381,6 +389,7 @@ const companies = [
     },
   
     {
+      id: 9,
       name: 'MedTech Innovators',
       position: 'Biomedical Engineer',
       location: 'Spain (On-site)',
@@ -424,6 +433,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      id: 10,
       name: 'FoodieTech Solutions',
       position: 'Mobile App Developer',
       location: 'France (Remote)',
@@ -467,6 +477,7 @@ const companies = [
     },
   
     {
+      id: 11,
       name: 'AI Innovations Co.',
       position: 'Machine Learning Engineer',
       location: 'South Korea (On-site)',
@@ -510,6 +521,7 @@ const companies = [
     },
   
     {
+      id: 12,
       name: 'GreenEnergy Innovate',
       position: 'Renewable Energy Analyst',
       location: 'Netherlands (Remote)',
@@ -552,6 +564,7 @@ const companies = [
       aboutPerks: ['Remote work options', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      id: 13,
       name: 'SpaceTech Explorations',
       position: 'Aerospace Engineer',
       location: 'Sweden (On-site)',
@@ -594,6 +607,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Competitive salary', 'Health and wellness programs'],
     },
     {
+      id: 14,
       name: 'RoboTech Solutions',
       position: 'Robotics Engineer',
       location: 'Italy (On-site)',
@@ -637,6 +651,7 @@ const companies = [
     },
   
     {
+      id: 15,
       name: 'HealthTech Solutions',
       position: 'Health Informatics Specialist',
       location: 'Denmark (On-site)',
@@ -680,6 +695,7 @@ const companies = [
     },
   
     {
+      id: 16,
       name: 'CyberSec Innovations',
       position: 'Cybersecurity Analyst',
       location: 'Switzerland (Remote)',
@@ -711,6 +727,7 @@ const companies = [
       aboutPerks: ['Remote work flexibility', 'Competitive salary', 'Professional development opportunities'],
     },
     {
+      id: 17,
       name: 'Blockchain Innovators',
       position: 'Blockchain Developer',
       location: 'Norway (Remote)',
@@ -754,6 +771,7 @@ const companies = [
     },
   
     {
+      id: 18,
       name: 'EdTech Innovate',
       position: 'Educational Technologist',
       location: 'Finland (Remote)',
@@ -797,6 +815,7 @@ const companies = [
     },
   
     {
+      id: 19,
       name: 'CleanTech Solutions',
       position: 'Environmental Engineer',
       location: 'Iceland (On-site)',

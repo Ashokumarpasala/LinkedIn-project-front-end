@@ -55,7 +55,7 @@ const NavBar = () => {
         <nav className="d-flex mainNavbar justify-content-between align-items-center" style={{fontSize:"12px", }}>
           <div className="navbar-brand d-flex">
             <img style={{ width: '50px' }} className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png" alt="" />
-            <input type="text" name="search" onClick={() => setShowLayer(!showlayer)} className='fs-5 rounded-3 navbarinput navinput navbaronly' placeholder="search" />
+            <input type="text" name="search"  className='fs-5 rounded-3 navbarinput navinput navbaronly' placeholder="search" />
           </div>
           <div className="navbar-links icons d-flex justify-content-around ">
               <div className="mx-3 text-center ">

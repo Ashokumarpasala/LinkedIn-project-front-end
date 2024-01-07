@@ -13,7 +13,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
      <div>
         <NavBar />
 
-        <div class="row mainprofiles container-xl mx-auto " style={{position:"relative", top:"10px", zIndex:"0", overflowY:"hidden"}}>
+        <div class="row mainprofiles container-xl mx-auto fs-5 " style={{position:"relative", top:"10px", zIndex:"0", overflowY:"hidden"}}>
             <div>
 
             <button className='btn btn-success my-3 mx-4 ' style={{width:"auto", float:"right"}} onClick={() => setUser(!user)}>Back To Network</button>
