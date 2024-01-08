@@ -2,8 +2,9 @@
     import compaines from './RecomdedJobsData'
 import { Link } from 'react-router-dom'
 import Footer from '../../Footer'
-    function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId}) {
+    function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId, showmyApplied, setShowApplied}) {
         const jobData =  compaines[selectedId - 1]
+       
       return (
         <div className='pt-5 singleJobComponent container-xl mx-auto fs-5 '>
             <div className=' d-flex justify-content-end'>

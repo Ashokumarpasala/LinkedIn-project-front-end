@@ -141,7 +141,7 @@ function Network() {
         </div>
       </div>) : <>
       {/* <SingleUserComponent />  */}
-    <SingleUserComponent user={user} selecteduserId={selecteduserId} setUser={setUser} /> 
+    <SingleUserComponent user={user} selecteduserId={selecteduserId} handleUserClick={handleUserClick} setUser={setUser} /> 
       </>
      }
 

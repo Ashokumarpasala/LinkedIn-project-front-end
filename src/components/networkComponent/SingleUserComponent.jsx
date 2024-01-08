@@ -5,7 +5,7 @@ import Footer from '../../Footer'
 import linkedInUsers from './LinkedInUsersData'
 
 
-function SingleUserComponent({user, setUser, selecteduserId}) {
+function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
     // console.log(linkedInUsers[selecteduserId].firstName)
     // console.log(selecteduserId)
     const singleUser = linkedInUsers[selecteduserId - 1]
@@ -178,7 +178,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                 {
                     linkedInUsers.slice(15, 20).map((data) => {
                         return(<>
-                         <div className='d-flex align-items-start p-2'>
+                         <div className='d-flex align-items-start p-2' onClick={() => handleUserClick(data.id)} style={{cursor:"pointer"}}>
                             <img style={{width:"100px"}} className='rounded-circle' src="https://i.pinimg.com/1200x/64/81/22/6481225432795d8cdf48f0f85800cf66.jpg" alt="" />
                             <div>
 

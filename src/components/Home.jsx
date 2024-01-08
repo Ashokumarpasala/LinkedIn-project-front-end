@@ -107,7 +107,7 @@ function Home({users}) {
       } finally {
         const timeoutId = setTimeout(() => {
           setLoading(false);
-        }, 5000);
+        }, 3000);
     
         // Cleanup the timeout when the component unmounts or when loading is complete
         return () => clearTimeout(timeoutId);      }
