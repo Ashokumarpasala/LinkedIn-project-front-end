@@ -13,7 +13,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
      <div>
         <NavBar />
 
-        <div class="row mainprofiles container-xl mx-auto fs-5 " style={{position:"relative", top:"10px", zIndex:"0", overflowY:"hidden"}}>
+        <div class="row mainprofiles singleUser container-xl mx-auto fs-5 " style={{position:"relative", top:"10px", zIndex:"0", overflowY:"hidden"}}>
             <div>
 
             <button className='btn btn-success my-3 mx-4 ' style={{width:"auto", float:"right"}} onClick={() => setUser(!user)}>Back To Network</button>
@@ -97,7 +97,7 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                     <div className="border rounded-5 p-3 my-3">
                         <p><i class="bi bi-gem mx-2"></i>Top skills</p>
                         <p>
-                        <div className="d-flex">
+                        <div className="d-flex flex-wrap">
                             {singleUser.skills.map((data) => <div className=''>{data }  {' , '}</div>)}
                         </div>
                             </p>
@@ -130,8 +130,8 @@ function SingleUserComponent({user, setUser, selecteduserId}) {
                 {/* <img src={pen} alt="" /> */}
                 </div>
                     </div>
-                    <p className='d-flex'><i class="bi bi-sign-dead-end-fill mx-2"></i> Degination : {singleUser.activities.map((data) => <><div>{data} {', '}</div></>)}</p>
-                    <p className='d-flex'><i class="bi bi-geo-alt-fill mx-2"></i>Prefered Locations to Work : {singleUser.preferredLocations.map((data) => <><div>{data} {', '}</div></>)}</p> <hr />
+                    <p className='d-flex flex-wrap'><i class="bi bi-sign-dead-end-fill mx-2"></i> Degination : {singleUser.activities.map((data) => <><div>{data} {', '}</div></>)}</p>
+                    <p className='d-flex flex-wrap'><i class="bi bi-geo-alt-fill mx-2"></i>Prefered Locations to Work : {singleUser.preferredLocations.map((data) => <><div>{data} {', '}</div></>)}</p> <hr />
                     <h4>Summary about the Member you Know something new .</h4>
                     <p>{singleUser.summary}</p>
                 </div> 

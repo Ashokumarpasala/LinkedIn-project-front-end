@@ -5,7 +5,7 @@ import Footer from '../../Footer'
     function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId}) {
         const jobData =  compaines[selectedId - 1]
       return (
-        <div className='pt-5 container-xl mx-auto fs-5 '>
+        <div className='pt-5 singleJobComponent container-xl mx-auto fs-5 '>
             <div className=' d-flex justify-content-end'>
                 <button className='btn btn-success ' onClick={() => setsinglejob(!singlejob)}>back to Jobs</button>
             </div>
@@ -79,19 +79,19 @@ import Footer from '../../Footer'
                     <p><i class="bi bi-person-vcard-fill mx-2"></i>{jobData.founders[0]} is hiring for this job</p>
                     <ul>{jobData.aboutValues.map((data) => <li className='d-flex'>{data}, is skills match your profile - you may be a good fit</li>)}</ul>
                     <p><i class="bi bi-mailbox-flag mx-2"></i>Job poster joined LinkedIn in {jobData.foundedYear}</p>
-                    <div className='my-3 '>
+                    <div className='my-3 insidebtn '>
                         <button className='fs-5 btn btn-primary rounded-pill'><i class="bi bi-linkedin mx-2"></i>Easy Apply</button>
                         <button className='btn fs-5 btn-outline-primary rounded-pill mx-3'>Save</button>
                     </div>
                     {/* about............... */}
-                    <div className='border p-3 my-3 rounded-4'>
+                    <div className='border p-3 my-3 rounded-4 aboutjob'>
                         <h4 className='fw-bold'>About the job</h4>
                         <p>{jobData.name} as a {jobData.position} JD</p>
                         <p>{jobData.about}</p>
                         <p>Are you passionate about bringing concepts to real life? </p>
                         <p>{jobData.aboutCulture}</p>
-                        <p className='d-flex'>{jobData.aboutValues.map((data) => <><div>{data } { ' ,  '} </div></>)}</p>
-                        <p className='d-flex'>{jobData.aboutPerks.map((data) => <><div>{data} { " , " } </div></>)}</p>
+                        <p className='d-flex flex-wrap'>{jobData.aboutValues.map((data) => <><div>{data } { ' ,  '} </div></>)}</p>
+                        <p className='d-flex flex-wrap'>{jobData.aboutPerks.map((data) => <><div>{data} { " , " } </div></>)}</p>
                     </div>
                     <div>
                         <div className='my-4'>

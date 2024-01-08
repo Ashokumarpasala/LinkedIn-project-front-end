@@ -176,7 +176,26 @@
         margin: 15px;
         height: 250px !important;
     }
-    
+    .singleJobComponent .col-4,
+    .singleJobComponent .col-8 {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .singleJobComponent .row {
+        flex-direction: column-reverse;
+    }
+    .singleJobComponent {
+        position: relative;
+        top: -35px;
+        left: 10px;
+    }
+    .singleJobComponent .insidebtn .btn {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+    .singleJobComponent .aboutjob {
+        width: auto;
+    }
      
   }
   
