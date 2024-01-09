@@ -204,6 +204,11 @@
     .companies {
         position: relative;
         top: -50px !important;
+        padding-left: 20px !important;
+    }
+    .companies .btn-success {
+        position: relative;
+        right: 20px !important;
     }
      
   }
