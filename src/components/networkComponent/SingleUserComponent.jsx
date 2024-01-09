@@ -182,7 +182,11 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                             <img style={{width:"100px"}} className='rounded-circle' src="https://i.pinimg.com/1200x/64/81/22/6481225432795d8cdf48f0f85800cf66.jpg" alt="" />
                             <div>
 
-                            <h6 className='fw-bold'>{data.firstName} {data.lastName}</h6>
+                            <h6 className='fw-bold'>
+                                <Link>
+                                    {data.firstName} {data.lastName}
+                                </Link>
+                                </h6>
                             <h6>{data.headline} at {data.experiences[1].company}</h6>
                             <button className='btn btn-outline-primart rounded-pill'>connect</button> <hr />
                             </div>

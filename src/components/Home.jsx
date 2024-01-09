@@ -3,12 +3,15 @@ import NavBar from './NavBar'
 import imge from './homeImages/image.png'
 import write from './homeImages/writting.png'
 import calender from './homeImages/calendar.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Footer from '../Footer'
 import MediaComponent from './profileComponents/MediaComponent'
 import EventComponent from './profileComponents/EventComponent'
 import axios from 'axios'
 function Home({users}) {
+  const location = useLocation();
+  const userData = location.state && location.state.userData;
+  console.log(userData)
   const [showAll, setShowAll] = useState(false);
   const [showpost, setShowpost] = useState('');
   const [showMediaComponent, setShowMediaComponent] = useState(false)
@@ -107,7 +110,7 @@ function Home({users}) {
       } finally {
         const timeoutId = setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 1000);
     
         // Cleanup the timeout when the component unmounts or when loading is complete
         return () => clearTimeout(timeoutId);      }
@@ -138,6 +141,10 @@ function Home({users}) {
       imageUrl: "https://isteam.wsimg.com/ip/a8efe83b-6857-477d-9d0f-f13ca0229a20/ols/2348_original/:/rs=w:600,h:600",
     },
     {
+      description: " Dive into Redux and state managment Frame Work and JavaScript, and work on real-world projects to sharpen your skills. Join us to turn your passion for coding into a rewarding career.",
+      imageUrl: "https://miro.medium.com/v2/resize:fit:1000/1*UOde9AZsRtpC7EwJRRVcWA.gif",
+    },
+    {
       description: "Enhance your front-end expertise with our comprehensive training in React.js and Vue.js. Master the art of building responsive and dynamic user interfaces. Take the next step in your development journey and become a sought-after front-end developer.",
       imageUrl: "https://media.licdn.com/dms/image/D5622AQEtyMVGID9zEA/feedshare-shrink_2048_1536/0/1681846684757?e=1706745600&v=beta&t=jngrvIgft8YUiFn0I5bklu2gz_bPgS8J4VRnH2lRZMc"
     },
@@ -157,6 +164,9 @@ function Home({users}) {
   
 
   
+
+
+  
  
 
 
@@ -169,6 +179,7 @@ function Home({users}) {
       <NavBar />
       <div class="row home container-xl mx-auto pt-5 py-5" style={{position:"relative", zIndex:"0", height:"auto"}}>
         {/* left side content user details card......... */}
+
         <div class="col-3">
         <div class="card shadow ">
           <Link to='/MainProfile'>
@@ -185,7 +196,7 @@ function Home({users}) {
           return (
           <div class="card-body text-center my-2 fw-bold">
             <Link to='MainProfile'>
-            <p class="card-title fs-5">{user.firstName } {user.lastName} {user.additionalName}</p>
+              <p class="card-title fs-5"> {user.firstName } {user.lastName} {user.additionalName}</p>
             </Link>
             <p class="card-text" style={{fontSize:"14px"}}>Worked in {user.industry} sector as a {user.headline}</p>
           </div>

@@ -51,7 +51,11 @@ function Connections() {
                   </svg>
                  <img class='userimg' style={{position:"absolute", top:"50px", left:"20px", width:"110px"}} className='rounded-circle' src='https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png' alt="" />
                 <div class="card-body mt-3">
-                  <h5 class="card-title fw-bold">{user.firstName} {user.lastName}</h5>
+                  <h4 class="card-title fw-bold">
+                    <Link>
+                      {user.firstName} {user.lastName}
+                    </Link>
+                    </h4>
                   <p class="card-text">{user.headline} in {user.industry}</p>
                   <p>{user.experiences[0].description}</p>
                   <a href="#" class="btn btn-outline-primary rounded-pill w-100">Follow</a>
@@ -77,7 +81,7 @@ function Connections() {
           </div>
           <Footer />
             </div>
-        </div>) : (<><SingleUserComponent user={user} selecteduserId={selecteduserId} setUser={setUser} /> </>)
+        </div>) : (<><SingleUserComponent user={user} selecteduserId={selecteduserId} handleUserClick={handleUserClick} setUser={setUser} /> </>)
       }
     </div>
   )

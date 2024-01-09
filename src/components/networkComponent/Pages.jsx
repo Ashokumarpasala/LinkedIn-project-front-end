@@ -3,7 +3,7 @@ import NavBar from '../NavBar';
 import Footer from '../../Footer';
 import itCompanies from './ItCompaniesData';
 import SingleCompanyComponent from './SingleCompanyComponent';
-
+import { Link } from 'react-router-dom';
 function Pages() {
   const [selectedId, setSelectedId] = useState(null);
   const [showSingleCompanyComp, setShowSingleComp] = useState(true);
@@ -18,7 +18,7 @@ function Pages() {
       <NavBar />
 
       {showSingleCompanyComp ? (
-        <div className='row page container-xl mx-auto pt-5 py-5'>
+        <div className='row page container-xl mx-auto pt-5 py-5 fs-4'>
           <div className="col-9">
             <div className="card p-3 shadow border">
               <div className="p-3">
@@ -28,7 +28,11 @@ function Pages() {
                     <div className='d-flex pageCard lh-base' style={{ cursor: "pointer" }}>
                       <img className='mx-1' style={{ width: "80px", height: "50px" }} src="https://www.closingthegap.com/wp-content/uploads/2020/05/generic-logo.png" alt="image" />
                       <div>
-                        <h5 className='fw-bold'>{data.name}</h5>
+                        <h5 className='fw-bold'>
+                          <Link>
+                          {data.name}
+                          </Link>
+                          </h5>
                         <div className='text-secondary'>{data.followers}</div>
                       </div>
                     </div>

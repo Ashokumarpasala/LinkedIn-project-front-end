@@ -124,7 +124,11 @@ function Network() {
                     <img class='userimg' style={{position:"absolute", top:"50px", left:"20px", width:"110px"}} className='rounded-circle' src='https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png' alt="" />
                     <div class="card-body mt-3">
                      {/* <Link to='/single-user-profile/netword-page'> */}
-                      <h5 class="card-title fw-bold">{user.firstName} {user.lastName}</h5>
+                      <h4 class="card-title fw-bold">
+                        <Link>
+                          {user.firstName} {user.lastName}
+                        </Link>
+                        </h4>
                     {/* </Link> */}
                       <p>{user.headline} | {user.experiences[1].company} | {user.connections}</p>
                       <p>{user.experiences[1].description}</p>
