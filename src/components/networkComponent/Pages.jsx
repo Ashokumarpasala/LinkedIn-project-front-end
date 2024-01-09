@@ -22,7 +22,7 @@ function Pages() {
           <div className="col-9">
             <div className="card p-3 shadow border">
               <div className="p-3">
-                <h5 className='border-bottom py-3'>Pages</h5>
+                <h3 className='border-bottom py-3 fw-bold'>Pages</h3>
                 {itCompanies.map((data) => (
                   <div className='d-flex justify-content-between my-3 border-bottom p-2' key={data.id} onClick={() => handleID(data.id)}>
                     <div className='d-flex pageCard lh-base' style={{ cursor: "pointer" }}>

@@ -196,6 +196,15 @@
     .singleJobComponent .aboutjob {
         width: auto;
     }
+    .singlecompanyComponent .col-3 .card,
+    .singlecompanyComponent .col-9 .card {
+        width: 370px !important;
+        margin-bottom: 15px;
+    }
+    .companies {
+        position: relative;
+        top: -50px !important;
+    }
      
   }
   
