@@ -23,7 +23,7 @@ import Myjobs from './components/jobsComponent/Myjobs';
 import InterviewPrepComp from './components/jobsComponent/InterviewPrepComp';
 import SingleUserComponent from './components/networkComponent/SingleUserComponent';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
+// import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
 
 function App() {
   const [usersData, setUsersData] = useState([]);
@@ -62,8 +62,8 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route exact path='/' element={<UserAuthenticationPage />}/>
-          <Route exact path='/home' element={<Home users={users} />} />
+          {/* <Route exact path='/' element={<UserAuthenticationPage />}/> */}
+          <Route exact path='/' element={<Home users={users} />} />
           <Route exact path='/network' element={<Network usersData={usersData} />} />
           <Route exact path='/jobs' element={<Jobs />} />
           <Route exact path='/messages' element={<Messages />} />

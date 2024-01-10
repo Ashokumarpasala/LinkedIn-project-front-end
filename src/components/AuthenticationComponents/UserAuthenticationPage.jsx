@@ -73,11 +73,15 @@ function UserAuthenticationPage() {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log({ user });
-          navigate('/home', { state: { userData: user } });
+          navigate('/home');
         })
-        .catch((error) => console.error('Error signing in:', error));
+        .catch((error) => {
+          console.error('Error signing in:', error)
+          alert('User Not Found')
+        });
     } else {
       console.log('Form validation failed.');
+      alert('Please Fill the Feilds')
     }
   };
 

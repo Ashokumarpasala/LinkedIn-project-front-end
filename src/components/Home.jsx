@@ -3,15 +3,12 @@ import NavBar from './NavBar'
 import imge from './homeImages/image.png'
 import write from './homeImages/writting.png'
 import calender from './homeImages/calendar.png'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Footer from '../Footer'
 import MediaComponent from './profileComponents/MediaComponent'
 import EventComponent from './profileComponents/EventComponent'
 import axios from 'axios'
 function Home({users}) {
-  const location = useLocation();
-  const userData = location.state && location.state.userData;
-  console.log(userData)
   const [showAll, setShowAll] = useState(false);
   const [showpost, setShowpost] = useState('');
   const [showMediaComponent, setShowMediaComponent] = useState(false)
@@ -110,7 +107,7 @@ function Home({users}) {
       } finally {
         const timeoutId = setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 500);
     
         // Cleanup the timeout when the component unmounts or when loading is complete
         return () => clearTimeout(timeoutId);      }
@@ -271,7 +268,7 @@ function Home({users}) {
             dataInsert.map((data) => {
               return (
                 <>
-                  <div class="card postedcard border text-center mt-2 ">
+                  <div class="card postedcard border text-center mt-2 " key={data.id}>
                       <div class="card-header p-4 ">
                         <div className="d-flex justify-content-between">
                           <h6>Suggested</h6>
@@ -371,7 +368,7 @@ function Home({users}) {
               childImages.map((postedimages) => {
                 return (
 
-            <div class="card postedcard text-center mt-2 ">
+            <div class="card postedcard text-center mt-2 " key={postedimages.text}>
               <div class="card-header p-4">
                 <div className="d-flex justify-content-between">
                   <h6>Suggested</h6>
