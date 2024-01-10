@@ -9,7 +9,7 @@ import chat from './navImages/chat.png';
 import suitcase from './navImages/suitcase.png';
 import teamwork from './navImages/teamwork.png';
 import search from './navImages/search.svg';
-
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -132,17 +132,22 @@ const NavBar = () => {
 
       {
         profileCard ? 
-        (<div className='scale-in-top' style={{position:"absolute", top:"10px", left:"55%",zIndex:"1" }}>
-          <div class="card w-50 p-2">
+        (<div className='scale-in-top' style={{position:"absolute", top:"10px", left:"55%",zIndex:"1" }} >
+          <div class="card w-50 p-2 border shadow">
             <div className='d-flex align-items-center'>
 
                 <img src={profile} class="card-img-top w-25" alt="..." />
-                <div className='fw-bold fs-5 w-100 '>
+                <div className='fw-bold fs-5 w-100 p-4 '>
+                      <Link to='/MainProfile'>
+                    <button className='btn btn-primary fs-5 w-100 my-3 rounded-5'>
+                      View Profile
+                      </button>
+                      </Link> 
                     <h5 className='fw-bold'>User Name </h5>
                     <h6>Worked in Previous Company </h6>
                 </div>
             </div>
-                    <button className='btn btn-outline-primary rounded-5 text-primary'>View Profile</button> <hr />
+                      <hr />
                 <div class="card-body fs-6">
                     <h5 class="card-title fw-bold text-secondary">Account</h5>
                     <p>Settings & privacy</p>
@@ -151,19 +156,22 @@ const NavBar = () => {
                     <h5 className='fw-bold text-secondary'>Manage</h5>
                     <p>post & Activity</p>
                     <p>Job posting Account</p> <hr />
-                    <p>Sign Out</p>
-                </div>
+                    <div className="d-flex justify-content-between">
+                    <p className='btn btn-danger fs-6' onClick={() => setprofileCard(!profileCard)}> Exit</p>
 
+                    <p className='btn btn-danger fs-6'>Sign Out</p>
+                    </div>
+                </div>
                 </div>
         </div>) : null
     }
     
     {
         businesscard ? (
-               <div className={`card h-100 w-25 slide-in-right  p-4`}  style={{position:"absolute", top:"10px", left:"73.5%", zIndex:"1" }}>
+               <div className={`card h-100 w-25 slide-in-right  p-4`}  style={{position:"absolute", top:"10px", left:"73.5%", zIndex:"1", cursor:"pointer" }} >
                   <div className='d-flex justify-content-between'>
                     <h3>For Business</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" className='' width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" className='' width="30" height="30" onClick={() => setbusinesscard(!businesscard)} fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                         </svg>
                   </div>
