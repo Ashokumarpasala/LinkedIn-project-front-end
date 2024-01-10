@@ -201,6 +201,11 @@
         width: 370px !important;
         margin-bottom: 15px;
     }
+    .lastbtn {
+        position: relative !important;
+        top: -40px;
+    }
+
     .companies {
         position: relative;
         top: -50px !important;

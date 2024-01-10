@@ -1,16 +1,16 @@
-    import React from 'react'
-    import compaines from './RecomdedJobsData'
+import React from 'react'
+import compaines from './RecomdedJobsData'
 import { Link } from 'react-router-dom'
 import Footer from '../../Footer'
-    function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId, showmyApplied, setShowApplied}) {
-        const jobData =  compaines[selectedId - 1]
-       
+    function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId, showmyApplied, setShowApplied,showSinglejobPage, selectedid,setShowSingleJobpage}) {
+        const jobData =  compaines[selectedId - 1] || compaines[selectedid -1] 
+
+
       return (
-        <div className='pt-5 singleJobComponent container-xl mx-auto fs-5 '>
-            <div className=' d-flex justify-content-end'>
-                <button className='btn btn-success ' onClick={() => setsinglejob(!singlejob)}>back to Jobs</button>
-            </div>
-            <div class="row py-3 pb-5" >
+        <div className='pt-3 singleJobComponent container-xl mx-auto fs-5 '>
+    
+           
+            <div class="row  pb-5" >
                 <div class="col-4">
                     <div className="card rounded-4" style={{height:"85vh"}}>
                     <div className='bg-primary px-4  py-4 text-white fw-bold fs-5'>

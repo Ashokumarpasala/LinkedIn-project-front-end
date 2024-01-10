@@ -15,6 +15,7 @@ import SingleJobComponent from './jobsComponent/SingleJobComponent'
 
 
 function Jobs() {
+  
   const [showPreferenceComponent, setshowPreferenceComponent] = useState(false)
   const [showskillsetCard, setShowSkillSetCard] = useState(false)
   const [singlejob, setsinglejob] = useState(true)
@@ -289,7 +290,11 @@ function Jobs() {
           </div>
         </div>
       </div>) : (<>
-       <div><SingleJobComponent setsinglejob={setsinglejob} handleId={handleId} selectedId={selectedId} singlejob={singlejob} /></div>
+       <div className='pt-5'>
+        <div className="d-flex lastbtn justify-content-end container">
+          <button className='btn btn-success ' onClick={() => setsinglejob(true)}>go back</button>
+        </div>
+        <SingleJobComponent setsinglejob={setsinglejob} handleId={handleId} selectedId={selectedId} singlejob={singlejob} /></div>
       </>)}
 
       {/* ....preferences card show............. */}
