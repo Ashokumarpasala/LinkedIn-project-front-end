@@ -256,6 +256,27 @@
         height: auto !important;
         padding-bottom: 50px !important;
     }
+    .singleJobComponent .row {
+        flex-direction: column-reverse;
+        overflow-x: hidden !important;
+        font-size: 22px !important;
+    }
+    .singleJobComponent .col-4,
+    .singleJobComponent .col-8 {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .message .col-9 .row {
+        width: 140% !important;
+    }
+    .message .col-9 .row .col-5  {
+        width: 200% !important;
+        margin-bottom: 10px;
+    }
+    .message .col-9 .row .col-7 .d-flex {
+        flex-direction: column;
+        width: 140% !important;
+    }
     .navinput {
         width: 400px !important;
     }
@@ -280,6 +301,13 @@
     }
     .mainNavbar input {
         width: 70% !important;
+    }
+    .notifications  .col-3 {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+    }
+    .notifications  .col-6 .card {
+        width: 207.5% !important;
     }
 
   }

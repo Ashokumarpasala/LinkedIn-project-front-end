@@ -13,8 +13,8 @@ function Notifications() {
       <NavBar />
       {
         showSinglejobPage ? 
-      (<div class="row container-xl mx-auto mt-5 pt-5 " >
-        <div class="col">
+      (<div class="row notifications container-xl mx-auto mt-5 pt-5 " >
+        <div class="col-3">
           <div className="card p-3 border">
             <h5>Manage your notifications</h5>
             <p><Link>view settings</Link></p>
