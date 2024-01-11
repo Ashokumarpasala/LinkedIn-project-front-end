@@ -66,7 +66,7 @@ function JobSeekPage() {
       
       
   return (
-    <div>
+    <div className='jobseker'>
         <div style={{position:"relative", zIndex:"2"}}>
 
       <NavBar />

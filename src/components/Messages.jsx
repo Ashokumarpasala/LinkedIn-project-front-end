@@ -21,10 +21,10 @@ function Messages() {
   return (
     <div className='mt-5'>
       <NavBar />
-      <div class="row py-5 message container-xl mx-auto" >
+      <div class="row py-5 message container-xl mx-auto" style={{backgroundColor:"#f4f2ee"}} >
         <div class="col-9 " >
           <div className="">
-             <div class="row border rounded-4">
+             <div class="row border rounded-4 bg-white">
                 <div class="col-5 border-end ">
                    <div className=' border-bottom'><h4 className='p-3'>Messaging</h4></div>
                    <input type="text" name="search"  className='fs-5 my-3 rounded-3 navbarinput navinput navbaronly w-100' placeholder="search" />
@@ -106,7 +106,7 @@ function Messages() {
                       <p>skillsLearned : {selectedMessengerData.skillsLearned.map((data) => <><li className='px-4'>{data}</li></>)}</p>
                       <p>{selectedMessengerData.importance}</p>
                       <div className="web">
-                        <p className=''>Time to Register the Program : <Link className=''> {selectedMessengerData.programWebsite}</Link></p>
+                        {/* <p className=''>Time to Register the Program : <Link className=''> {selectedMessengerData.programWebsite}</Link></p> */}
                       </div>
                       <p>Location Of Program : {selectedMessengerData.programLocation}</p>
                         <p>Regards,</p>
@@ -119,7 +119,7 @@ function Messages() {
             </div>
            </div>
         <div class="col-3">
-          <img className='img-fluid rounded-5' src="https://img.jagranjosh.com/images/2022/February/222022/Top-10-most-valuable-companies-in-the-world.jpg" alt="" />
+          <img className='img-fluid rounded-5 lastimg' src="https://img.jagranjosh.com/images/2022/February/222022/Top-10-most-valuable-companies-in-the-world.jpg" alt="" />
           <Footer />
         </div>
       </div>
