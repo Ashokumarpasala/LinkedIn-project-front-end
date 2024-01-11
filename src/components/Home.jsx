@@ -14,6 +14,9 @@ function Home({users}) {
   const [showMediaComponent, setShowMediaComponent] = useState(false)
   const [eventComponent, seteventComponent] = useState(false)
   
+  
+  const [likeCount, setLikeCount] = useState(null)
+  const [selectedId, setselectedId] = useState(null)
 
   const handleReadMore = () => {
     setShowAll(!showAll);
@@ -134,43 +137,39 @@ function Home({users}) {
 
   const dataInsert = [
     {
+      id:1,
       description: "Explore the world of front-end development with our hands-on internship program. Dive into HTML, CSS, and JavaScript, and work on real-world projects to sharpen your skills. Join us to turn your passion for coding into a rewarding career.",
       imageUrl: "https://isteam.wsimg.com/ip/a8efe83b-6857-477d-9d0f-f13ca0229a20/ols/2348_original/:/rs=w:600,h:600",
     },
     {
+      id:2,
       description: " Dive into Redux and state managment Frame Work and JavaScript, and work on real-world projects to sharpen your skills. Join us to turn your passion for coding into a rewarding career.",
       imageUrl: "https://miro.medium.com/v2/resize:fit:1000/1*UOde9AZsRtpC7EwJRRVcWA.gif",
     },
     {
+      id:3,
       description: "Enhance your front-end expertise with our comprehensive training in React.js and Vue.js. Master the art of building responsive and dynamic user interfaces. Take the next step in your development journey and become a sought-after front-end developer.",
       imageUrl: "https://media.licdn.com/dms/image/D5622AQEtyMVGID9zEA/feedshare-shrink_2048_1536/0/1681846684757?e=1706745600&v=beta&t=jngrvIgft8YUiFn0I5bklu2gz_bPgS8J4VRnH2lRZMc"
     },
     {
+      id:4,
       description: "Join our dynamic front-end internship and collaborate with a diverse team of developers. Gain exposure to cutting-edge technologies, refine your coding skills, and contribute to impactful projects. Kickstart your journey to becoming a proficient front-end developer.",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdouZcQuoeC34UkZlHzhORaRzV_XEuLK4A1ijBEIr3SMuRk0W0KNph5ihkpNGx06qyXKM&usqp=CAU",
     },
     {
+      id:5,
       description: "Immerse yourself in the world of web development through our intensive front-end training. Learn the latest trends in UI/UX design, responsive layouts, and web accessibility. Elevate your coding prowess and unlock exciting opportunities in the tech industry.",
       imageUrl: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/203680158/original/58dbe2e106e6ddcf55bde877704514cd3f350411/do-web-programming-in-html-css-php-mysql-bootstrap.jpeg"
     },
     {
+      id:6,
       description: "Embark on a transformative front-end internship experience. Work on real-world projects, collaborate with industry professionals, and build a portfolio that showcases your skills. Join us to gain valuable insights and accelerate your career in front-end development.",
       imageUrl: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/331693509/original/74be9ca9a6a03d08421554bd9d232cf0dd273373/do-mini-web-project-in-html-css-and-js-in-1-day.jpg",
     },
   ];
-  
 
   
 
-
-  
- 
-
-
-
-
-
-  
   return (
     <div className='mt-5' style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
@@ -326,10 +325,16 @@ function Home({users}) {
                                         <img className='w-100 my-4' src={data.imageUrl} alt="" />                     
                                       </div> 
                             </div>
+                            {(likeCount > 0) && (selectedId === data.id) ? 
+                            <p className='text-start mx-5'>{likeCount} <span className='fw-bold fs-5'>Likes</span></p> : ''
+                            }
                           </div>
                       <div class="card-footer text-body-secondary">
-                      <div className="d-flex plate justify-content-between">
-                          <div className="d-flex iconshover  p-2 px-3">
+                      <div className="d-flex plate justify-content-between" style={{cursor:"pointer"}}>
+                          <div className="d-flex iconshover  p-2 px-3" onClick={() => {
+                              setselectedId(data.id)
+                              setLikeCount(likeCount + 1)
+                          }}>
                           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-hand-thumbs-up mx-1" viewBox="0 0 16 16">
                             <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
                           </svg>

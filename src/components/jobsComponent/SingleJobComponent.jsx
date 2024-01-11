@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import compaines from './RecomdedJobsData'
 import { Link } from 'react-router-dom'
 import Footer from '../../Footer'
+import companies from './RecomdedJobsData'
     function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId, showmyApplied, setShowApplied,showSinglejobPage, selectedid,setShowSingleJobpage}) {
-        const jobData =  compaines[selectedId - 1] || compaines[selectedid -1] 
+      // const [selectedid, setselectedid] = useState(null) 
+      const jobData =  compaines[selectedId - 1] || compaines[selectedid -1] 
+        const [currentPage, setCurrentPage] = useState(1);
+        const itemsPerPage = 4;
+
+       
+      
+        const handlePageChange = (page) => {
+          setCurrentPage(page);
+        };
+      
+        const paginatedCompanies = companies.slice(
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
+        );
 
 
       return (
@@ -12,13 +27,13 @@ import Footer from '../../Footer'
            
             <div class="row  pb-5" >
                 <div class="col-4">
-                    <div className="card rounded-4" style={{height:"85vh"}}>
+                    <div className="card rounded-4" style={{height:"auto"}}>
                     <div className='bg-primary px-4  py-4 text-white fw-bold fs-5'>
                         <h4>Jobs based on your profile</h4>
                         <p>24 results</p>
                     </div>
-                    <div className='my-3' style={{overflowY:"scroll"}}>
-                    {compaines.slice(0, 10).map((data) => {
+                    <div className='my-3'>
+                    {paginatedCompanies.map((data) => {
                         return(<>
                         <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
                         <div className='d-flex'>
@@ -42,18 +57,25 @@ import Footer from '../../Footer'
                         </div> <hr />
                         </>)
                     })}
-                    <nav aria-label="...">
-                        <ul class="pagination pagination-lg d-flex justify-content-center">
-                            <li class="page-item active" aria-current="page">
-                            <span class="page-link">1</span>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        </ul>
-                        </nav> <hr />
-                    <Footer />
+                     <nav aria-label="...">
+        <ul className="pagination pagination-lg d-flex justify-content-center">
+          {Array.from({ length: Math.ceil(companies.length / itemsPerPage) }, (_, index) => (
+            <li
+              key={index + 1}
+              className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+              aria-current="page"
+            >
+              <span className="page-link" onClick={() => handlePageChange(index + 1)}>
+                {index + 1}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+                         <hr />
                     </div>
                  </div>
+                    <Footer />
                 </div>
                 <div class="col-8">
                  <div className="card p-3 py-4 px-4"style={{height:"85vh", overflowY:"scroll"}}>

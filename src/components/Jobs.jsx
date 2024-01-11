@@ -57,12 +57,14 @@ function Jobs() {
                </Link>
               </div>
               <div className='d-flex'>
-                <img src={file} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Resume Builder</p>
+                <img src={paper} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
+                <Link to='/Job-seeker-guidance/jobs'>
+                <p>Job seeker guidance</p>
+                </Link>
               </div>
               <div className='d-flex'>
-                <img src={paper} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
-                <p>Job seeker guidance</p>
+                <img src={file} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
+                <p>Resume Builder</p>
               </div>
               <div className='d-flex'>
               <i class="bi bi-gear-fill mx-2" style={{width:"20px", height:"20px"}}></i>

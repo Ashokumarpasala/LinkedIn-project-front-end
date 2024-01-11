@@ -11,6 +11,23 @@ function FollowersPage({usersData}) {
         setActiveTab(tab);
     };
     console.log(usersData)
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9;
+    const itemPerPage = 5;
+  
+    const handlePageChange = (page) => {
+      setCurrentPage(page);
+    };
+  
+    const paginatedUsers = usersData.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage
+    );
+    const paginatedUser = usersData.slice(
+        (currentPage - 1) * itemPerPage,
+        currentPage * itemPerPage
+      );
     
   return (
     <div className='mt-5 pt-4 ' style={{backgroundColor:"#f4f2ee"}}>
@@ -44,7 +61,7 @@ function FollowersPage({usersData}) {
                      <p>You are following below people out of your network</p>
                     </div>
                     {
-                        usersData.slice(23, 30).map((user) => {
+                        paginatedUsers.map((user) => {
                             return (
                                 <>
                                  <div className='d-flex  justify-content-between my-4'>
@@ -70,6 +87,21 @@ function FollowersPage({usersData}) {
                             )
                         })
                      }
+                                          <nav aria-label="...">
+                       <ul className="pagination pagination-lg d-flex justify-content-center">
+          {Array.from({ length: Math.ceil(usersData.length / itemsPerPage) }, (_, index) => (
+            <li
+              key={index + 1}
+              className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+              aria-current="page"
+            >
+              <span className="page-link" onClick={() => handlePageChange(index + 1)}>
+                {index + 1}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </nav>
                 </div>
             )}
 
@@ -79,7 +111,7 @@ function FollowersPage({usersData}) {
                      <p>You are followers below people out of your network</p>
                     </div>
                       {
-                        usersData.slice(15, 24).map((user) => {
+                        paginatedUser.map((user) => {
                             return (
                                 <>
                                  <div className='d-flex justify-content-between my-4'>
@@ -105,6 +137,21 @@ function FollowersPage({usersData}) {
                             )
                         })
                      }
+                     <nav aria-label="...">
+        <ul className="pagination pagination-lg d-flex justify-content-center">
+          {Array.from({ length: Math.ceil(usersData.length / itemsPerPage) }, (_, index) => (
+            <li
+              key={index + 1}
+              className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+              aria-current="page"
+            >
+              <span className="page-link" onClick={() => handlePageChange(index + 1)}>
+                {index + 1}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </nav>
                 </div>
             )}
         </div>

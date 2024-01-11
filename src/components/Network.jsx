@@ -104,7 +104,7 @@ function Network() {
               {
                 linkedInUsers.map((user) => {
                   return(
-                    <div class="card  text-start shadow m-4 " key={user.id}  style={{width:"250px", cursor:"pointer"}} onClick={() => {
+                    <div class="card  text-start shadow m-4 h-75" key={user.id}  style={{width:"250px", cursor:"pointer"}} onClick={() => {
                       handleUserClick(user.id)
                       return (
                         setUser(!user)
@@ -122,7 +122,7 @@ function Network() {
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
                       </svg>
                     <img class='userimg' style={{position:"absolute", top:"50px", left:"20px", width:"110px"}} className='rounded-circle' src='https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png' alt="" />
-                    <div class="card-body mt-3">
+                    <div class="card-body">
                      {/* <Link to='/single-user-profile/netword-page'> */}
                       <h4 class="card-title fw-bold">
                         <Link>
@@ -130,8 +130,8 @@ function Network() {
                         </Link>
                         </h4>
                     {/* </Link> */}
-                      <p>{user.headline} | {user.experiences[1].company} | {user.connections}</p>
-                      <p>{user.experiences[1].description}</p>
+                      <p>{user.headline} | {user.experiences[1].company}</p>
+                      <p className=' ' style={{overflow:"hidden", height:"75px"}}>{user.experiences[0].description}</p>
                       {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                       <a href="#" class="btn btn-outline-primary rounded-pill w-100">Follow</a>
                     </div>

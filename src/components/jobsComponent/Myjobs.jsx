@@ -31,6 +31,22 @@ function Myjobs() {
           answer: 'Version control is crucial in software development for tracking changes, collaborating with team members, and maintaining code history. It helps manage codebase versions, rollback changes, and merge contributions seamlessly. Some commonly used version control systems include Git, Mercurial, and SVN. Git is widely adopted due to its distributed nature, branching capabilities, and compatibility with platforms like GitHub and GitLab.',
         },
       ];
+
+      const [currentPage, setCurrentPage] = useState(1);
+  const companiesPerPage = 7;
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const visibleCompanies = companies.slice(
+    (currentPage - 1) * companiesPerPage,
+    currentPage * companiesPerPage
+  );
       
       
   return (
@@ -68,7 +84,7 @@ function Myjobs() {
                 </div>
               </div>
                 <div className='border-bottom'>
-                    {companies.slice(0, 8).map((data) => {
+                    {visibleCompanies.map((data) => {
                         return(<>
                          <div className='d-flex p-2' onClick={() => handleId(data.id)}>
                             <div>
@@ -92,23 +108,27 @@ function Myjobs() {
                     })}
                 </div>
                 <div className='p-3'>
-                    <div className='d-flex justify-content-between'>
-                        <div>
-                        <i class="bi bi-caret-left-fill"></i> previous
-                        </div>
-                        <div>
-                            <span className='mx-3 active'>1</span>
-                            <span className='mx-3'>2</span>
-                            <span className='mx-3'>3</span>
-                            
-                        </div>
-                        <div>
-                        next <i class="bi bi-caret-right-fill"></i>
-                        </div>
-                    </div>
-
-                </div>
-
+        <div className='d-flex justify-content-between' style={{cursor:"pointer"}}>
+          <div onClick={handlePrevPage}>
+            <i className="bi bi-caret-left-fill"></i> Previous
+          </div>
+          <div>
+            {/* Display page numbers dynamically */}
+            {Array.from({ length: Math.ceil(companies.length / companiesPerPage) }, (_, index) => (
+              <span
+                key={index}
+                className={currentPage === index + 1 ? 'mx-3 active' : 'mx-3'}
+                onClick={() => setCurrentPage(index + 1)}
+              >
+                {index + 1}
+              </span>
+            ))}
+          </div>
+          <div onClick={handleNextPage}>
+            Next <i className="bi bi-caret-right-fill"></i>
+          </div>
+        </div>
+        </div>
                 </div>
             </div>
             <div class="col-3">

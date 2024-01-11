@@ -23,6 +23,7 @@ import Myjobs from './components/jobsComponent/Myjobs';
 import InterviewPrepComp from './components/jobsComponent/InterviewPrepComp';
 import SingleUserComponent from './components/networkComponent/SingleUserComponent';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import JobSeekPage from './components/jobsComponent/JobSeekPage';
 // import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
           <Route exact path='/discoverGropus/network'  element={<DiscoverGroups />} />
           <Route exact path='/myjobs/jobs'  element={<Myjobs />} />
           <Route exact path='/interview-preparation/jobs'  element={<InterviewPrepComp />} />
+          <Route exact path='/Job-seeker-guidance/jobs'  element={<JobSeekPage />} />
           {/* <Route exact path='/single-user-profile/netword-page'  element={<SingleUserComponent />} /> */}
         </Routes>
       </Router>

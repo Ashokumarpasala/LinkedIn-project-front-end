@@ -5,6 +5,8 @@ import Footer from '../Footer'
 import { Link } from 'react-router-dom'
 function Messages() {
   const [selectedId, setselectedId] = useState(1)
+  const [selectedTab, setSelectedTab] = useState('focused');
+
   // console.log(selectedId)
   const selectedMessengerData = softwarePrograms[selectedId -1] || softwarePrograms[0];
   // console.log(selectedMessengerData)
@@ -12,6 +14,9 @@ function Messages() {
     backgroundColor: '#edf3f8',
     borderLeft:"10px solid green"
   }
+  const handleClick = (tab) => {
+    setSelectedTab(tab);
+  };
 
   return (
     <div className='mt-5'>
@@ -24,29 +29,51 @@ function Messages() {
                    <div className=' border-bottom'><h4 className='p-3'>Messaging</h4></div>
                    <input type="text" name="search"  className='fs-5 my-3 rounded-3 navbarinput navinput navbaronly w-100' placeholder="search" />
 
-                    <div className='d-flex flex-wrap ' >
-                      <h4 className='active w-50 p-3 text-center text-success'>Foused</h4>
-                      <h4 className=' w-50 text-center p-3'>Other</h4>
-                    </div>
+                   <div className='d-flex flex-wrap ' style={{ cursor: "pointer" }}>
+                        <h4
+                          className={`w-50 p-3 text-center ${selectedTab === 'focused' ? 'active text-success border-5' : ''}`}
+                          onClick={() => handleClick('focused')}
+                        >
+                          Focused
+                        </h4>
+                        <h4
+                          className={`w-50 text-center p-3 ${selectedTab === 'other' ? 'active text-success border-5' : ''}`}
+                          onClick={() => handleClick('other')}
+                        >
+                          Other
+                        </h4>
+                      </div>
                     <div className='my-3'>
-                      {
-                        softwarePrograms.map((data) => {
-                          return (<>
-                          {/* ...user active */}
-                            <div style={selectedId === data.id ? bgcolor : {}} className={`d-flex p-2 `} key={data.id}  onClick={() => setselectedId(data.id)}>
-                             <div><img className='rounded-circle' style={{width:"75px", height:"75px"}} src="https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face.png" alt="" /></div>
-                             <div className='px-3 border-bottom p-2'>
-                              <div className="d-flex justify-content-between">
-                                <h5 className='fw-bold'><Link>{data.messageSender}</Link></h5>
-                                <div>{data.messageDate}</div>
+                    {selectedTab === 'focused' ? 
+                      <>
+                        {
+                          softwarePrograms.map((data) => {
+                            return (<>
+                            {/* ...user active */}
+                              <div style={selectedId === data.id ? bgcolor : {}} className={`d-flex p-2 `} key={data.id}  onClick={() => setselectedId(data.id)}>
+                              <div><img className='rounded-circle' style={{width:"75px", height:"75px"}} src="https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face.png" alt="" /></div>
+                              <div className='px-3 border-bottom p-2'>
+                                <div className="d-flex justify-content-between">
+                                  <h5 className='fw-bold'><Link>{data.messageSender}</Link></h5>
+                                  <div>{data.messageDate}</div>
+                                </div>
+                                <div>{data.sponsoredBy}</div>
+                                <div>{data.programName}</div>
                               </div>
-                              <div>{data.sponsoredBy}</div>
-                              <div>{data.programName}</div>
-                             </div>
-                            </div>
-                          </>)
-                        })
-                      }
+                              </div>
+                            </>)
+                          })
+                        }
+
+                      </>   : <>
+                        <div className='text-center p-5'>
+                          <img className='img-fluid w-100' src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-web-design_516790-900.jpg?w=2000" alt="" />
+                          <h2 className='fw-bold'>No Messages Yet</h2>
+                          <p>Reach out and start a conversation to advance your career</p>
+                          <button className='btn btn-primary rounded-pill fw-bold fs-6'>send a message</button>
+                        </div>
+                      </>
+                  }
                     </div>
                    </div>
                   <div class="col-7 fs-5 ">
