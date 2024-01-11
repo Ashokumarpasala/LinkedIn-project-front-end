@@ -183,6 +183,8 @@
     }
     .singleJobComponent .row {
         flex-direction: column-reverse;
+        font-size: 16px !important;
+        overflow-x: hidden !important;
     }
     .singleJobComponent {
         position: relative;
