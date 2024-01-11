@@ -104,7 +104,7 @@ function Network() {
               {
                 linkedInUsers.map((user) => {
                   return(
-                    <div class="card  text-start shadow m-4 h-75" key={user.id}  style={{width:"250px", cursor:"pointer"}} onClick={() => {
+                    <div class="card  text-start shadow m-3 h-75" key={user.id}  style={{width:"250px", cursor:"pointer"}} onClick={() => {
                       handleUserClick(user.id)
                       return (
                         setUser(!user)
@@ -124,16 +124,16 @@ function Network() {
                     <img class='userimg' style={{position:"absolute", top:"50px", left:"20px", width:"110px"}} className='rounded-circle' src='https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png' alt="" />
                     <div class="card-body">
                      {/* <Link to='/single-user-profile/netword-page'> */}
-                      <h4 class="card-title fw-bold">
+                      <h5 class="card-title fw-bold">
                         <Link>
                           {user.firstName} {user.lastName}
                         </Link>
-                        </h4>
+                        </h5>
                     {/* </Link> */}
-                      <p>{user.headline} | {user.experiences[1].company}</p>
-                      <p className=' ' style={{overflow:"hidden", height:"75px"}}>{user.experiences[0].description}</p>
+                      <div>{user.headline} | {user.experiences[1].company}</div>
+                      <div className=' ' style={{overflow:"hidden", height:"75px"}}>{user.experiences[0].description}</div>
                       {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                      <a href="#" class="btn btn-outline-primary rounded-pill w-100">Follow</a>
+                      <div class="btn btn-outline-primary rounded-pill w-100">Follow</div>
                     </div>
               </div>
                   )
