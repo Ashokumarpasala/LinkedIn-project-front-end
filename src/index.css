@@ -53,6 +53,19 @@
   margin: 15px 0px 15px 0px;
 }
 
+/* toast.css */
+.toast-container {
+  position: fixed;
+  top: 10%;
+  left: 72.5%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Adjust the z-index as needed */
+}
+
+/* Your existing toast styles */
+/* ... */
+
+
 .slide-in-right{animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
 .slide-out-right{animation:slide-out-right .5s cubic-bezier(.55,.085,.68,.53) both}
 .scale-in-top{animation:scale-in-top 0.5s cubic-bezier(.25,.46,.45,.94) both}

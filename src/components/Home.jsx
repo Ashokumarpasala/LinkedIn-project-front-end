@@ -8,6 +8,7 @@ import Footer from '../Footer'
 import MediaComponent from './profileComponents/MediaComponent'
 import EventComponent from './profileComponents/EventComponent'
 import axios from 'axios'
+import Toster from './Tostercomponent/Toster'
 function Home({users}) {
   const [showAll, setShowAll] = useState(false);
   const [showpost, setShowpost] = useState('');
@@ -103,7 +104,7 @@ function Home({users}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:9099/create/an/event/eventdetails');
+        const response = await axios.get('http://localhost:9090/create/an/event/eventdetails');
         setEventDetails(response.data);
       } catch (error) {
         console.error('Error fetching event details:', error);
@@ -177,6 +178,7 @@ function Home({users}) {
         {/* left side content user details card......... */}
 
         <div class="col-3">
+          
         <div class="card shadow ">
           <Link to='/MainProfile'>
         <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "100px",

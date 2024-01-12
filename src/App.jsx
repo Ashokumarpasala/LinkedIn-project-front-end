@@ -24,6 +24,8 @@ import InterviewPrepComp from './components/jobsComponent/InterviewPrepComp';
 import SingleUserComponent from './components/networkComponent/SingleUserComponent';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import JobSeekPage from './components/jobsComponent/JobSeekPage';
+import "react-toastify/dist/ReactToastify.css";
+
 // import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
 
 function App() {

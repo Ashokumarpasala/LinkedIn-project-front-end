@@ -3,15 +3,21 @@ import NavBar from '../NavBar'
 import { Link } from 'react-router-dom'
 import Footer from '../../Footer'
 import linkedInUsers from './LinkedInUsersData'
+import { ToastContainer, toast } from "react-toastify";
 
 
 function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
     // console.log(linkedInUsers[selecteduserId].firstName)
     // console.log(selecteduserId)
     const singleUser = linkedInUsers[selecteduserId - 1]
+    const showToastMessage = () => {
+        toast.success("User-Details Change succesfully", {
+            position: toast.POSITION.TOP_CENTER,
+        });
+      };
   return (
      <div>
-        <NavBar />
+        {/* <NavBar /> */}
 
         <div class="row mainprofiles singleUser container-xl mx-auto fs-5 " style={{position:"relative", top:"10px", zIndex:"0", overflowY:"hidden"}}>
             <div>
@@ -144,6 +150,10 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
 
             {/* right side............. */}
             <div class="col-3 ">
+            <div className="toast-container">
+
+                    <ToastContainer />
+            </div>
             <div className="card p-4 shadow">
                 <div className='d-flex  justify-content-between'>
                     <div className='fw-bold'>Profile language</div>
@@ -182,7 +192,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                             <img style={{width:"100px"}} className='rounded-circle' src="https://i.pinimg.com/1200x/64/81/22/6481225432795d8cdf48f0f85800cf66.jpg" alt="" />
                             <div>
 
-                            <h6 className='fw-bold'>
+                            <h6 className='fw-bold' onClick={showToastMessage}>
                                 <Link>
                                     {data.firstName} {data.lastName}
                                 </Link>

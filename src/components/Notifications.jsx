@@ -4,10 +4,18 @@ import { Link } from 'react-router-dom'
 import Footer from '../Footer'
 import companies from './jobsComponent/RecomdedJobsData'
 import SingleJobComponent from './jobsComponent/SingleJobComponent'
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 function Notifications() {
   const [showSinglejobPage, setShowSingleJobpage] = useState(true)
   const [selectedid, setselectedid] = useState(1)
- 
+
+  // const showToastMessage = () => {
+  //   toast.success("Success Notification !", {
+  //     position: toast.POSITION.BOTTOM_CENTER,
+  //   });
+  // };
+
   return (
     <div style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
@@ -74,6 +82,11 @@ function Notifications() {
       </>
       }
     </div>
+    // <>
+    
+    // <button onClick={showToastMessage}>Notify</button>
+    //   <ToastContainer />
+    // </>
   )
 }
 

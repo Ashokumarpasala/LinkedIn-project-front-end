@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
 import NavBar from '../NavBar'
 import Footer from '../../Footer';
+import { ToastContainer, toast } from "react-toastify";
+
 
 function JobSeekPage() {
+  const showToastMessage = () => {
+    toast.success(`Guideline changed Succesfully`, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
     const linkedInJobSeekingQuestions = [
         {
           id: 1,
@@ -88,13 +95,19 @@ function JobSeekPage() {
             </div>
                 <div class="row container-xl mx-auto my-3">
                     <div class="col-4">
-                        <div className="border rounded-4">
+                    <div className="toast-container">
+                      <ToastContainer />
+
+                    </div>
+                        <div className="border rounded-4" onClick={showToastMessage}>
                         {linkedInJobSeekingQuestions.map((data) => {
                             return (<>
                                 <div
                                     className={`border-bottom p-4 ${selectedId === data.id ? 'active' : ''}`}
                                     key={data.id}
-                                    onClick={() => setSelectedId(data.id)}
+                                    onClick={() => setSelectedId(data.id)
+                                      
+                                    }
                                     style={{
                                         cursor: "pointer",
                                         backgroundColor: selectedId === data.id ? '#e6e6e6' : 'transparent',

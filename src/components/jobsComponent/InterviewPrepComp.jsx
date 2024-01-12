@@ -2,12 +2,19 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../NavBar';
 import hrInterviewQuestions from '../jobsComponent/jobsQ&A';
 import Footer from '../../Footer';
+import { ToastContainer, toast } from "react-toastify";
+
 
 function InterviewPrepComp() {
   const [selectedQuestionId, setSelectedQuestionId] = useState(0);
 
   const handleQuestionClick = (questionId) => {
     setSelectedQuestionId(questionId);
+  };
+  const showToastMessage = () => {
+    toast.success(`Question changed Succesfully`, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
 
   useEffect(() => {
@@ -19,6 +26,10 @@ function InterviewPrepComp() {
     <div style={{ backgroundColor: "#f4f2ee" }} className='mt-5 pt-5 py-5 h-100'>
       <NavBar />
       <div className="row interviewPrep container-xl mx-auto">
+      <div className="toast-container">
+                      <ToastContainer />
+
+                    </div>
         <div className="col-4 ">
           <div className="border card">
             <div className='d-flex justify-content-between align-items-start p-3 border-bottom'>
@@ -35,7 +46,7 @@ function InterviewPrepComp() {
                 style={{ fontSize: "14px", cursor: "pointer" }}
                 onClick={() => handleQuestionClick(index)}
               >
-                <div className="p-3 d-flex justify-content-between">
+                <div className="p-3 d-flex justify-content-between" onClick={showToastMessage}>
                   <p><span>{index + 1}.</span> {' '}{data.question}</p>
                   <i className={`bi ${selectedQuestionId === index ? 'bi-check-circle-fill' : ''}`}></i>
                 </div>

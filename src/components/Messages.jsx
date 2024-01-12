@@ -3,9 +3,16 @@ import NavBar from './NavBar'
 import softwarePrograms from './messageComponent/MessageData'
 import Footer from '../Footer'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from "react-toastify";
+
 function Messages() {
   const [selectedId, setselectedId] = useState(1)
   const [selectedTab, setSelectedTab] = useState('focused');
+  const showToastMessage = () => {
+    toast.success(`Message changed Succesfully`, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
 
   // console.log(selectedId)
   const selectedMessengerData = softwarePrograms[selectedId -1] || softwarePrograms[0];
@@ -19,9 +26,13 @@ function Messages() {
   };
 
   return (
-    <div className='mt-5'>
+    <div className='mt-5' style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
-      <div class="row py-5 message container-xl mx-auto" style={{backgroundColor:"#f4f2ee"}} >
+      <div class="row py-5 message container-xl mx-auto"  >
+      <div className="toast-container">
+                      <ToastContainer />
+
+                    </div>
         <div class="col-9 " >
           <div className="">
              <div class="row border rounded-4 bg-white">
@@ -29,7 +40,7 @@ function Messages() {
                    <div className=' border-bottom'><h4 className='p-3'>Messaging</h4></div>
                    <input type="text" name="search"  className='fs-5 my-3 rounded-3 navbarinput navinput navbaronly w-100' placeholder="search" />
 
-                   <div className='d-flex flex-wrap ' style={{ cursor: "pointer" }}>
+                   <div className='d-flex flex-wrap '  style={{ cursor: "pointer" }}>
                         <h4
                           className={`w-50 p-3 text-center ${selectedTab === 'focused' ? 'active text-success border-5' : ''}`}
                           onClick={() => handleClick('focused')}
@@ -45,7 +56,7 @@ function Messages() {
                       </div>
                     <div className='my-3'>
                     {selectedTab === 'focused' ? 
-                      <>
+                      <div onClick={showToastMessage}>
                         {
                           softwarePrograms.map((data) => {
                             return (<>
@@ -65,7 +76,7 @@ function Messages() {
                           })
                         }
 
-                      </>   : <>
+                      </div>   : <>
                         <div className='text-center p-5'>
                           <img className='img-fluid w-100' src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-web-design_516790-900.jpg?w=2000" alt="" />
                           <h2 className='fw-bold'>No Messages Yet</h2>

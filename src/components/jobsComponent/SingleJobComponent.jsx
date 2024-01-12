@@ -3,11 +3,18 @@ import compaines from './RecomdedJobsData'
 import { Link } from 'react-router-dom'
 import Footer from '../../Footer'
 import companies from './RecomdedJobsData'
+import { ToastContainer, toast } from "react-toastify";
+
     function SingleJobComponent({singlejob, setsinglejob, handleId, selectedId, showmyApplied, setShowApplied,showSinglejobPage, selectedid,setShowSingleJobpage}) {
       // const [selectedid, setselectedid] = useState(null) 
       const jobData =  compaines[selectedId - 1] || compaines[selectedid -1] 
         const [currentPage, setCurrentPage] = useState(1);
         const itemsPerPage = 4;
+        const showToastMessage = () => {
+          toast.success(`job profile changed Succesfully`, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        };
 
        
       
@@ -26,13 +33,17 @@ import companies from './RecomdedJobsData'
     
            
             <div class="row  pb-5" >
+            <div className="toast-container">
+                      <ToastContainer />
+
+                    </div>
                 <div class="col-4">
                     <div className="card rounded-4" style={{height:"auto"}}>
                     <div className='bg-primary px-4  py-4 text-white fw-bold fs-5'>
                         <h4>Jobs based on your profile</h4>
                         <p>24 results</p>
                     </div>
-                    <div className='my-3'>
+                    <div className='my-3' onClick={showToastMessage}>
                     {paginatedCompanies.map((data) => {
                         return(<>
                         <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
