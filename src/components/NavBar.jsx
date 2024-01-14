@@ -110,6 +110,11 @@ const NavBar = () => {
                 <span><img src={downarrow} className="mx-2" style={{ width: '15px' }} alt="" /></span>
               </div>
             </div>
+
+              {/* <div className=" text-center w-75 fs-6">
+               <Link>Learn New Skills Try Premimum Free</Link>
+              </div> */}
+
           </div>
         </nav>
         </div>

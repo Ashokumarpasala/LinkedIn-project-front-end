@@ -27,7 +27,7 @@ function Network() {
       user ? 
       (<div class="row container-xl network mx-auto p-3">
         <div class="col-3 ">
-        <div class="card">
+        <div class="card border">
           <ul class="list-group list-group-light">
             <li class="list-group-item px-3">
               <p className='fw-bold'>Manage my network</p>
@@ -86,7 +86,7 @@ function Network() {
         </div>
         </div>
         <div class="col-9 ">
-          <div className="card pending">
+          <div className="card border pending">
             {/* manage card......... */}
             <div className="d-flex justify-content-between mx-3 mt-3 align-items-center">
             <p>No pending invitations</p>
@@ -104,7 +104,7 @@ function Network() {
               {
                 linkedInUsers.map((user) => {
                   return(
-                    <div class="card  text-start shadow m-3 h-75" key={user.id}  style={{width:"250px", cursor:"pointer"}} onClick={() => {
+                    <div class="card border  text-start shadow m-3 h-75" key={user.id}  style={{width:"250px", cursor:"pointer"}} onClick={() => {
                       handleUserClick(user.id)
                       return (
                         setUser(!user)

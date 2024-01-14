@@ -107,8 +107,7 @@ function Jobs() {
                 return(<>
                 <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)} >
                   <div className='d-flex'>
-
-                  <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183937/denside-logo-design-d-letter-logo-concept-by-abdul-gaffar-dribbble.png" alt="" />
+                  <img style={{width:"100px", height:"70px", objectFit:"contain"}} className='img-fluid' src={data.logoImage} alt="" />
                   <div className='mx-3' style={{fontSize:"12px"}}>
  
                   <h6 className='fw-bold'>
@@ -141,7 +140,7 @@ function Jobs() {
                 <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
                   <div className='d-flex'>
 
-                  <img style={{width:"50px", height:"50px"}} src="https://img.freepik.com/free-vector/creative-gradient-laptop-logo-template_23-2149010269.jpg?size=338&ext=jpg&ga=GA1.1.1222169770.1704326400&semt=ais" alt="" />
+                  <img style={{width:"100px", height:"70px", objectFit:"contain"}} className='img-fluid' src={data.logoImage} alt="" />
                   <div className='mx-3' style={{fontSize:"12px"}}>
  
                   <h6 className='fw-bold'>
@@ -249,7 +248,7 @@ function Jobs() {
                 <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
                   <div className='d-flex'>
 
-                  <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183931/comtug-logo-design-combination-mark-logo-unused-by-md-zahid-hasan-dribbble.png" alt="" />
+                  <img style={{width:"100px", height:"70px", objectFit:"contain"}} className='img-fluid' src={data.logoImage} alt="" />
                   <div className='mx-3' style={{fontSize:"12px"}}>
  
                   <h6 className='fw-bold'>

@@ -89,7 +89,7 @@ function Myjobs() {
                          <div className='d-flex p-2' onClick={() => handleId(data.id)}>
                             <div>
 
-                                <img style={{width:"100px"}} src="https://img.freepik.com/premium-vector/creative-letter-s-logotype-abstract-hexagon-with-pixel-technology-logo-design-creative-dynamic-round-logotype-connection-symbol-design_144543-1685.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704412800&semt=ais" alt="" />
+                            <img style={{width:"100px", height:"70px", objectFit:"contain"}} className='img-fluid' src={data.logoImage} alt="" />
                             </div>
                             <div className='d-flex justify-content-between border-bottom  w-100'>
                                  <div style={{fontSize:"12px"}} className='p-2'>
@@ -158,13 +158,15 @@ function Myjobs() {
            
             <div class="col-12">
              <div className="card p-3 py-4 px-4"style={{height:"85vh", overflowY:"scroll"}}>
-              <img src="https://i.ytimg.com/vi/BOqibST7QWs/maxresdefault.jpg" style={{height:"300px", objectFit:"cover"}} alt="" />
+             <img style={{height:"300px", objectFit:"contain"}} src={jobData.logoImage} alt="" />
                 <div className='d-flex justify-content-between mt-5'>
                     <h1 className='fw-bold'>{jobData.position}</h1>
                     <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="mx-4 bi bi-arrow-90deg-right" viewBox="0 0 16 16">
+                    <div title='GO Back'>
+                    <svg xmlns="http://www.w3.org/2000/svg" onClick={handletoggles} width="30" style={{cursor:"pointer"}} height="30" fill="currentColor" class="mx-4 bi bi-arrow-90deg-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M14.854 4.854a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 4H3.5A2.5 2.5 0 0 0 1 6.5v8a.5.5 0 0 0 1 0v-8A1.5 1.5 0 0 1 3.5 5h9.793l-3.147 3.146a.5.5 0 0 0 .708.708z"/>
                         </svg>
+                    </div>
                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                         <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
                         </svg>

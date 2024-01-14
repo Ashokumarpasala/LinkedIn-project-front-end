@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 function JobSeekPage() {
   const showToastMessage = () => {
     toast.success(`Guideline changed Succesfully`, {
-      position: toast.POSITION.TOP_RIGHT,
+      position: toast.POSITION.TOP_CENTER,
     });
   };
     const linkedInJobSeekingQuestions = [
@@ -95,9 +95,8 @@ function JobSeekPage() {
             </div>
                 <div class="row container-xl mx-auto my-3">
                     <div class="col-4">
-                    <div className="toast-container">
+                    <div className="">
                       <ToastContainer />
-
                     </div>
                         <div className="border rounded-4" onClick={showToastMessage}>
                         {linkedInJobSeekingQuestions.map((data) => {

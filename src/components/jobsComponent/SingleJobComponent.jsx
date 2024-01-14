@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
         const itemsPerPage = 4;
         const showToastMessage = () => {
           toast.success(`job profile changed Succesfully`, {
-            position: toast.POSITION.TOP_RIGHT,
+            position: toast.POSITION.TOP_CENTER,
           });
         };
 
@@ -33,7 +33,7 @@ import { ToastContainer, toast } from "react-toastify";
     
            
             <div class="row  pb-5" >
-            <div className="toast-container">
+            <div className="">
                       <ToastContainer />
 
                     </div>
@@ -43,14 +43,14 @@ import { ToastContainer, toast } from "react-toastify";
                         <h4>Jobs based on your profile</h4>
                         <p>24 results</p>
                     </div>
-                    <div className='my-3' onClick={showToastMessage}>
+                    <div className='my-3' >
                     {paginatedCompanies.map((data) => {
                         return(<>
                         <div className=" rounded-4 d-flex justify-content-between  m-1 p-2" key={data.name} onClick={() => handleId(data.id)}>
                         <div className='d-flex'>
 
                         <img style={{width:"70px"}} src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/11/09183937/denside-logo-design-d-letter-logo-concept-by-abdul-gaffar-dribbble.png" alt="" />
-                        <div className='mx-3' style={{fontSize:"12px"}}>
+                        <div className='mx-3' style={{fontSize:"12px"}} onClick={showToastMessage}>
         
                         <h6 className='fw-bold'>
                             <Link >
@@ -76,7 +76,7 @@ import { ToastContainer, toast } from "react-toastify";
               className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
               aria-current="page"
             >
-              <span className="page-link" onClick={() => handlePageChange(index + 1)}>
+              <span className="page-link" style={{cursor:"pointer"}} onClick={() => handlePageChange(index + 1)}>
                 {index + 1}
               </span>
             </li>
@@ -90,7 +90,9 @@ import { ToastContainer, toast } from "react-toastify";
                 </div>
                 <div class="col-8">
                  <div className="card p-3 py-4 px-4"style={{height:"85vh", overflowY:"scroll"}}>
-                    <div className='d-flex justify-content-between'>
+                 <img className='img-fluid' src={jobData.logoImage} alt="" />
+
+                    <div className='d-flex justify-content-between mt-5'>
                         <h1 className='fw-bold'>{jobData.position}</h1>
                         <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="mx-4 bi bi-arrow-90deg-right" viewBox="0 0 16 16">

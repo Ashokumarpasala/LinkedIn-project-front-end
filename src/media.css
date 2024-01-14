@@ -253,6 +253,31 @@
         font-size: 35px !important;
         width: 100% !important;
     }
+    .newspage .row .col-9 .card .inside {
+        margin: 0px !important;
+        padding: 10px !important;
+    }
+    .newspage .row .col-9 .card {
+        height: 100% !important;
+    }
+    .newspage .row .col-9 .card .inside .main {
+        width: 100% !important;
+        font-size: 10px;
+        flex-direction: column;
+    }
+    .newspage .row .col-9 .card .d-flex img,
+    .newspage .row .col-9 .card .d-flex .btn {
+        /* flex-direction: column !important; */
+        width: 100% !important;
+        
+    }
+    .addcomment {
+        display: none !important;
+    }
+    .socialicons {
+        flex-wrap: wrap !important;
+        font-size: 12px !important;
+    }
      
   }
   
@@ -262,6 +287,10 @@
     body {
         height: auto !important;
         padding-bottom: 50px !important;
+    }
+    .newspage .row .col-9 {
+        height: 100% !important;
+        width: 100% !important;
     }
     .singleJobComponent .row {
         flex-direction: column-reverse;

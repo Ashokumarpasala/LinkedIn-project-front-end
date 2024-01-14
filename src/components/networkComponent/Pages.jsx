@@ -26,13 +26,14 @@ function Pages() {
                 {itCompanies.map((data) => (
                   <div className='d-flex justify-content-between my-3 border-bottom p-2' key={data.id} onClick={() => handleID(data.id)}>
                     <div className='d-flex pageCard lh-base' style={{ cursor: "pointer" }}>
-                      <img className='mx-1' style={{ width: "80px", height: "50px" }} src="https://www.closingthegap.com/wp-content/uploads/2020/05/generic-logo.png" alt="image" />
-                      <div>
+                      <img className='mx-1 img-fluid rounded-5' style={{width:"100px", height:"80px"}} src={data.logoUrl} alt="image" />
+                      <div className='mx-3'>
                         <h5 className='fw-bold'>
                           <Link>
                           {data.name}
                           </Link>
                           </h5>
+                        <div className='text-secondary'>{data.revenue}</div>
                         <div className='text-secondary'>{data.followers}</div>
                       </div>
                     </div>

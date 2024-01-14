@@ -18,6 +18,9 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
   return (
      <div>
         {/* <NavBar /> */}
+        <div className="">
+            <ToastContainer />
+        </div>
 
         <div class="row mainprofiles singleUser container-xl mx-auto fs-5 " style={{position:"relative", top:"10px", zIndex:"0", overflowY:"hidden"}}>
             <div>
@@ -26,7 +29,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
             </div>
             <div class="  col-9">
                 {/* main card.......... */}
-                <div className={`card my-2 shadow rounded-5`}>
+                <div className={`card border my-2 shadow rounded-5`}>
                     <div className=''   style={{position:"absolute", left:"93%", top:"20px", cursor:"pointer"}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="blue"  class="bi bi-camera-fill  bg-white border p-2 rounded-circle" viewBox="0 0 16 16">
                     <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
@@ -90,7 +93,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                 </div>
                 </div>
                 {/* about card........... */}
-                <div className="card p-4 my-2 shadow ">
+                <div className="card p-4 my-2 shadow border">
 
                     <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>About</h5>
@@ -110,7 +113,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                     </div>
                 </div>
                 {/* experience card......... */}
-                <div className="card p-4 shadow">
+                <div className="card p-4 shadow border">
                 <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>Experience</h5>
                     </div>
@@ -129,7 +132,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                     }
                 </div>
                 {/* education card......... */}
-                <div className="card p-4 my-2 shadow">
+                <div className="card p-4 my-2 shadow border">
                 <div className='d-flex my-3  justify-content-between'>
                     <h5 className='fw-bold'>Activities</h5>
                     <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>     
@@ -149,12 +152,9 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
             </div>
 
             {/* right side............. */}
+            
             <div class="col-3 ">
-            <div className="toast-container">
-
-                    <ToastContainer />
-            </div>
-            <div className="card p-4 shadow">
+            <div className="card p-4 shadow border">
                 <div className='d-flex  justify-content-between'>
                     <div className='fw-bold'>Profile language</div>
                     <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
@@ -172,7 +172,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                     </div>
                 </div>
                 {/* user card...... */}
-                <div className="card p-3 text-center my-2 shadow">
+                <div className="card border p-3 text-center my-2 shadow">
                     <p>Get the latest jobs and industry news</p>
                     <div className="d-flex align-self-center my-3">
                     <div className='penhover  d-flex align-items-center justify-content-center ' style={{width:"50px", height:"50px"}}>
@@ -183,7 +183,7 @@ function SingleUserComponent({user, setUser, selecteduserId, handleUserClick}) {
                     <button className='btn btn-primary fw-bold'>Follow</button>
                 </div>
                 {/* people viewed...... */}
-                <div className="card p-3 my-2">
+                <div className="card border p-3 my-2">
                 <p>People Aslo Viewed</p> 
                 {
                     linkedInUsers.slice(15, 20).map((data) => {

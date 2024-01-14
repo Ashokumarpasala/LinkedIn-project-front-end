@@ -56,9 +56,7 @@
 /* toast.css */
 .toast-container {
   position: fixed;
-  top: 10%;
-  left: 72.5%;
-  transform: translate(-50%, -50%);
+  top: 30%;
   z-index: 9999; /* Adjust the z-index as needed */
 }
 

@@ -1,6 +1,7 @@
 
 const companies = [
     {
+      logoImage:"https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/102020/logo.png?_yoy9w6Odc3ZcujdWnFOI7Tv.JqxzkZF&itok=tZFwmDM_",
       id: 1,
       name: 'Wisedoc, Inc.',
       position: 'Frontend Developer',
@@ -47,6 +48,7 @@ const companies = [
     // Add 19 more companies here...
   
     {
+      logoImage:"https://techgeniussolution.com/img/logo/logo2.png",
       id: 2,
       name: 'TechGenius Solutions',
       position: 'Full Stack Developer',
@@ -126,6 +128,7 @@ const companies = [
       aboutPerks: ['Competitive salary', 'Flexible work hours', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://innovatexconz.files.wordpress.com/2021/05/cropped-cropped-cropped-1234-1.png",
       id: 3,
       name: 'InnovateTech Labs',
       position: 'Data Scientist',
@@ -166,6 +169,7 @@ const companies = [
       aboutPerks: ['Remote work options', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://codecrafterspune.com/assets/img/codecrafters.jpg",
       id: 4,
       name: 'CodeCrafters Ltd.',
       position: 'UX/UI Designer',
@@ -211,6 +215,7 @@ const companies = [
     },
     // Add 16 more companies here...
     {
+      logoImage:"https://lesvallons.com/images/2042636.png",
       id: 5,
       name: 'WebMasters Co.',
       position: 'SEO Specialist',
@@ -255,6 +260,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://www.softinnovationbd.com/assets/softinnovation_logo.f6eafe31.png",
       id: 6,
       name: 'SoftInnovate Solutions',
       position: 'Software Engineer',
@@ -300,6 +306,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://www.ecotech-innovation.fr/data/themes/ecotech-innovation/images/xlogo.png.pagespeed.ic.q5PRubm4VT.png",
       id: 7,
       name: 'EcoTech Innovations',
       position: 'Environmental Analyst',
@@ -344,6 +351,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://images.squarespace-cdn.com/content/v1/5b0dfd31372b967956a2fc47/1527643532917-HTXEP4SFU6VT894X63DR/fintech+logo+%281%29.png",
       id: 8,
       name: 'FinTech Solutions Ltd.',
       position: 'Financial Analyst',
@@ -389,6 +397,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://www.biospectrumasia.com/uploads/articles/medtechinnovator_accelerator_social-17002.png",
       id: 9,
       name: 'MedTech Innovators',
       position: 'Biomedical Engineer',
@@ -433,6 +442,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://fts.bio/wp-content/uploads/2023/01/fts-logo.jpeg",
       id: 10,
       name: 'FoodieTech Solutions',
       position: 'Mobile App Developer',
@@ -477,6 +487,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://www.onshelf.co.za/wp-content/uploads/2019/07/AI-Innovations-in-the-World-of-Learning-and-Disability-1-1.jpg",
       id: 11,
       name: 'AI Innovations Co.',
       position: 'Machine Learning Engineer',
@@ -521,6 +532,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://media.licdn.com/dms/image/C560BAQHuSBi3DvXrOQ/company-logo_200_200/0/1630664189727/energy_innovation_network_logo?e=2147483647&v=beta&t=SqO7-MiRkSinOYDXF4OX-AEG7lsWg94_Ag5dEgP0KDE",
       id: 12,
       name: 'GreenEnergy Innovate',
       position: 'Renewable Energy Analyst',
@@ -564,6 +576,7 @@ const companies = [
       aboutPerks: ['Remote work options', 'Professional development opportunities', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://commercialisation.esa.int/wp-content/uploads/2023/02/BRE-logo-Yellow.jpg",
       id: 13,
       name: 'SpaceTech Explorations',
       position: 'Aerospace Engineer',
@@ -607,6 +620,7 @@ const companies = [
       aboutPerks: ['On-site work environment', 'Competitive salary', 'Health and wellness programs'],
     },
     {
+      logoImage:"https://robotechsolutions.ae/wp-content/uploads/2019/02/cropped-RS-logo-website-1.png",
       id: 14,
       name: 'RoboTech Solutions',
       position: 'Robotics Engineer',
@@ -651,6 +665,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://hlttsolutions.com/wp-content/uploads/2023/01/HealthTech-Solutions-RGB.png",
       id: 15,
       name: 'HealthTech Solutions',
       position: 'Health Informatics Specialist',
@@ -695,6 +710,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://euhubs4data.eu/wp-content/uploads/2021/11/Logo-CIH.png",
       id: 16,
       name: 'CyberSec Innovations',
       position: 'Cybersecurity Analyst',
@@ -727,6 +743,7 @@ const companies = [
       aboutPerks: ['Remote work flexibility', 'Competitive salary', 'Professional development opportunities'],
     },
     {
+      logoImage:"https://www.shutterstock.com/image-vector/blockchain-logo-icon-vector-isolated-600nw-1522458983.jpg",
       id: 17,
       name: 'Blockchain Innovators',
       position: 'Blockchain Developer',
@@ -771,6 +788,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://images.squarespace-cdn.com/content/v1/6516b0c4cdba01348b741c2f/186955d8-f269-4482-9297-f71d34f03a4e/EdTech+Innovate+London+24+logo+medium+colour+no+date.png",
       id: 18,
       name: 'EdTech Innovate',
       position: 'Educational Technologist',
@@ -815,6 +833,7 @@ const companies = [
     },
   
     {
+      logoImage:"https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/04575f91fefe7dfd330c",
       id: 19,
       name: 'CleanTech Solutions',
       position: 'Environmental Engineer',

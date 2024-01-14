@@ -10,7 +10,7 @@ function Messages() {
   const [selectedTab, setSelectedTab] = useState('focused');
   const showToastMessage = () => {
     toast.success(`Message changed Succesfully`, {
-      position: toast.POSITION.TOP_RIGHT,
+      position: toast.POSITION.TOP_CENTER,
     });
   };
 
@@ -29,7 +29,7 @@ function Messages() {
     <div className='mt-5' style={{backgroundColor:"#f4f2ee"}}>
       <NavBar />
       <div class="row py-5 message container-xl mx-auto"  >
-      <div className="toast-container">
+      <div className="">
                       <ToastContainer />
 
                     </div>
