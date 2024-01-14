@@ -278,10 +278,12 @@ function Jobs() {
             <p className='fw-bold fs-6'>Job seeker guidance</p>
             <div>Recommended based on your activity</div>
             </div>
+            <Link to='/Job-seeker-guidance/jobs'>
             <div className='d-flex border align-items-center py-2 p-2 fs-6' style={{backgroundColor:"#f8fafd"}}>
               <p>i want improve my resume</p>
               <img src="https://image.pngaaa.com/928/1143928-small.png" style={{width:"80px", height:"80px"}} alt="" />
             </div>
+          </Link>
             <p className='p-2'>Explore our curated guide of expert-led courses, such as how to improve your resume and grow your network, to help you land your next opportunity.</p>
              <Link className='fw-bold fs-5 p-3'>show more</Link>
           </div>

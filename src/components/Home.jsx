@@ -617,7 +617,7 @@ function Home({users}) {
             </div>
             {/* sticky card........... */}
 
-            <div ref={stickyCardRef} className={` ${isSticky ? 'sticky-top' : ''}`}>
+            <div ref={stickyCardRef} className={` ${isSticky ? 'sticky-top' : ''}`} >
             <div className='card  p-4 text-center my-2 border'>
               <p>Get the latest jobs and industry news</p>
               <div className="d-flex align-self-center">

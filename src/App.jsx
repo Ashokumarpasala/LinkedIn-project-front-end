@@ -25,6 +25,7 @@ import SingleUserComponent from './components/networkComponent/SingleUserCompone
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import JobSeekPage from './components/jobsComponent/JobSeekPage';
 import "react-toastify/dist/ReactToastify.css";
+import About from './components/footerComponents/About';
 
 // import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
 
@@ -81,6 +82,7 @@ function App() {
           <Route exact path='/myjobs/jobs'  element={<Myjobs />} />
           <Route exact path='/interview-preparation/jobs'  element={<InterviewPrepComp />} />
           <Route exact path='/Job-seeker-guidance/jobs'  element={<JobSeekPage />} />
+          <Route exact path='/about'  element={<About />} />
           {/* <Route exact path='/single-user-profile/netword-page'  element={<SingleUserComponent />} /> */}
         </Routes>
       </Router>

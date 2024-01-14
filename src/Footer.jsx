@@ -1,11 +1,11 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <div>
       <div className="text-center   ">
         <div className="d-flex flex-wrap justify-content-around m-3 p-2 text-center" style={{cursor:"pointer"}}>
-        <p className='mx-2'>About</p>
+        <p className='mx-2'><Link to='/about'>About</Link></p>
         <p className='mx-2'>Accessibility</p>
         <p className='mx-2'>Help Center</p>
         <p className='mx-2'>Privacy &amp; Terms</p>
