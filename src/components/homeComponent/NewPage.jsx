@@ -26,8 +26,8 @@ function NewPage({newsId, setnewspageShow, newspageShow, setNewsId}) {
       <ToastContainer />
     </div>
     <div>
-      <NavBar />
-      <div className="container-xl mx-auto newspage">
+      {/* <NavBar /> */}
+      <div className="container-xl mx-auto newspage fs-5">
 
       <div class="row">
             <div class="col-9">
@@ -100,34 +100,37 @@ function NewPage({newsId, setnewspageShow, newspageShow, setNewsId}) {
               </div>
               <div>
         {showAll ? (
-          <div className=''>
+          <ul className=''>
           {
 
             leftArryData.map((data) => (
-              <div  key={data.id} onClick={() => setNewsId(data.id)}  style={{cursor:"pointer"}} >
-              <li className='fw-bold fs-6' onClick={showToastMessage}><Link>{data.headline}</Link></li>
-              <p className='text-secondary mx-4' style={{fontSize:"14px"}}>{data.time}</p>
-            </div>
+              <li  key={data.id} onClick={() => setNewsId(data.id)}  style={{cursor:"pointer"}} >
+              <div className='fw-bold fs-6' onClick={showToastMessage}><Link>{data.headline}</Link></div>
+              <p className='text-secondary' style={{fontSize:"14px"}}>{data.time}</p>
+            </li>
           )
           )
         }
               <button onClick={() => setShowAll(!showAll)} className='btn btn-secondary'>
                 Show less
               </button>
-          </div>
+          </ul>
         ) : (
           <>
+          <ul>
+
             {leftArryData.slice(0, 4).map((data) => (
-              <div  key={data.id} onClick={() => setNewsId(data.id)} style={{cursor:"pointer"}} >
-              <li className='fw-bold fs-6' onClick={showToastMessage}><Link>{data.headline}</Link></li>
-                <p className='text-secondary mx-4' style={{fontSize:"14px"}}>{data.time}</p>
-              </div>
+              <li  key={data.id} onClick={() => setNewsId(data.id)} style={{cursor:"pointer"}} >
+              <div className='fw-bold fs-6' onClick={showToastMessage}><Link>{data.headline}</Link></div>
+                <p className='text-secondary' style={{fontSize:"14px"}}>{data.time}</p>
+              </li>
             ))}
             {leftArryData.length > 5 && (
               <button onClick={() => setShowAll(!showAll)} className='btn btn-secondary'>
                 Show More
               </button>
             )}
+            </ul>
           </>
         )}
       </div>

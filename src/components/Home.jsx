@@ -597,13 +597,17 @@ function Home({users}) {
           {
 
             leftArryData.map((data) => (
-              <div  key={data.id} onClick={() => {
+              <ul  key={data.id} onClick={() => {
                 setNewsId(data.id)
                 setnewspageShow(!newspageShow)
+                
               }} style={{cursor:"pointer"}} >
-              <li className='fw-bold fs-6'><Link>{data.headline}</Link></li>
-              <p className='text-secondary mx-4' style={{fontSize:"14px"}}>{data.time}</p>
-            </div>
+                <li>
+
+              <div className='fw-bold fs-6 '><Link>{data.headline}</Link></div>
+              <div className='text-secondary' style={{fontSize:"14px"}}>{data.time}</div>
+                </li>
+            </ul>
           )
           )
         }
@@ -614,13 +618,16 @@ function Home({users}) {
         ) : (
           <>
             {leftArryData.slice(0, 4).map((data) => (
-              <div  key={data.id} onClick={() => {
+              <ul  key={data.id} onClick={() => {
                 setNewsId(data.id)
                 setnewspageShow(!newspageShow)
               }} style={{cursor:"pointer"}} >
-              <li className='fw-bold fs-6'><Link>{data.headline}</Link></li>
-                <p className='text-secondary mx-4' style={{fontSize:"14px"}}>{data.time}</p>
-              </div>
+                <li>
+
+              <div className='fw-bold fs-6'><Link>{data.headline}</Link></div>
+                <div className='text-secondary ' style={{fontSize:"14px"}}>{data.time}</div>
+                </li>
+              </ul>
             ))}
             {leftArryData.length > 5 && (
               <button onClick={handleReadMore} className='btn btn-secondary'>

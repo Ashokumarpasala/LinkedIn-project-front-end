@@ -82,21 +82,19 @@ function Jobs() {
         {/* center card............... */}
         <div class="col-7">
           <div class="card">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <div className="d-flex justify-content-between mt-3">
-                  <h5 className='fw-bold'>Recent job searches</h5>
-                  <p>Clear</p>
-                </div>
-                  <p>Front-End Developer <br />india Remote Search jobs</p>
-              </li>
-              <li class="list-group-item">
-                <p>infanion <br />india</p>
-              </li>
-              <li class="list-group-item">
-                <p>Freelance Jobs as frontend developer <br />india</p>
-              </li>
-            </ul>
+            <div className='p-3'>
+
+           {
+             compaines.slice(7, 15).map((data) => {
+               return (<>
+               <button className='btn btn-outline-primary m-2 rounded-pill fw-bold' key={data.id} onClick={() => {
+               handleId(data.id)
+               setsinglejob(!singlejob)
+               }}><i class="bi bi-search mx-2"></i>{data.position}</button>
+              </>)
+            })
+          }
+          </div>
           </div>
           {/* recommanded jobs........ */}
           <div className="card p-3 mt-3">
