@@ -46,7 +46,7 @@ function Notifications() {
                   }} >
                   <div className="d-flex justify-content-between">
                     <div className='d-flex w-75'>
-                    <img className='img-fluid mx-3 rounded-4' style={{width:"75px", height:"50px"}} src="https://miro.medium.com/v2/resize:fit:880/0*SQy-aKEXu_WSoRd-.png" alt="" />
+                    <img className='img-fluid mx-3 rounded-4' style={{width:"75px", height:"50px", objectFit:"contain"}} src={data.logoImage} alt="" />
                     <div style={{cursor:"pointer"}}>{data.name} - {data.position} - {data.responsibilities[1]}</div>
                     </div>
                     <div><i class="bi bi-three-dots"></i></div>

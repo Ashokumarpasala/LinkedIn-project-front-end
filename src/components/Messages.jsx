@@ -58,7 +58,7 @@ function Messages() {
                     {selectedTab === 'focused' ? 
                       <div onClick={showToastMessage}>
                         {
-                          softwarePrograms.map((data) => {
+                          softwarePrograms.slice(2, 8).map((data) => {
                             return (<>
                             {/* ...user active */}
                               <div style={selectedId === data.id ? bgcolor : {}} className={`d-flex p-2 `} key={data.id}  onClick={() => setselectedId(data.id)}>

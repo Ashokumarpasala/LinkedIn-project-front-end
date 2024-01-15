@@ -35,8 +35,8 @@ function NewPage({newsId, setnewspageShow, newspageShow, setNewsId}) {
                  <img className='' style={{height:"700px", height:"500px", objectFit:"cover"}} src={newsArry.mainImage} alt="" />
                  <div className="border inside rounded-5 m-5 p-3" style={{backgroundColor:"#edf3f8", position:"relative", top:"-150px"}}>
                     <div className="d-flex main justify-content-between">
-                        <h3 className='fw-bold'>{newsArry.headline}</h3>
-                        <div className='d-flex'>
+                        <h3 className='fw-bold w-50'>{newsArry.headline}</h3>
+                        <div className='d-flex align-items-start'>
                         <button className='btn btn-primary  rounded-pill'>share</button>
                         <button className='btn btn-primary mx-2 rounded-pill' onClick={() => setnewspageShow(!newspageShow)}><i class="bi bi-arrow-90deg-right"></i>go back</button>
                         </div>
