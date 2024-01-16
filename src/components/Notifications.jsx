@@ -32,8 +32,8 @@ function Notifications() {
           <div className="card border">
             <div className="d-flex p-3">
             <button className='btn btn-success rounded-pill px-3'>All</button>
-            <button className='btn btn-outline-secondary fw-bld mx-3 rounded-pill px-3'>my-posts</button>
-            <button className='btn btn-outline-secondary fw-bld mx-3 rounded-pill px-3'>mention</button>
+            <button className='btn btn-success fw-bld mx-3 rounded-pill px-3'>my-posts</button>
+            <button className='btn btn-success fw-bld mx-3 rounded-pill px-3'>mention</button>
             </div>
           </div>
           <div className="card border mt-3">

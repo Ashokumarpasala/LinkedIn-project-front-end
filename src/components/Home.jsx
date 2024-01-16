@@ -586,7 +586,7 @@ function Home({users}) {
             </div>
           </div>
           <div class="col-3">
-            <div className="card p-3 shadow border">
+            <div className="card p-3 shadow border" >
               <div className="d-flex justify-content-between fw-bold">
                 <p>LinkedIn News</p>
                 <h6> <span class="badge bg-dark">i</span></h6>
@@ -595,13 +595,12 @@ function Home({users}) {
         {showAll ? (
           <div className=''>
           {
-
             leftArryData.map((data) => (
               <ul  key={data.id} onClick={() => {
                 setNewsId(data.id)
                 setnewspageShow(!newspageShow)
                 
-              }} style={{cursor:"pointer"}} >
+              }} style={{cursor:"pointer",}} >
                 <li>
 
               <div className='fw-bold fs-6 '><Link>{data.headline}</Link></div>
