@@ -190,9 +190,11 @@ const NavBar = () => {
         profileCard ? 
         (<div className='scale-in-top' style={{position:"fixed", top:"10px", left:"55%",zIndex:"1",  }} >
           <div class="card border shadow">
-            <div className='d-flex align-items-center'>
-                <img src={profile} class="" style={{width:"75px"}} alt="..." />
-                <div className='fw-bold pt-2 mx-2' style={{fontSize:"10px"}}>
+            <div className='d-flex align-items-center p-3'>
+            <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "60px",
+        
+        }}
+        alt="Avatar" />                <div className='fw-bold pt-2 mx-2' style={{fontSize:"10px"}}>
                       <Link to='/MainProfile'>
                         <h6 className='fw-bold'>Ashok Kumar Pasala</h6>
                         <div className=''>Worked in Think Core Technologies </div>
@@ -276,7 +278,7 @@ const NavBar = () => {
     
     {
         businesscard ? (
-               <div className={`card border slide-in-right  p-4`}  style={{position:"absolute", top:"10px", left:"70%", zIndex:"1", cursor:"pointer", overflow:"hidden" }} >
+               <div className={`card border slide-in-right  p-4`}  style={{position:"fixed", top:"10px", left:"70%", zIndex:"1", cursor:"pointer" }} >
                   <div className='d-flex justify-content-between'>
                     <h3>For Business</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" className='' width="30" height="30" onClick={() => setbusinesscard(!businesscard)} fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">

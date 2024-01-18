@@ -23,6 +23,7 @@ function Home({users}) {
   // console.log(newsId)
   // console.log(newspageShow)
   const randomnumber = (Math.floor(Math.random() * 19) + 1)
+  console.log(users)
 
  
 
@@ -169,22 +170,28 @@ function Home({users}) {
           <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "100px",
           position:"absolute",
           top:"30px",
-          right:"100px"  
+          right:"90px"  
         }}
         alt="Avatar" />
             <img className='' style={{height:"100px"}} src="https://img.freepik.com/free-photo/gray-smooth-textured-paper-background_53876-101833.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1702512000&semt=ais" class="card-img-top" alt="..."/>
         </Link>
         {
-          users.slice(0, 1).map((user) => {
+          users.length >= 1 ? (users.slice(0, 1).map((user) => {
             return (
             <div class="card-body text-center my-2 fw-bold">
               <Link to='MainProfile'>
                 <p class="card-title fs-5"> {user.firstName } {user.lastName} {user.additionalName}</p>
               </Link>
-              <p class="card-text" style={{fontSize:"14px"}}>Worked in {user.industry} sector as a {user.headline}</p>
+              <p class="card-text" style={{fontSize:"12px"}}>Worked in {user.industry} sector as a {user.headline}</p>
             </div>
             )
-          })
+          })) : 
+          <div class="card-body text-center fw-bold">
+              <Link to='MainProfile'>
+                <div class="card-title fs-5">Ashok Kumar Pasala</div>
+              </Link>
+              <div class="card-text" style={{fontSize:"12px"}}>Worked in Think core as a Front-end Developer</div>
+            </div>
         }
             <hr />
             <ul class="list-group homelist list-group-flush fw-bold" >
