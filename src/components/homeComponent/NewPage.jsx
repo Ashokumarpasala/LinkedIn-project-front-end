@@ -38,7 +38,7 @@ function NewPage({newsId, setnewspageShow, newspageShow, setNewsId}) {
                         <h3 className='fw-bold w-50'>{newsArry.headline}</h3>
                         <div className='d-flex align-items-start'>
                         <button className='btn btn-primary  rounded-pill'>share</button>
-                        <button className='btn btn-primary mx-2 rounded-pill' onClick={() => setnewspageShow(!newspageShow)}><i class="bi bi-arrow-90deg-right"></i>go back</button>
+                        <button className='btn btn-primary mx-2 rounded-pill' onClick={() => setnewspageShow(!newspageShow)}>Go Back<i class="bi bi-arrow-90deg-right mx-2"></i></button>
                         </div>
                     </div>
                     <div>

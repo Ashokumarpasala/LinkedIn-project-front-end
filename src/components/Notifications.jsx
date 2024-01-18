@@ -25,7 +25,7 @@ function Notifications() {
         <div class="col-3">
           <div className="card p-3 border">
             <h5>Manage your notifications</h5>
-            <p><Link>view settings</Link></p>
+            <p><Link to='/privacy-&-settings-page'>view settings</Link></p>
           </div>
         </div>
         <div class="col-6">

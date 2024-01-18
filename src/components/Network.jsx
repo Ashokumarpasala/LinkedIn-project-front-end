@@ -33,7 +33,8 @@ function Network() {
               <p className='fw-bold'>Manage my network</p>
               <div  >
                 <Link to='/connections/network' className='d-flex fw-bold'>
-                <img src={network} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
+                <i class="bi bi-people-fill mx-3"></i>
+                {/* <img src={network} className='mx-3' style={{width:"20px", height:"20px"}} alt="" /> */}
                 <p>connections</p>
                 </Link>
               </div>

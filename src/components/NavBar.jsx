@@ -55,7 +55,7 @@ const NavBar = () => {
         <nav className="d-flex mainNavbar justify-content-between align-items-center" style={{fontSize:"12px", }}>
           <div className="navbar-brand d-flex">
             <img style={{ width: '50px' }} className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png" alt="" />
-            <input type="text" name="search"  className='fs-5 rounded-3 navbarinput navinput navbaronly' placeholder="search" />
+            <input type="text" name="search"  className='fs-5 rounded-2 navbarinput navinput navbaronly' placeholder="search" />
           </div>
           <div className="navbar-links icons d-flex justify-content-around ">
               <div className="mx-3 text-center ">
@@ -137,34 +137,53 @@ const NavBar = () => {
 
       {
         profileCard ? 
-        (<div className='scale-in-top' style={{position:"absolute", top:"10px", left:"55%",zIndex:"1" }} >
-          <div class="card w-50 p-2 border shadow">
+        (<div className='scale-in-top' style={{position:"fixed", top:"10px", left:"55%",zIndex:"1",  }} >
+          <div class="card border shadow">
             <div className='d-flex align-items-center'>
-
-                <img src={profile} class="card-img-top w-25" alt="..." />
-                <div className='fw-bold fs-5 w-100 p-4 '>
+                <img src={profile} class="" style={{width:"75px"}} alt="..." />
+                <div className='fw-bold pt-2 mx-2' style={{fontSize:"10px"}}>
                       <Link to='/MainProfile'>
-                    <button className='btn btn-primary fs-5 w-100 my-3 rounded-5'>
-                      View Profile
-                      </button>
+                        <h6 className='fw-bold'>Ashok Kumar Pasala</h6>
+                        <div className=''>Worked in Think Core Technologies </div>
                       </Link> 
-                    <h5 className='fw-bold'>User Name </h5>
-                    <h6>Worked in Previous Company </h6>
                 </div>
-            </div>
-                      <hr />
-                <div class="card-body fs-6">
-                    <h5 class="card-title fw-bold text-secondary">Account</h5>
-                    <p>Settings & privacy</p>
-                    <p>Help</p>
-                    <p>Language</p> <hr />
-                    <h5 className='fw-bold text-secondary'>Manage</h5>
-                    <p>post & Activity</p>
-                    <p>Job posting Account</p> <hr />
-                    <div className="d-flex justify-content-between">
-                    <p className='btn btn-danger fs-6' onClick={() => setprofileCard(!profileCard)}> Exit</p>
+            </div> 
+                        <div className='border-primary border text-center text-dark mx-2 rounded-pill'>
+                          <Link to='/MainProfile'>view profile</Link>
+                        </div>
 
-                    <p className='btn btn-danger fs-6'>Sign Out</p>
+                      <hr />
+                <div class="">
+                    <div className="px-3 lh-base border-bottom py-2" style={{fontSize:"14px"}}>
+                    <h6 class="card-title fw-bold text-secondary">Account</h6>
+                   <div>
+                    <Link to='/privacy-&-settings-page'>
+                    <div>Settings & privacy</div>
+                      </Link>
+                    </div>
+
+                    <div>
+                      <Link to='/premimum'>
+                        Try Premimum for $/- 0
+                      </Link>
+                      </div>
+                    <div>Help</div>
+                    <div>Language</div>
+                    </div>
+                    <div className="px-3 border-bottom py-2" style={{fontSize:"14px"}}>
+                    <h6 className='fw-bold text-secondary'>Manage</h6>
+                    <Link to='/jobs'>
+                    <div>post & Activity</div>
+                      </Link>
+                      <Link to='/myjobs/jobs'>
+                    <div>Job posting Account</div>
+                      </Link>
+                    </div>
+                    <div className="d-flex justify-content-between px-2">
+                      <p>Sign Out</p>
+                    {/* <p className='btn btn-danger' onClick={() => setprofileCard(!profileCard)}> Exit</p>
+
+                    <p className='btn btn-danger'>Sign Out</p> */}
                     </div>
                 </div>
                 </div>

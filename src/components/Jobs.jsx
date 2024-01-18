@@ -12,6 +12,7 @@ import { Carousel } from 'react-bootstrap';
 import test from '../assets/test.png'
 import compaines from './jobsComponent/RecomdedJobsData'
 import SingleJobComponent from './jobsComponent/SingleJobComponent'
+import ResumeBuilderpage from './jobsComponent/ResumeBuilderpage'
 
 
 function Jobs() {
@@ -20,6 +21,7 @@ function Jobs() {
   const [showskillsetCard, setShowSkillSetCard] = useState(false)
   const [singlejob, setsinglejob] = useState(true)
   const [selectedId, setSelectedId]  = useState(null)
+  const [showResumeCard, setshowResumeCard]  = useState(false)
   // console.log( `id from jobs ${selectedId}`)
   const handleId = (id) => {
     setSelectedId(id)
@@ -62,13 +64,17 @@ function Jobs() {
                 <p>Job seeker guidance</p>
                 </Link>
               </div>
-              <div className='d-flex'>
+              <div className='d-flex' onClick={() => setshowResumeCard(!showResumeCard)}>
                 <img src={file} className='mx-2' style={{width:"20px", height:"20px"}} alt="" />
+                <Link>
                 <p>Resume Builder</p>
+                </Link>
               </div>
               <div className='d-flex'>
               <i class="bi bi-gear-fill mx-2" style={{width:"20px", height:"20px"}}></i>
-                              <p>Application settings</p>
+              <Link to='/additonal-settings-page'>
+                 <p>Application settings</p>
+                </Link>
               </div>
               
           </div>
@@ -374,6 +380,26 @@ function Jobs() {
                </div>
               </div>
       </> : <><div>{null}</div></>}
+
+      {showResumeCard ?
+       <>
+          <div style={{
+            position:"fixed",
+            width:"100%",
+            height:"100%",
+            backgroundColor:"black",
+            top:"0",
+            left:"0",
+            opacity:"0.65"
+          }}  onClick={() => setshowResumeCard(!showResumeCard)}>
+
+            </div>
+            <div className="">
+              <ResumeBuilderpage  setshowResumeCard={setshowResumeCard} showResumeCard={showResumeCard}  />
+            </div>
+      </> : <><div>{null}</div></>}
+
+
 
 
 

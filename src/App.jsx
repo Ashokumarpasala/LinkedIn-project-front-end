@@ -26,6 +26,10 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import JobSeekPage from './components/jobsComponent/JobSeekPage';
 import "react-toastify/dist/ReactToastify.css";
 import About from './components/footerComponents/About';
+import PremimumPage from './components/homeComponent/PremimumPage';
+import WriteArticlePage from './components/homeComponent/WriteArticlePage';
+import AdditionalSeetingPage from './components/jobsComponent/AdditionalSeetingPage';
+import SettingsAndPrivacyPage from './components/homeComponent/SettingsAndPrivacyPage';
 
 // import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
 
@@ -83,6 +87,11 @@ function App() {
           <Route exact path='/interview-preparation/jobs'  element={<InterviewPrepComp />} />
           <Route exact path='/Job-seeker-guidance/jobs'  element={<JobSeekPage />} />
           <Route exact path='/about'  element={<About />} />
+          <Route exact path='/premimum'  element={<PremimumPage />} />
+          <Route exact path='/single-rimemum-myjob'  element={<Myjobs />} />
+          <Route exact path='/write-article-page'  element={<WriteArticlePage />} />
+          <Route exact path='/additonal-settings-page'  element={<AdditionalSeetingPage />} />
+          <Route exact path='/privacy-&-settings-page'  element={<SettingsAndPrivacyPage />} />
           {/* <Route exact path='/single-user-profile/netword-page'  element={<SingleUserComponent />} /> */}
         </Routes>
       </Router>

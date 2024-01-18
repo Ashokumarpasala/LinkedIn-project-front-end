@@ -278,6 +278,55 @@
         flex-wrap: wrap !important;
         font-size: 12px !important;
     }
+    .writearticle .maindiv {
+        flex-direction: column !important;
+        position: relative !important;
+        top: -50px !important;
+    }
+    .writearticle .toolbar {
+        flex-direction: row !important;
+        width: 100% !important;
+    }
+    .writearticle .toolbar >div {
+        font-size: 10px !important;
+        margin: 10px 12.5px !important;
+    }
+    .writearticle .button {
+        margin-top: 25px !important;
+    }
+    .uploadpart {
+        width: 100% !important;
+    }
+    .writearticle .userprofile {
+        flex-direction: column !important;
+        align-items: center !important;
+        font-size: 20px !important;
+        margin: 10px 0px;
+    }
+    .writearticle .userprofile img {
+        width: 100% !important;
+    }
+    .home .premimum {
+        margin: 10px 0px;
+    }
+    .trypremimum .d-flex {
+        flex-direction: column;
+    }
+    .trypremimum .card {
+        width: 100% !important;
+    }
+    .trypremimum .nav {
+        flex-direction: row !important;
+    }
+    .resumebuilder .card {
+        width: 90% !important;
+        position: fixed !important;
+        left: 20px !important;
+    }
+    .SettingsAndPrivacyPage .settings .main {
+        width: 100% !important;
+    }
+    
      
   }
   

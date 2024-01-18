@@ -10,6 +10,8 @@ import EventComponent from './profileComponents/EventComponent'
 import leftArryData from './homeComponent/NewsData'
 import axios from 'axios'
 import NewPage from './homeComponent/NewPage'
+import companies from './jobsComponent/RecomdedJobsData'
+
 function Home({users}) {
   const [showAll, setShowAll] = useState(false);
   const [showpost, setShowpost] = useState('');
@@ -17,8 +19,10 @@ function Home({users}) {
   const [eventComponent, seteventComponent] = useState(false)
   const [newspageShow, setnewspageShow] = useState(true)
   const [newsId, setNewsId] = useState(null)
+  const [premimum, setpremimum] = useState(true)
   // console.log(newsId)
   // console.log(newspageShow)
+  const randomnumber = (Math.floor(Math.random() * 19) + 1)
 
  
 
@@ -160,7 +164,7 @@ function Home({users}) {
           newspageShow ? <>
           <div class="col-3">
             
-          <div class="card shadow ">
+          <div class="card shadow  ">
             <Link to='/MainProfile'>
           <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "100px",
           position:"absolute",
@@ -184,26 +188,41 @@ function Home({users}) {
         }
             <hr />
             <ul class="list-group homelist list-group-flush fw-bold" >
-              <h4 class="list-group-item">
+              <h6 class="list-group-item">
                 <Link to='/network' className='d-flex justify-content-between'>
-                <p>connections</p> <i class="bi bi-people-fill mx-2"></i>
+                  <div>
+
+                <div>connections</div>
+                <div>Grow Yor network</div>
+                  </div>
+                 <i class="bi bi-people-fill mx-2"></i>
                 </Link>
+                </h6>
+                <p class="list-group-item fs-6">
+                <Link to='/network' className='d-flex justify-content-between'>
+                <p>invitations</p> <span>1</span>
+                </Link>
+                </p>
                 
-                <span style={{fontSize:"14px"}}>Grow our Network </span></h4>
-              <li class="list-group-item">Try For Free $/-</li>
-              <li class="list-group-item"><i class="bi bi-bookmark-fill mx-2"></i>My Items</li>
+              <li class="list-group-item">
+                  <i class="bi bi-file-earmark-fill mx-2"></i>
+                <Link to='/premimum'>
+                  Learn New Skills Try For Free $/-
+                </Link>
+                </li>
+              <li class="list-group-item"><i class="bi bi-bookmark-fill mx-2"></i><Link to='/myjobs/jobs'>My Items</Link></li>
             </ul>
           </div>
 
           <div className="card shadow mt-3">
           <ul class="list-group homelist list-group-flush mt-4 fw-bold" >
-              <h5 class="list-group-item"><Link to='/groups/network'>Groups</Link></h5>
+              <li class="list-group-item"><Link to='/groups/network'>Groups</Link></li>
               <li class="list-group-item d-flex justify-content-between"><Link to='/events/network'>Events</Link>
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
               </svg>
               </li>
-              <li class="list-group-item"><Link to='/Followerspage/network'>Followed by</Link></li>
+              <li class="list-group-item"><Link to='/Followerspage/network'>Followed Hastags</Link></li>
             </ul>
             <ul class="list-group list-group-flush fw-bold fs-6">
             <li class="list-group-item"></li>
@@ -211,29 +230,41 @@ function Home({users}) {
 
   </ul>
 
-            <p className='text-center text-secondary fw-bold'>Dicover More</p>
+            <p className='text-center text-secondary fw-bold fs-6'>
+              <Link to='/network'>
+                Dicover More
+              </Link>
+              </p>
           </div>
           </div>
 
           {/* middle card content */}
           <div class="col-6">
-            <div className="card border p-4">
+               {
+                premimum ? 
+                <div className="card premimum border p-4">
               <div className="d-flex  justify-content-between">
                 <h4 className='fw-bold'>Get ahead with Premium</h4>
-                <i class="bi bi-x-lg"></i>
+                <i class="bi bi-x-lg" onClick={() => setpremimum(false)} style={{cursor:"pointer"}}></i>
               </div>
               <div className='border rounded-4 text-center mt-2  p-4'>
               <img className='avatar' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "150px",
                 
-                }}
-                alt="Avatar" />
+              }}
+              alt="Avatar" />
                 <div className="lh-base mt-2">
-                <h4>Looking for your next role?</h4>
+                <h5>Looking for your next role?</h5>
                 <p>Premium members are 2.6x more likely to get hired on average.</p>
-                <button className='btn btn-warning fs-5 rounded-pill text-black fw-bold'>get Premimum</button>
+                <button className='btn btn-warning fs-6 rounded-pill text-black fw-bold '>
+                  <Link to='/premimum' className='text-black'>
+                    get Premimum
+                  </Link>
+                  </button>
                 </div>
               </div>
-            </div>
+            </div> : ''
+            }
+
             {/* post search card  */}
             <div className="card border postcard shadow rounded-4 p-3 mt-3">
               <div className="d-flex  align-items-center">
@@ -245,7 +276,7 @@ function Home({users}) {
                 <input type="" className='form-control mx-3 rounded-5 p-3 rounded-pill' onClick={() => setShowMediaComponent(!showMediaComponent)} placeholder='Start a Post' />
 
                     </div>
-                    <div className="d-flex centercard  justify-content-around  mt-4 fw-bold text-secondary " style={{cursor:"pointer"}}>
+                    <div className="d-flex centercard  justify-content-around  mt-2 fw-bold text-secondary " style={{cursor:"pointer"}}>
                     <div className="d-flex align-items-center rounded-4  px-4 " onClick={() => setShowMediaComponent(!showMediaComponent)}>
                       <img src={imge} style={{width:"25px"}} alt="" />
                       <p className=' mx-2' style={{top:"10px", position:"relative"}}>Media</p>
@@ -256,19 +287,27 @@ function Home({users}) {
                     </div>
                     <div className="d-flex align-items-center p-2 rounded-4 px-4  ">
                       <img src={write} style={{width:"30px"}} alt="" />
-                      <p className='mx-2' style={{top:"10px", position:"relative"}}>Write articles</p>
+                      <p className='mx-2' style={{top:"10px", position:"relative"}}>
+                        <Link to='/write-article-page' className='text-secondary'>
+                          Write articles
+                        </Link>
+                        </p>
                     </div>
                     
                     </div>
             </div> 
-            <hr />
+            <div className="d-flex sortline align-items-center py-2">
+              <div className='border-bottom ' style={{width:"80%"}}></div>
+
+              <div className='px-2'>Sort by: <span>Top</span> <i class="bi bi-caret-down-fill "></i></div>
+            </div>
             {/* ..hard coded image post........ */}
             {
               dataInsert.map((data) => {
                 return (
                   <>
-                    <div class="card postedcard border text-center mt-2 " key={data.id}>
-                        <div class="card-header p-4 ">
+                    <div class="card postedcard border text-center mt-1 " key={data.id}>
+                        <div class="card-header p-3 ">
                           <div className="d-flex justify-content-between">
                             <h6>Suggested</h6>
                             <div>
@@ -282,7 +321,7 @@ function Home({users}) {
                             <div class="">
                               <div>
                                 {/* posted user details */}
-                                <div className="d-flex postedUser justify-content-between p-3">
+                                <div className="d-flex postedUser justify-content-between p-2">
                                   <div className='d-flex '>
 
                                   <img style={{width:"70px", height:"70px"}} className='user' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK8ffDsJ4jPCqnGI6CmuPG9MHW22ophfZauvpt6qO5qnJz6oKjsySCrmqgrEZLk30ufKs&usqp=CAU" alt="" />
@@ -603,8 +642,8 @@ function Home({users}) {
               }} style={{cursor:"pointer",}} >
                 <li>
 
-              <div className='fw-bold fs-6 '><Link>{data.headline}</Link></div>
-              <div className='text-secondary' style={{fontSize:"14px"}}>{data.time}</div>
+              <div className='fw-bold  '><Link>{data.headline}</Link></div>
+              <div className='text-secondary'>{data.time}</div>
                 </li>
             </ul>
           )
@@ -615,16 +654,15 @@ function Home({users}) {
               </button>
           </div>
         ) : (
-          <>
+          <div>
             {leftArryData.slice(0, 4).map((data) => (
               <ul  key={data.id} onClick={() => {
                 setNewsId(data.id)
                 setnewspageShow(!newspageShow)
               }} style={{cursor:"pointer"}} >
                 <li>
-
-              <div className='fw-bold fs-6'><Link>{data.headline}</Link></div>
-                <div className='text-secondary ' style={{fontSize:"14px"}}>{data.time}</div>
+                  <div className='fw-bold ' style={{fontSize:"12px"}}><Link>{data.headline}</Link></div>
+                  <div className='text-secondary '>{data.time}</div>
                 </li>
               </ul>
             ))}
@@ -633,7 +671,7 @@ function Home({users}) {
                 Show More
               </button>
             )}
-          </>
+          </div>
         )}
       </div>
             </div>
@@ -641,13 +679,17 @@ function Home({users}) {
 
             <div ref={stickyCardRef} className={` ${isSticky ? 'sticky-top' : ''}`} >
             <div className='card  p-4 text-center my-2 border'>
+              <div className='text-end'>Add<i class="bi bi-three-dots mx-2"></i></div>
               <p>Get the latest jobs and industry news</p>
-              <div className="d-flex align-self-center">
+              <Link to='/single-rimemum-myjob'>
+              <div className="m-3">
 
-              <img className='' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px",}} alt="Avatar" />
+              <img className='' src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style={{width: "80px", height:"80px", objectFit:"contain"}} alt="Avatar" />
+              <img className='border rounded-4' src={companies[randomnumber].logoImage} class="" style={{width: "100px", height:"80px", objectFit:"contain", marginLeft:"30px"}} alt="" />
               </div>
-              <p>Ashok Kumar, explore relevant opportunities with Mavenir</p>
-              <button className='btn btn-primary fw-bold'>Follow</button>
+              <p >Ashok Kumar, explore relevant opportunities with {companies[randomnumber].name}</p>
+              <button className='btn btn-primary fw-bold'>view more Job</button>
+              </Link>
             </div>
             {/* .......footer......... */}
             <Footer />
