@@ -15,9 +15,11 @@ function Network() {
   const [user, setUser] = useState(true)
   const [selecteduserId, setSelectedUserId] = useState(null)
   const handleUserClick = (userId) => {
-    console.log('Clicked on user with ID:', userId);
+    // console.log('Clicked on user with ID:', userId);
     setSelectedUserId(userId)
   }
+  
+  
   
   return (
     <div style={{backgroundColor:"#f4f2ee"}} className='mt-5 pt-4'>
@@ -34,7 +36,6 @@ function Network() {
               <div  >
                 <Link to='/connections/network' className='d-flex fw-bold'>
                 <i class="bi bi-people-fill mx-3"></i>
-                {/* <img src={network} className='mx-3' style={{width:"20px", height:"20px"}} alt="" /> */}
                 <p>connections</p>
                 </Link>
               </div>
@@ -64,11 +65,15 @@ function Network() {
               </div>
               <div className='d-flex'>
                 <img src={paper} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
+                <Link to='/news-letter/network' className='d-flex fw-bold'>
                 <p>Newsletter</p>
+              </Link>
               </div>
               <div className='d-flex'>
                 <img src={hash} className='mx-3' style={{width:"20px", height:"20px"}} alt="" />
+                <Link to='/news-letter/hastag/network'  className='d-flex fw-bold' >
                 <p>Hashtags</p>
+              </Link>
               </div>
             </li>
             <li class="list-group-item px-3">

@@ -30,6 +30,7 @@ import PremimumPage from './components/homeComponent/PremimumPage';
 import WriteArticlePage from './components/homeComponent/WriteArticlePage';
 import AdditionalSeetingPage from './components/jobsComponent/AdditionalSeetingPage';
 import SettingsAndPrivacyPage from './components/homeComponent/SettingsAndPrivacyPage';
+import LetterPage from './components/networkComponent/LetterPage';
 
 // import UserAuthenticationPage from './components/AuthenticationComponents/UserAuthenticationPage';
 
@@ -65,6 +66,9 @@ function App() {
     fetchData();
   }, []);
 
+  const hastage = 'Hastage Following'
+  
+
   // console.log(usersData);
   return (
     <div>
@@ -92,6 +96,10 @@ function App() {
           <Route exact path='/write-article-page'  element={<WriteArticlePage />} />
           <Route exact path='/additonal-settings-page'  element={<AdditionalSeetingPage />} />
           <Route exact path='/privacy-&-settings-page'  element={<SettingsAndPrivacyPage />} />
+          
+            <Route exact path='/news-letter/hastag/network'  element={<LetterPage hastage={hastage} />} /> : 
+            <Route exact path='/news-letter/network'  element={<LetterPage  />} /> 
+            
           {/* <Route exact path='/single-user-profile/netword-page'  element={<SingleUserComponent />} /> */}
         </Routes>
       </Router>

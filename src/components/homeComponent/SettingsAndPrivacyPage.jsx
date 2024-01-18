@@ -35,8 +35,8 @@ function SettingsAndPrivacyPage() {
                 </div>
             </div>
         </nav>
-        <div className=" d-flex justify-content-center settings " style={{zIndex:"-2", position:"relative", top:"50px"}} >
-            <div className='w-50 p-5 main' >
+        <div className=" d-flex justify-content-center settings " style={{zIndex:"-2", position:"relative", top:"50px", backgroundColor:"#f4f2ee"}} >
+            <div className='w-75 p-5 main' >
 
             <div class="card  border">
             <ul class="list-group list-group-flush">

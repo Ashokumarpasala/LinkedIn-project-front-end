@@ -17,9 +17,60 @@ const NavBar = () => {
     const [profileCard, setprofileCard] = useState(false)
     const [showlayer, setShowLayer] = useState(false)
     const [businesscard, setbusinesscard] = useState(false)
+    const [help, setHelp] = useState(false)
     const handletoggle =() => {
         setActive(!active)
     }
+
+    const  products =  [
+      {
+        productName: 'Sell with LinkedIn',
+        logoUrl: 'https://example.com/sell-with-linkedin-logo.png',
+        headline: 'Unlock sales opportunities',
+        description: 'A powerful tool to enhance your sales strategies on LinkedIn.',
+      },
+      {
+        productName: 'Market with LinkedIn',
+        logoUrl: 'https://example.com/market-with-linkedin-logo.png',
+        headline: 'Reach your target audience',
+        description: 'Effective marketing solutions to connect with your audience on LinkedIn.',
+      },
+      {
+        productName: 'Connect with LinkedIn',
+        logoUrl: 'https://example.com/connect-with-linkedin-logo.png',
+        headline: 'Build meaningful connections',
+        description: 'Networking solutions to help you establish and grow your professional network.',
+      },
+      {
+        productName: 'Learn with LinkedIn',
+        logoUrl: 'https://example.com/learn-with-linkedin-logo.png',
+        headline: 'Access educational content',
+        description: 'Explore a variety of educational resources to enhance your skills and knowledge.',
+      },
+      {
+        productName: 'Recruit with LinkedIn',
+        logoUrl: 'https://example.com/recruit-with-linkedin-logo.png',
+        headline: 'Efficient hiring solutions',
+        description: 'Streamline your recruitment process and find the right talent for your team.',
+      },
+      {
+        productName: 'Advertise on LinkedIn',
+        logoUrl: 'https://example.com/advertise-on-linkedin-logo.png',
+        headline: 'Promote your brand',
+        description: 'Advertise your products and services to a targeted audience on LinkedIn.',
+      },
+      // Add more products as needed
+    ]
+    const learning = [
+      { name: 'Learning', logoUrl: 'https://t4.ftcdn.net/jpg/01/28/93/91/360_F_128939133_0WXTVdZ1bv1NXusQsdYYJLIwTVoXHqQ7.jpg' },
+      { name: 'Talent Insights', logoUrl: 'https://media.licdn.com/dms/image/D4E0BAQHfErkmQSWBxw/company-logo_200_200/0/1700041013849/talent_insight_group_logo?e=2147483647&v=beta&t=N2X_W2dbY9uzqieL2cjf5MqWYXjulByEjRhYW6nJ8XI' },
+      { name: 'Advertise', logoUrl: 'https://cdn.dribbble.com/userupload/5332605/file/original-44cc2e7058108f3bf07b21890b296120.jpg?resize=400x0' },
+      { name: 'Find Leads', logoUrl: 'https://i.pinimg.com/564x/cc/64/92/cc649271943b3680b9256c64373723d0.jpg' },
+      { name: 'Skill Development', logoUrl: 'https://img.freepik.com/premium-vector/gradient-code-logo-tagline-here_23-2148808179.jpg' },
+      { name: 'Business Intelligence', logoUrl: 'https://us.123rf.com/450wm/mariiasimakova/mariiasimakova2008/mariiasimakova200800104/162423930-business-intelligence-icon-simple-line-element-business-intelligence-symbol-for-templates-web-design.jpg?ver=6' },
+      { name: 'Marketing Solutions', logoUrl: 'https://logoarena-storage.s3.amazonaws.com/contests/public/2505/1828_1364959127_sl2.jpg' },
+    ];
+        
     
   return (
     <>
@@ -106,7 +157,7 @@ const NavBar = () => {
             <div  className='nav-link lastIcons' onClick={() => setbusinesscard(!businesscard)} style={{cursor:"pointer"}}>
               <div className="mx-3 text-center">
                 <img src={menu} style={{ width: '30px' }} alt="" /> <br />
-             For Business
+                  For Business
                 <span><img src={downarrow} className="mx-2" style={{ width: '15px' }} alt="" /></span>
               </div>
             </div>
@@ -167,8 +218,16 @@ const NavBar = () => {
                         Try Premimum for $/- 0
                       </Link>
                       </div>
-                    <div>Help</div>
+                    <div onClick={() => {
+                      setHelp(!help)
+                      setprofileCard(!profileCard)
+                    }}><Link>Help</Link></div>
+                   
+                    <div>
+                      <Link to='/privacy-&-settings-page'>
                     <div>Language</div>
+                      </Link>
+                      </div>
                     </div>
                     <div className="px-3 border-bottom py-2" style={{fontSize:"14px"}}>
                     <h6 className='fw-bold text-secondary'>Manage</h6>
@@ -189,10 +248,35 @@ const NavBar = () => {
                 </div>
         </div>) : null
     }
+
+                    {help ? <>
+                      <div class="card w-25 border" style={{position:"absolute", top:"50px", left:"72%", zIndex:"1", cursor:"pointer" }}>
+                          <div class="card-header bg-dark text-white">
+                            <div className="d-flex justify-content-between">
+
+                            <h3>Help</h3>
+                            <div><i class="bi bi-x-lg" onClick={() => setHelp(!help)}></i></div>
+                            </div>
+                            <input type="text" className='form-control' name="" id="" />
+                          </div>
+                          <ul class="list-group list-group-flush">
+                            <div className="p-3 border-bottom">
+
+                            <p>Help based on your activity</p>
+                            <p><Link>LinkedIn Connections and Invitations – FAQ</Link></p>
+                            <p><Link>Various ways to Connect with People on LinkedIn</Link></p>
+                            <p><Link>“People You May Know” Feature - Overview</Link></p>
+                            </div>
+                            <li class="list-group-item"><Link>Open Help in a new tab</Link></li>
+                          </ul>
+                        </div>
+                     </> : <>
+                      <div>{null}</div>
+                    </>}
     
     {
         businesscard ? (
-               <div className={`card h-100 w-25 slide-in-right  p-4`}  style={{position:"absolute", top:"10px", left:"73.5%", zIndex:"1", cursor:"pointer" }} >
+               <div className={`card border slide-in-right  p-4`}  style={{position:"absolute", top:"10px", left:"70%", zIndex:"1", cursor:"pointer", overflow:"hidden" }} >
                   <div className='d-flex justify-content-between'>
                     <h3>For Business</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" className='' width="30" height="30" onClick={() => setbusinesscard(!businesscard)} fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -201,55 +285,43 @@ const NavBar = () => {
                   </div>
                   <div style={{overflow:"scroll"}}>
 
-                  <div class="card my-3">
+                  <div class="card border my-3">
                     <div class="card-header">
-                      <h5 className='fw-bold p-2'>Visit More LinkedIn Products</h5>
+                      <h3 className='fw-bold p-2'>Visit More LinkedIn Products</h3>
                     </div>
                     <div class="card-body d-flex flex-wrap p-2">
-                        <div className="card m-3 p-2">icons</div>
-                        <div className="card m-3 p-2">icons</div>
-                        <div className="card m-3 p-2">icons</div>
-                        <div className="card m-3 p-2">icons</div>
-                        <div className="card m-3 p-2">icons</div>
-                        <div className="card m-3 p-2">icons</div>
+                      {
+                        learning.map((data) => {
+                          return (<>
+                          <div className='text-center'>
+
+                            <div className="card mx-4">
+                              <img src={data.logoUrl} style={{width:"75px", height:"75px", objectFit:"cover"}} alt="" />
+                            </div> 
+                            <div>
+
+                            <h6>{data.name}</h6>
+                          </div>
+                            </div>
+                          </>)
+                        })
+                      }
                     </div>
                     </div>
-                    <div class="card">
-                        <h5 class="card-header fw-bold">Explore more for business</h5>
+                    <div class="card border">
+                        <h3 class="card-header fw-bold">Explore more for business</h3>
                         <div class="card-body">
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
+                          {
+                            products.map((data) => {
+                              return (
+                             <div className='p-3 border-bottom'>
+                              <h5 class="card-title fw-bold">{data.headline}</h5>
+                              <p class="card-text">{data.description}</p>
                             </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            <div>
-                            <h6 class="card-title">Special title treatment</h6>
-                            <p class="card-text">With supporting text below as a naturalcontent.</p>
-                            </div>
-                            
+
+                              )
+                            })
+                          } 
                         </div>
                         </div>
                         </div>
