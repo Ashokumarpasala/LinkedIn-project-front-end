@@ -70,6 +70,8 @@ const NavBar = () => {
       { name: 'Business Intelligence', logoUrl: 'https://us.123rf.com/450wm/mariiasimakova/mariiasimakova2008/mariiasimakova200800104/162423930-business-intelligence-icon-simple-line-element-business-intelligence-symbol-for-templates-web-design.jpg?ver=6' },
       { name: 'Marketing Solutions', logoUrl: 'https://logoarena-storage.s3.amazonaws.com/contests/public/2505/1828_1364959127_sl2.jpg' },
     ];
+
+    const animaSlideIn = `slide-in-right`
         
     
   return (
@@ -278,8 +280,8 @@ const NavBar = () => {
     
     {
         businesscard ? (
-               <div className={`card border slide-in-right  p-4`}  style={{position:"fixed", top:"10px", left:"70%", zIndex:"1", cursor:"pointer" }} >
-                  <div className='d-flex justify-content-between'>
+               <div className={`card border ${businesscard === true ? animaSlideIn : `slide-out-right`}  p-4`}  style={{position:"fixed", top:"10px", left:"70%", zIndex:"1", cursor:"pointer" }} >
+                  <div className='d-flex justify-content-between '>
                     <h3>For Business</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" className='' width="30" height="30" onClick={() => setbusinesscard(!businesscard)} fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>

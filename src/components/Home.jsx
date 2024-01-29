@@ -23,7 +23,7 @@ function Home({users}) {
   // console.log(newsId)
   // console.log(newspageShow)
   const randomnumber = (Math.floor(Math.random() * 19) + 1)
-  console.log(users)
+  // console.log(users)
 
  
 
@@ -327,7 +327,7 @@ function Home({users}) {
 
                             <div class="">
                               <div>
-                                {/* posted user details */}
+                                {/* posted  image card details */}
                                 <div className="d-flex postedUser justify-content-between p-2">
                                   <div className='d-flex '>
 
